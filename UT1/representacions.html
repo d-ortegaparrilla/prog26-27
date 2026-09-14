@@ -1,0 +1,761 @@
+
+<!doctype html>
+<html lang="ca" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://d-ortegaparrilla.github.io/prog26-27/UT1/representacions.html">
+      
+      
+        <link rel="prev" href="java.html">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Algorismes i representacions - Programació</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="orange" data-md-color-accent="deep-orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#algorismes-i-representacions" class="md-skip">
+          Salta el contingut
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Capçalera">
+    <a href="../index.html" title="Programació" class="md-header__button md-logo" aria-label="Programació" data-md-component="logo">
+      
+  <img src="../favicon.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Programació
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Algorismes i representacions
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Cerca" placeholder="Cerca" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Cerca">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Neteja" aria-label="Neteja" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicialitzant cerca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegació" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="Programació" class="md-nav__button md-logo" aria-label="Programació" data-md-component="logo">
+      
+  <img src="../favicon.png" alt="logo">
+
+    </a>
+    Programació
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UT1
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    UT1
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="introduccio.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introducció
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="java.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    El llenguatge de programació Java
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Algorismes i representacions
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="representacions.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Algorismes i representacions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Taula de continguts">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Taula de continguts
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#concepte-dalgorisme" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concepte d'algorisme
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pseudocodi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pseudocodi
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diagrames-de-flux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagrames de flux
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Diagrames de flux">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#estructures-sequencials" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estructures seqüencials.
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#llenguatges-de-programacio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Llenguatges de programació
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Llenguatges de programació">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#caracteristiques" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Característiques
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#el-proces-de-traduccio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        El procés de traducció
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Taula de continguts">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Taula de continguts
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#concepte-dalgorisme" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concepte d'algorisme
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pseudocodi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pseudocodi
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diagrames-de-flux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagrames de flux
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Diagrames de flux">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#estructures-sequencials" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estructures seqüencials.
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#llenguatges-de-programacio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Llenguatges de programació
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Llenguatges de programació">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#caracteristiques" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Característiques
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#el-proces-de-traduccio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        El procés de traducció
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="algorismes-i-representacions">Algorismes i representacions</h1>
+<h2 id="concepte-dalgorisme">Concepte d'algorisme</h2>
+<p>No tots els mètodes de solució d'un problema són susceptibles de ser utilitzats per un computador. Perquè un procediment puga ser implementat en un computador ha de complir determinats requisits:</p>
+<ul>
+<li>Ha d'estar compost d'accions ben definides.</li>
+<li>Ha d'estar format per una seqüència finita d'operacions amb un ordre definit.</li>
+<li>Finalment, ha d'acabar en un temps finit.</li>
+</ul>
+<p>Es pot donar la següent definició d'algorisme: un algorisme és un procediment no ambigu que resol un problema. Un procediment és una seqüència d'operacions ben definides, cadascuna de les quals requereix una quantitat finita de memòria i es realitza en un temps finit.</p>
+<h2 id="pseudocodi">Pseudocodi</h2>
+<p>El pseudocodi és un llenguatge que permet passar quasi de manera directa la solució del problema a un llenguatge de programació específic. El pseudocodi és una sèrie de passos ben detallats i clars que condueixen a la resolució d'un problema. La facilitat de passar quasi de manera directa el pseudocodi a la computadora ha donat com a resultat que molts programadors implementen de manera directa els programes en la computadora.</p>
+<p>Exemple 1: El pseudocodi per a determinar el volum d'una caixa de dimensions A, B i C es pot establir de la següent manera:</p>
+<p><img alt="Image title" src="images/cube.png" style="float: right;" /></p>
+<ol>
+<li>Inici</li>
+<li>Llegir les mesures A, B i C</li>
+<li>Realitzar el producte d'A * B * C i guardar-lo en V (V = A * B * C)</li>
+<li>Escriure el resultat V</li>
+<li>Fi</li>
+</ol>
+<p>Com es pot veure, s'estableix de manera precisa la seqüència dels passos a realitzar; a més, si se'ls proporciona sempre els mateixos valors a les variables A, B i C, el resultat del volum serà el mateix i, per consegüent, es compta amb un final.</p>
+<h2 id="diagrames-de-flux">Diagrames de flux</h2>
+<p>Els diagrames de flux permeten representar visualment quines operacions es requereixen i en quina seqüència s'han d'efectuar per a solucionar un problema.</p>
+<p>Els diagrames de flux exerceixen un paper vital en la programació d'un problema, ja que faciliten la comprensió de problemes complicats i sobretot els processos que són molt llargs; generalment, els diagrames de flux es dibuixen abans de començar a programar el codi font, el qual s'inserirà posteriorment en l'ordinador.</p>
+<p>Dins dels diagrames de flux es poden utilitzar els símbols que es presenten a continuació, amb els quals s'indiquen les operacions que s'efectuaran sobre les dades per a produir un resultat. En aquesta primera UT tan sols es tractaran les estructures seqüencials, per la qual cosa no utilitzarem els símbols associats a operacions de decisió.</p>
+<p><img alt="Image title" src="images/diagrama1.png" style="display: block; margin: auto;" /></p>
+<p>Exemple 2: A continuació es mostra la solució del diagrama de flux per a determinar el volum d'una caixa de dimensions A, B i C.</p>
+<p><img alt="Image title" src="images/diagrama2.png" style="display: block; margin: auto;" /></p>
+<p>Com es pot veure de manera gràfica, s'estableix de manera precisa la seqüència dels passos per realitzar per a obtindre el resultat del volum. Com es pot verificar, són els mateixos passos que es van establir en l'algorisme presentat prèviament mitjançant el pseudocodi.</p>
+<h3 id="estructures-sequencials">Estructures seqüencials.</h3>
+<p>En aquest tipus d'estructura les instruccions es realitzen o s'executen una després de l'altra i, en general, s'espera que es proporcione una o diverses dades, les quals són assignades a variables perquè amb elles es produïsquen els resultats que representen la solució del problema.</p>
+<p>Exemple 3: Es desitja implementar un algorisme per a obtindre la suma de dos números qualsevol. S'ha de partir que per a poder obtindre la suma és necessari comptar amb dos números, perquè el procés que hem de realitzar és precisament la suma d'aquests, la qual s'assigna a una variable que es mostra com a resultat del procés.</p>
+<p>És recomanable indicar mitjançant una taula les variables que s'utilitzen, assenyalant el que representen i les seues característiques, aquesta acció facilitarà la lectura de la solució d'un problema donat, sense importar quina eina de programació s'estiga utilitzant per a la representació de la solució. Per al problema de la suma de dos números, la taula següent mostra les variables utilitzades en la solució.</p>
+<p><img alt="Image title" src="images/taula1.png" style="display: block; margin: auto;" /></p>
+<p>Els passos per seguir són els mostrats en el pseudocodi següent, que correspon a l'algorisme que permet determinar la suma de dos números qualsevol.</p>
+<ol>
+<li>Inici </li>
+<li>Llegir A, B </li>
+<li>Realitzar S = A + B </li>
+<li>Escriure S </li>
+<li>Fi</li>
+</ol>
+<p>La representació del algorisme mitjaçant la utilització d'un diagrama de flux seria com el que es mostra en el diagrama següent.</p>
+<p><img alt="Image title" src="images/diagrama3.png" style="display: block; margin: auto;" /></p>
+<p>Exemple 4: Un estudiant realitza quatre exàmens durant el trimestre, els quals tenen la mateixa ponderació. Realitza el pseudocodi i el diagrama de flux que representen l'algorisme necessari per a obtindre el promedi de les qualificacions obtingudes.</p>
+<p>Les variables que es van a utilitzar en la solució d'este problema es mostren en la taula següent.</p>
+<p><img alt="Image title" src="images/diagrama4.png" style="float: right;" /></p>
+<ol>
+<li>Inici </li>
+<li>Llegir C1, C2, C3, C4 </li>
+<li>Realitzar S = C1 + C2 + C3 + C4 </li>
+<li>Realitzar P = S/4 </li>
+<li>Escriure P </li>
+<li>Fi</li>
+</ol>
+<h2 id="llenguatges-de-programacio">Llenguatges de programació</h2>
+<p>Un llenguatge de programació és un conjunt de símbols i de regles necessàries per a combinar-los, els quals s'usen per a expressar algorismes. Els llenguatges de programació tenen un lèxic (conjunt de símbols permesos), una sintaxi (indica com realitzar les construccions del llenguatge) i una semàntica (determina el significat de cada construcció).</p>
+<p><img alt="Image title" src="images/llenguatge1.png" style="display: block; margin: auto;" /></p>
+<h3 id="caracteristiques">Característiques</h3>
+<p>Els llenguatges de programació, o llenguatges d'alt nivell, estan específicament dissenyats per a programar computadors. Tenen les següents característiques fonamentals:</p>
+<ul>
+<li>Són independents de l'arquitectura del computador. </li>
+<li>Normalment, una sentència en un llenguatge d'alt nivell requereix de diverses instruccions en llenguatge màquina. </li>
+<li>Utilitzen notacions properes a les habituals en l'àmbit en les quals s'usen.</li>
+</ul>
+<p>Com a conseqüència d'aquest allunyament de la màquina i apropament a les persones, els programes escrits en llenguatges de programació no poden ser directament interpretats pel computador, sent necessari realitzar prèviament la seua traducció a llenguatge màquina.</p>
+<h3 id="el-proces-de-traduccio">El procés de traducció</h3>
+<p>Com l'ordinador pot interpretar i executar només el codi de la màquina, hi ha traductors que tradueixen programes escrits en llenguatges de programació a llenguatge màquina. El programa inicial s'anomena programa font i el programa obtingut, programa objecte.</p>
+<p>Un <strong>compilador</strong> tradueix un programa font, escrit en un llenguatge d'alt nivell, en un programa objecte, escrit en llenguatge d'assemblador o màquina. El programa font normalment es troba en un fitxer, i el programa objecte es pot emmagatzemar com un fitxer que s'ha de processar més tard, sense necessitat de tornar a realitzar la traducció. </p>
+<p>Un <strong>intèrpret</strong> fa que un programa font escrit en un idioma vaja, línia a línia, traduint i executant directament a través de l'ordinador. L'intèrpret captura una linia font, l'analitza i l'interpreta donant lloc a la seua execució immediata, sense crear cap arxiu o objecte de programa per a noves execucions.</p>
+<p>Un <strong>compilador Just-In-Time</strong> (<strong>JIT</strong>) (compilador en temps d'execució) representa un model híbrid que combina els avantatges dels compiladors i dels intèrprets. En aquest enfocament, el programa font no es tradueix directament a codi màquina, sinó a un codi intermedi independent del maquinari (<strong>bytecode</strong>). </p>
+<p>Un error molt comú és pensar que el JIT compila constantment el mateix codi. La clau del seu alt rendiment és que <strong>només compila una vegada</strong> les parts més utilitzades del programa (<em>hot spots</em>). Un cop el <em>bytecode</em> d'un bucle o mètode s'ha traduït a codi màquina, el JIT l'emmagatzema a la memòria cau. A partir d'eixe moment, qualsevol execució futura d'eixe codi utilitzarà directament la versió compilada, sense cap cost addicional de traducció.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["header.autohide", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiat al porta-retalls", "clipboard.copy": "C\u00f2pia al porta-retalls", "search.result.more.one": "1 m\u00e9s en aquesta p\u00e0gina", "search.result.more.other": "# m\u00e9s en aquesta p\u00e0gina", "search.result.none": "Cap document coincideix", "search.result.one": "1 document coincident", "search.result.other": "# documents coincidents", "search.result.placeholder": "Escriu per a comen\u00e7ar a cercar", "search.result.term.missing": "Desaparegut", "select.version": "Selecciona la versi\u00f3"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
