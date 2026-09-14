@@ -1,0 +1,656 @@
+
+<!doctype html>
+<html lang="ca" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://d-ortegaparrilla.github.io/prog26-27/UT1/java.html">
+      
+      
+        <link rel="prev" href="introduccio.html">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>El llenguatge de programació Java - Programació</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="orange" data-md-color-accent="deep-orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#el-llenguatge-de-programacio-java" class="md-skip">
+          Salta el contingut
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Capçalera">
+    <a href="../index.html" title="Programació" class="md-header__button md-logo" aria-label="Programació" data-md-component="logo">
+      
+  <img src="../favicon.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Programació
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              El llenguatge de programació Java
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Cerca" placeholder="Cerca" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Cerca">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Neteja" aria-label="Neteja" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicialitzant cerca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegació" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="Programació" class="md-nav__button md-logo" aria-label="Programació" data-md-component="logo">
+      
+  <img src="../favicon.png" alt="logo">
+
+    </a>
+    Programació
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UT1
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    UT1
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="introduccio.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introducció
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    El llenguatge de programació Java
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="java.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    El llenguatge de programació Java
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Taula de continguts">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Taula de continguts
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#que-necessite-per-a-programar-en-java" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Què necessite per a programar en Java?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Què necessite per a programar en Java?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jshell-proves-rapides-interactives-repl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        JShell: Proves ràpides interactives (REPL)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentacio-api-de-java" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Documentació: API de Java.
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#entorns-de-desenvolupament-per-a-java" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Entorns de desenvolupament per a Java
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Taula de continguts">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Taula de continguts
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#que-necessite-per-a-programar-en-java" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Què necessite per a programar en Java?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Què necessite per a programar en Java?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jshell-proves-rapides-interactives-repl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        JShell: Proves ràpides interactives (REPL)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentacio-api-de-java" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Documentació: API de Java.
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#entorns-de-desenvolupament-per-a-java" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Entorns de desenvolupament per a Java
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="el-llenguatge-de-programacio-java">El llenguatge de programació Java</h1>
+<p>Java és un llenguatge de programació orientat a objectes desenvolupat per Sun Microsystems a principis dels anys 90. El seu creador, James Gosling, el va batejar com a Oak.</p>
+<p>A continuació, es mostren les versions de Java, juntament amb la seua data de llançament, actualment amb suport:</p>
+<ul>
+<li>Java SE 8 (LTS): Març de 2014. Suport especial.</li>
+<li>Java SE 11 (LTS): Setembre de 2018. Suport especial.</li>
+<li>Java SE 17 (LTS): Setembre de 2021. Suport especial.</li>
+<li>Java SE 21 (LTS): Setembre de 2023.</li>
+<li>Java SE 25 (LTS): Setembre de 2025.</li>
+</ul>
+<h2 id="que-necessite-per-a-programar-en-java">Què necessite per a programar en Java?</h2>
+<p>Necessitem:</p>
+<p>El JDK (<em>Java Development Kit</em> o Kit de Desenvolupament en Java). És el programari que ens permet crear aplicacions Java de diferents tipus. És el primer que hem de tindre instal·lat al nostre ordinador. El JDK inclou:</p>
+<ul>
+<li>
+<p>El JRE (<em>Java Runtime Environment</em>). És la màquina virtual de Java que tradueix el bytecode a codi executable.</p>
+</li>
+<li>
+<p>El compilador de Java. És l'encarregat de convertir el nostre codi font a bytecode.</p>
+</li>
+<li>
+<p>API de Java (<em>Application Programming Interface</em>). Conté tots els paquets, classes i interfícies del llenguatge Java. És el codi que proporciona Java perquè el programador desenvolupe les seues pròpies aplicacions.</p>
+</li>
+</ul>
+<p>L'entorn JDK funciona única i exclusivament mitjançant ordres de consola:</p>
+<ul>
+<li>
+<p><strong>javac</strong>: És l'ordre compiladora de Java.
+    La seua sintaxi és: <code>javac Exemple.java</code>
+    L'entrada d'aquesta ordre ha de ser necessàriament un fitxer que continga codi escrit en llenguatge Java i amb extensió <strong>.java</strong>. L'ordre ens crearà un fitxer <strong>.class</strong> per cada classe que continga el fitxer Java. Els fitxers .class contenen codi bytecode, el codi que és interpretat per la màquina virtual.</p>
+</li>
+<li>
+<p><strong>java</strong>: És l'intèrpret de Java. Permet executar aplicacions que prèviament hagen sigut compilades i transformades en fitxers .class.
+    La seua sintaxi és: <code>java Exemple</code>
+    No cal ací subministrar l'extensió del fitxer, ja que sempre ha de ser un fitxer .class.</p>
+</li>
+</ul>
+<p>Des de la versió 11, el JDK permet executar un fitxer de codi font directament amb l'ordre <code>java</code>, sense necessitat d'utilitzar <code>javac</code> prèviament.</p>
+<p>La seua sintaxi és: <strong><code>java Exemple.java</code></strong> <em>(nota que ací sí que s'inclou l'extensió .java)</em></p>
+<p>Quan ho fem així, el JDK compila l'arxiu directament en la memòria principal i l'executa sobre la marxa. L'avantatge principal és que <strong>no es genera cap fitxer <code>.class</code></strong> al disc, la qual cosa ho fa ideal per a provar xicotets scripts o fer proves ràpides sense embrutar el directori de treball.</p>
+<h3 id="jshell-proves-rapides-interactives-repl">JShell: Proves ràpides interactives (REPL)</h3>
+<p>A partir de Java 9, el JDK inclou una eina interactiva de línia d'ordres anomenada <strong>JShell</strong>. És el que en programació es coneix com un entorn REPL (<em>Read-Eval-Print Loop</em>).</p>
+<p>JShell permet escriure i executar fragments de codi Java (declarar variables, fer operacions matemàtiques, provar mètodes) <strong>immediatament</strong>, sense necessitat de crear una classe, escriure el mètode <code>main</code> ni compilar cap arxiu. És l'eina perfecta per a experimentar o resoldre dubtes ràpids de sintaxi mentre aprens.</p>
+<p>Per a utilitzar-lo, només cal obrir la consola o terminal i escriure l'ordre <code>jshell</code>:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>$<span class="w"> </span>jshell
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="p">|</span><span class="w">  </span>Welcome<span class="w"> </span>to<span class="w"> </span>JShell<span class="w"> </span>--<span class="w"> </span>Version<span class="w"> </span><span class="m">25</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>jshell&gt;<span class="w"> </span>int<span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">10</span><span class="p">;</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="nv">a</span><span class="w"> </span><span class="o">==</span>&gt;<span class="w"> </span><span class="m">10</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>jshell&gt;<span class="w"> </span>IO.println<span class="o">(</span><span class="s2">"La meitat és "</span><span class="w"> </span>+<span class="w"> </span><span class="o">(</span>a<span class="w"> </span>/<span class="w"> </span><span class="m">2</span><span class="o">))</span><span class="p">;</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>La<span class="w"> </span>meitat<span class="w"> </span>és<span class="w"> </span><span class="m">5</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>jshell&gt;<span class="w"> </span>/exit
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="p">|</span><span class="w">  </span>Goodbye
+</span></code></pre></div>
+<p>Dins de JShell, pots escriure codi Java normal. No obstant això, l'eina té les seues pròpies ordres de control que sempre comencen per una barra inclinada (/). Per exemple, /exit s'utilitza per a tancar el programa, i /vars et mostra una llista de totes les variables que has creat durant la sessió.</p>
+<h2 id="documentacio-api-de-java">Documentació: API de Java.</h2>
+<p>A <a href="https://docs.oracle.com/en/java/index.html">https://docs.oracle.com/en/java/index.html</a> es troba la documentació oficial de Java. La més interessant és la documentació de l'API de Java. El següent enllaç correspon a l'API de la Java SE (JDK 25 LTS):</p>
+<p><a href="https://docs.oracle.com/en/java/javase/25/docs/api/index.html">https://docs.oracle.com/en/java/javase/25/docs/api/index.html</a></p>
+<p><img alt="Image title" src="images/api.png" style="display: block; margin: auto;" /></p>
+<h2 id="entorns-de-desenvolupament-per-a-java">Entorns de desenvolupament per a Java</h2>
+<p>El kit de desenvolupament bàsic proporcionat per Oracle és el mínim que es necessita per a desenvolupar un programa en Java. És útil si es necessita compilar aplicacions Java de manera esporàdica.</p>
+<p>No obstant això, l'escriptura i compilació de programes feta d'aquesta forma és un poc incòmoda. Per això, nombroses empreses fabriquen els seus propis entorns d'edició, algunes inclouen el compilador i altres utilitzen el mateix JDK d'Oracle. Alguns avantatges que oferixen són:</p>
+<ul>
+<li>Facilitats per a escriure codi.</li>
+<li>Facilitats de depuració.</li>
+<li>Facilitat de configuració del sistema.</li>
+<li>Facilitats per a organitzar els arxius de codi.</li>
+<li>Facilitat per a exportar i importar projectes.</li>
+</ul>
+<p><img alt="Image title" src="images/intellij1.png" style="float: right; width: 100px" /></p>
+<p>L'entorn de desenvolupament per a Java que utilitzarem en el mòdul serà: IntelliJ IDEA. Aquest entorn està creat per la companyia JetBrains.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["header.autohide", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiat al porta-retalls", "clipboard.copy": "C\u00f2pia al porta-retalls", "search.result.more.one": "1 m\u00e9s en aquesta p\u00e0gina", "search.result.more.other": "# m\u00e9s en aquesta p\u00e0gina", "search.result.none": "Cap document coincideix", "search.result.one": "1 document coincident", "search.result.other": "# documents coincidents", "search.result.placeholder": "Escriu per a comen\u00e7ar a cercar", "search.result.term.missing": "Desaparegut", "select.version": "Selecciona la versi\u00f3"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
