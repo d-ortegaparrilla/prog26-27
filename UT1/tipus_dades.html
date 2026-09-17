@@ -1,0 +1,1114 @@
+
+<!doctype html>
+<html lang="ca" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://d-ortegaparrilla.github.io/prog26-27/UT1/tipus_dades.html">
+      
+      
+        <link rel="prev" href="conceptes_basics.html">
+      
+      
+        <link rel="next" href="operadors.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Tipus de dades i literals en Java. - Programació</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="orange" data-md-color-accent="deep-orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#tipus-de-dades-i-literals-en-java" class="md-skip">
+          Salta el contingut
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Capçalera">
+    <a href="../index.html" title="Programació" class="md-header__button md-logo" aria-label="Programació" data-md-component="logo">
+      
+  <img src="../favicon.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Programació
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Tipus de dades i literals en Java.
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Cerca" placeholder="Cerca" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Cerca">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Neteja" aria-label="Neteja" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicialitzant cerca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegació" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="Programació" class="md-nav__button md-logo" aria-label="Programació" data-md-component="logo">
+      
+  <img src="../favicon.png" alt="logo">
+
+    </a>
+    Programació
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UT1
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    UT1
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="introduccio.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introducció
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="representacions.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Representacions d'algorismes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="java.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    El llenguatge de programació Java
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="conceptes_basics.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Conceptes bàsics de programació en llenguatge Java
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tipus de dades i literals en Java.
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="tipus_dades.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tipus de dades i literals en Java.
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Taula de continguts">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Taula de continguts
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tipus-de-dades-en-java" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tipus de dades en Java
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tipus de dades en Java">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dades-numeriques-enteres" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dades numèriques enteres.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dades-numeriques-reals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dades numèriques reals.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dades-de-tipus-caracter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dades de tipus caràcter.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dades-de-tipus-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dades de tipus lògic.
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#literals-en-java-variables-i-constants" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Literals en Java. Variables i constants.
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Literals en Java. Variables i constants.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#literals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Literals.
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Literals.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#literal-java-de-tipus-enter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Literal Java de tipus enter.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#literal-java-de-tipus-real" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Literal Java de tipus real.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#literal-java-de-tipus-cadena-de-caracters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Literal Java de tipus cadena de caràcters.
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Variables.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constants" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Constants.
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="operadors.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operadors en Java
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Taula de continguts">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Taula de continguts
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tipus-de-dades-en-java" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tipus de dades en Java
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tipus de dades en Java">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dades-numeriques-enteres" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dades numèriques enteres.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dades-numeriques-reals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dades numèriques reals.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dades-de-tipus-caracter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dades de tipus caràcter.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dades-de-tipus-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dades de tipus lògic.
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#literals-en-java-variables-i-constants" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Literals en Java. Variables i constants.
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Literals en Java. Variables i constants.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#literals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Literals.
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Literals.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#literal-java-de-tipus-enter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Literal Java de tipus enter.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#literal-java-de-tipus-real" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Literal Java de tipus real.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#literal-java-de-tipus-cadena-de-caracters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Literal Java de tipus cadena de caràcters.
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Variables.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constants" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Constants.
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="tipus-de-dades-i-literals-en-java">Tipus de dades i literals en Java.</h1>
+<h2 id="tipus-de-dades-en-java">Tipus de dades en Java</h2>
+<p>Una dada sempre porta associada un tipus de dada, que determina el conjunt de valors que pot prendre.
+A Java tota la informació que utilitza un programa està representada per dos tipus principals de dades:</p>
+<ol>
+<li>Dades de tipus bàsic o primitiu.</li>
+<li>Referències a objectes.</li>
+</ol>
+<p>Els tipus de dades bàsiques o primitives no són objectes i es poden fer servir directament en un programa sense necessitat de crear objectes d'aquest tipus. La biblioteca Java disposa de classes associades a aquests tipus que proporcionen mètodes per facilitar-ne el maneig. 
+Els tipus de dades primitives que suporta Java són:</p>
+<table>
+<thead>
+<tr>
+<th>Tipus de dada</th>
+<th>Representació</th>
+<th>Grandària (bytes)</th>
+<th>Rang de valors</th>
+<th>Valor per defecte</th>
+<th>Classe associada</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>byte</td>
+<td>Número enter amb signe</td>
+<td>1</td>
+<td>-128 a 127</td>
+<td>0</td>
+<td>Byte</td>
+</tr>
+<tr>
+<td>short</td>
+<td>Número entero amb signe</td>
+<td>2</td>
+<td>-32768 a 32767</td>
+<td>0</td>
+<td>Short</td>
+</tr>
+<tr>
+<td>int</td>
+<td>Número entero amb signe</td>
+<td>4</td>
+<td>-2147483648 a 2147483647</td>
+<td>0</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>long</td>
+<td>Número entero amb signo</td>
+<td>8</td>
+<td>-9223372036854775808 a 9223372036854775807</td>
+<td>0</td>
+<td>Long</td>
+</tr>
+<tr>
+<td>float</td>
+<td>Número en coma flotant de precisió simple. Norma IEEE 754</td>
+<td>4</td>
+<td>± 3.4x10-38 a ± 3.4x1038</td>
+<td>0.0</td>
+<td>Float</td>
+</tr>
+<tr>
+<td>double</td>
+<td>Número en coma flotant de precisió doble. Norma IEEE 754</td>
+<td>8</td>
+<td>± 1.8x10-308 a ± 1.8x10308</td>
+<td>0.0</td>
+<td>Double</td>
+</tr>
+<tr>
+<td>char</td>
+<td>Caràcter Unicode</td>
+<td>2</td>
+<td>\u0000 a \uFFFF</td>
+<td>\u0000</td>
+<td>Character</td>
+</tr>
+<tr>
+<td>boolean</td>
+<td>Dada lògic</td>
+<td>no definit</td>
+<td>true ó false</td>
+<td>false</td>
+<td>Boolean</td>
+</tr>
+<tr>
+<td>void</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>Void</td>
+</tr>
+</tbody>
+</table>
+<h3 id="dades-numeriques-enteres">Dades numèriques enteres.</h3>
+<p>Les dades numèriques són representades en Java pels tipus: <code>byte</code>, <code>short</code>, <code>int</code>, <code>long</code>. El tipus de dada numèric enter és un subconjunt finit dels números enters del món real. Poden ser positius o negativus.</p>
+<p>Exemple de declaració de variables enteres:</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kt">byte</span><span class="w"> </span><span class="n">n1</span><span class="p">,</span><span class="w"> </span><span class="n">n2</span><span class="p">;</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kt">short</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+</span></code></pre></div>
+<h3 id="dades-numeriques-reals">Dades numèriques reals.</h3>
+<p>En Java els representen els tipus: <code>float</code>, <code>double</code>. El tipus de dada numèric real és un subconjunt finit dels números reals. Sempre porten un punt decimal i també poden ser positius o negatius. Els números reals tenen una part entera i una part decimal.</p>
+<p>Per exemple: 0.08   -54.0001</p>
+<p>Exemple de declaració de variables reals:</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kt">float</span><span class="w"> </span><span class="n">pes</span><span class="p">;</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kt">double</span><span class="w"> </span><span class="n">longitud</span><span class="p">;</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="kt">float</span><span class="w"> </span><span class="n">altura</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2.5F</span><span class="p">;</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="kt">double</span><span class="w"> </span><span class="n">area</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.7E4</span><span class="p">;</span><span class="w"> </span><span class="c1">//equival a 1.7 * 104</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="kt">double</span><span class="w"> </span><span class="n">z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">.123</span><span class="p">;</span><span class="w"> </span><span class="c1">//si la part entera és 0 es pot ometre</span>
+</span></code></pre></div>
+<h3 id="dades-de-tipus-caracter">Dades de tipus caràcter.</h3>
+<p>En Java es representa amb el tipus <code>char</code>. Una dada de tipus caràcter s'utilitza per a representar un caràcter dins el rang \u0000 a \uFFFF (números des de 0 fins al 65535) en Unicode.</p>
+<p>En Java s'utilitza el codi Unicode per a la representació de caràcters. Aquest codi actualment representa els caràcters de la majoria d'idiomes escrits en tot el món. Els 127 primers caràcters d'Unicode corresponen al codi ASCII.</p>
+<p>El codi ASCII (American Standard Code for Information Interchange) assigna valors numèrics a les lletres, números, signes de puntuació i alguns altres caràcters especiales.</p>
+<p>Debut a la limitació de la seua grandària, el codi ASCII no és suficient per a representar caràcters no existents a l'alfabet anglès. </p>
+<p>Exemple de declaració de variables de tipus caràcter:</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kt">char</span><span class="w"> </span><span class="n">car</span><span class="p">;</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kt">char</span><span class="w"> </span><span class="n">lletra1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">'z'</span><span class="p">;</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="kt">char</span><span class="w"> </span><span class="n">lletra</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">'\u0061'</span><span class="p">;</span><span class="w"> </span><span class="c1">//codi unicode del caràcter 'a'</span>
+</span></code></pre></div>
+<h3 id="dades-de-tipus-logic">Dades de tipus lògic.</h3>
+<p>Es representen amb el tipus <code>boolean</code>. Les dades d'aquest tipus sols poden contindre dos valors: <code>true</code> (vertader) o <code>false</code> (fals).</p>
+<p>Exemple de declaració de variables lògiques:</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kt">boolean</span><span class="w"> </span><span class="n">primer</span><span class="p">;</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="kt">boolean</span><span class="w"> </span><span class="n">parell</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+</span></code></pre></div>
+<p>Els tipus de dades lògics són també coneguts com a <strong>booleans</strong>, en honor del matemàtic anglès <em>George Boole</em>, que va desenvolupar la teoria coneguda com a àlgebra de boole, que va ser la base per a la representació dels circuits lògics.</p>
+<h2 id="literals-en-java-variables-i-constants">Literals en Java. Variables i constants.</h2>
+<h3 id="literals">Literals.</h3>
+<p>Un literal és un valor de tipus enter, real, lògic, caràcter, cadena de caràcters o un valor nul (null) que pot aparéixer dins d'un programa.</p>
+<p>Per exemple: 150, 12.4, "ANA", null, 't'</p>
+<p>Els literals solen aparéixer en l'assignació de valors a les variables o formant part d'expressions aritmètiques o lògiques. Per exemple:</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">25</span><span class="p">;</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">preu</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">120.99</span><span class="p">;</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">mes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"gener"</span><span class="p">;</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="n">descompte</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">preu</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">(</span><span class="n">preu</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">100</span><span class="p">);</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="n">valor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">5</span><span class="p">);</span>
+</span></code></pre></div>
+<p>Quan s'utilitzen literals, és molt important tindre en compte que Java és un <strong>llenguatge fortament tipat</strong>, això vol dir que fa un control estricte dels tipus de dades que poden contindre les variables.</p>
+<p>Per exemple, si una variable s'ha declarat com a <code>int</code> no podrem assignar-li un valor de tipus <code>double</code>.</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2.5</span><span class="p">;</span><span class="w"> </span><span class="c1">// Esta assignació no és correcta i provocarà un error.</span>
+</span></code></pre></div>
+<p>Esta assignació provocaria un error, ja que estem assignant un valor no enter (2.5) a una variable declarada com a <code>int</code>. Per tant, és molt important saber de quin tipus és un literal per a treballar de manera correcta amb ells i no obtindre resultats inesperats.</p>
+<p>Els literals en Java poden ser:</p>
+<ul>
+<li>Literals de tipus enter</li>
+<li>Literals de tipus real</li>
+<li>Literals de tipus caràcter</li>
+<li>Literals de cadenes de caràcters</li>
+</ul>
+<h4 id="literal-java-de-tipus-enter">Literal Java de tipus enter.</h4>
+<p>El tipus del literal enter és <code>int</code> a menys que el seu valor absolut siga major que el d'un int o que s'especifique el sufix l (ela) o L, cas en què serà de tipus long. El signe + al principi és opcional i el signe – serà obligatori si el número és negatiu.</p>
+<p>982                   literal enter de tipus int
+-25                   literal enter de tipus int
++1200                 literal enter de tipus int
+1234                  literal enter de tipus int
+1234L                 literal enter de tipus long. El tipus long l'indica la L
+123400000000          literal enter de tipus long. El valor del número supera el rang d'un int</p>
+<h4 id="literal-java-de-tipus-real">Literal Java de tipus real.</h4>
+<p>Són números en base 10, que han de portar una part sencera, un punt decimal i una part fraccionària. Si la part sencera és zero, es pot ometre. El signe + al principi és opcional i el signe – serà obligatori si el número és negatiu. Per exemple:</p>
+<p>12.2303
+-3.44
++10.33
+0.456
+.96</p>
+<p>També poden representar-se utilitzant la notació científica. En este cas s'utilitza una E (majúscula o minúscula) seguida de l'exponent (positiu o negatiu). L'exponent està format per dígits del 0 al 9. Per exemple, el número en notació científica 14*10⁻³ s'escriu: 14E-3. Més exemples de literal Java de tipus real:</p>
+<p>2.15E2      -&gt; 2.15 * 10²
+.0007E4     -&gt; 0.0007 * 10⁴
+-50.445e-10 -&gt; -50.445 * 10⁻¹⁰</p>
+<p>El tipus d'estos literals és sempre double, a menys que s'afija el sufix F o f per a indicar que és float. Per exemple:</p>
+<p>2.15          literal real de tipus double
+2.15F         literal real de tipus float
+.23e5         literal real de tipus double
++74.336E-2F   literal real de tipus float</p>
+<p>També es poden utilitzar els sufixos d o D per a indicar que el literal és de tipus double:
+12.002d       literal real de tipus double</p>
+<p>Literal Java de tipus caràcter.
+Conté un sol caràcter tancat entre cometes simples. És de tipus char. Les seqüències d'escapament es consideren literals de tipus caràcter. Per exemple:</p>
+<p>'a'
+'4'
+'\n'
+'\u0061'</p>
+<h4 id="literal-java-de-tipus-cadena-de-caracters">Literal Java de tipus cadena de caràcters.</h4>
+<p>Està format per 0 o més caràcters tancats entre cometes dobles. Poden incloure seqüències d'escapament. Per exemple:</p>
+<p>"Açò és una cadena de caràcters"
+"Prem "C" per a continuar"
+""    -&gt; cadena buida
+"T"   -&gt; cadena d'un sol caràcter, és diferent de 't' que és un caràcter</p>
+<p>Les cadenes de caràcters en Java són objectes de tipus <code>String</code>.</p>
+<h3 id="variables">Variables.</h3>
+<p>Les dades que gestiona un programa s'emmagatzemen en la memòria de l'ordinador. Per a accedir-hi s'utilitza la seua adreça de memòria o posició dins de la memòria on es troba la dada. Per a facilitar la referència a les posicions de memòria, es pot substituir la cadena binària de zeros i uns que indica l'adreça per un identificador.</p>
+<p><strong>Un identificador és el nom que se li dóna a un component dins d'un programa</strong> (una variable, una constant, un mètode, una classe, etc.). Exemple d'identificadors: nom, matriculaAlumne, $suma5, any, etc.</p>
+<p><strong>Definició</strong>: Una variable és una zona de memòria que es referencia amb un identificador, conegut com a nom de la variable, on s'emmagatzema el valor d'una dada <strong>que pot canviar</strong> durant l'execució del programa.</p>
+<p>Una variable té tres característiques bàsiques:
+- <strong>Nom</strong> o identificador de la variable.
+- <strong>Tipus</strong>. Conjunt de valors que pot prendre la variable (numèric, caràcter, etc.).
+- <strong>Valor</strong>. Informació que emmagatzema.</p>
+<p>Per a poder utilitzar una variable en un programa, primer hem de declarar-la. Declarar una variable significa assignar-li un nom i un tipus. Per exemple:</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">;</span><span class="w">   </span><span class="c1">//declarem la variable a de tipus int</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="kt">char</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w">  </span><span class="c1">//declarem la variable b de tipus char</span>
+</span></code></pre></div>
+<p>També podem assignar-li un valor inicial a la variable quan es declara:</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w">            </span><span class="c1">//declarem la variable x de tipus int i li assignem el valor 5</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="kt">char</span><span class="w"> </span><span class="n">caracter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">'b'</span><span class="p">;</span><span class="w">  </span><span class="c1">//declarem la variable caràcter de tipus char i li assignem el valor 'b'</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="kt">double</span><span class="w"> </span><span class="n">altura</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">6.25</span><span class="p">;</span><span class="w"> </span><span class="c1">//declarem la variable altura de tipus double i li assignem el valor 6.25</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="kt">int</span><span class="w"> </span><span class="n">comptador</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">    </span><span class="c1">//declarem la variable comptador de tipus int i li assignem el valor 0</span>
+</span></code></pre></div>
+<h3 id="constants">Constants.</h3>
+<p>Un programa pot contindre certs valors que no han de canviar durant la seua execució. Estos valors s'anomenen constants.</p>
+<p><strong>Definició</strong>: Una constant és una zona de memòria que es referencia amb un identificador, conegut com a nom de la constant, on s'emmagatzema un valor que no pot canviar durant l'execució del programa.
+Una constant en Java es declara de manera similar a una variable, anteposant la paraula final. Exemple:</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kd">final</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">PI</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3.141591</span><span class="p">;</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="kd">final</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">diesSetmana</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">7</span><span class="p">;</span>
+</span></code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["header.autohide", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiat al porta-retalls", "clipboard.copy": "C\u00f2pia al porta-retalls", "search.result.more.one": "1 m\u00e9s en aquesta p\u00e0gina", "search.result.more.other": "# m\u00e9s en aquesta p\u00e0gina", "search.result.none": "Cap document coincideix", "search.result.one": "1 document coincident", "search.result.other": "# documents coincidents", "search.result.placeholder": "Escriu per a comen\u00e7ar a cercar", "search.result.term.missing": "Desaparegut", "select.version": "Selecciona la versi\u00f3"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
