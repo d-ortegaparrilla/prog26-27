@@ -507,6 +507,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#dades-de-tipus-enumerat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dades de tipus enumerat.
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -721,6 +732,17 @@
     <span class="md-ellipsis">
       
         Dades de tipus lògic.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dades-de-tipus-enumerat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dades de tipus enumerat.
       
     </span>
   </a>
@@ -968,20 +990,29 @@ Els tipus de dades primitives que suporta Java són:</p>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="kt">boolean</span><span class="w"> </span><span class="n">parell</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
 </span></code></pre></div>
 <p>Els tipus de dades lògics són també coneguts com a <strong>booleans</strong>, en honor del matemàtic anglès <em>George Boole</em>, que va desenvolupar la teoria coneguda com a àlgebra de boole, que va ser la base per a la representació dels circuits lògics.</p>
+<h3 id="dades-de-tipus-enumerat">Dades de tipus enumerat.</h3>
+<p>De vegades, una variable només ha de contenir un conjunt restringit de valors. Per exemple, pots vendre roba o pizzes en quatre talles: petita, mitjana, gran i extragran. És clar que podries codificar aquestes talles com a nombres enters (1, 2, 3, 4) o com a caràcters (S, M, L, X), però aquesta és una solució propensa a errors. És massa fàcil que una variable acabe tenint un valor incorrecte (com un 0 o una m).</p>
+<p>Es pot definir el teu propi tipus enumerat sempre que es presente una situació així. Un tipus enumerat té un nombre finit de valors amb nom. Per exemple:</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kd">enum</span><span class="w"> </span><span class="n">Size</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">SMALL</span><span class="p">,</span><span class="w"> </span><span class="n">MEDIUM</span><span class="p">,</span><span class="w"> </span><span class="n">LARGE</span><span class="p">,</span><span class="w"> </span><span class="n">EXTRA_LARGE</span><span class="w"> </span><span class="p">};</span>
+</span></code></pre></div>
+<p>Ara es podrien declarar variables d'aquest tipus:</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">Size</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Size</span><span class="p">.</span><span class="na">MEDIUM</span><span class="p">;</span>
+</span></code></pre></div>
+<p>Una variable de tipus <code>Size</code> només pot contenir un dels valors llistats en la declaració del tipus, o bé el valor especial <code>null</code>, que indica que la variable no té assignat cap valor.</p>
 <h2 id="literals-en-java-variables-i-constants">Literals en Java. Variables i constants.</h2>
 <h3 id="literals">Literals.</h3>
 <p>Un literal és un valor de tipus enter, real, lògic, caràcter, cadena de caràcters o un valor nul (null) que pot aparéixer dins d'un programa.</p>
 <p>Per exemple: 150, 12.4, "ANA", null, 't'</p>
 <p>Els literals solen aparéixer en l'assignació de valors a les variables o formant part d'expressions aritmètiques o lògiques. Per exemple:</p>
-<div class="language-java highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">25</span><span class="p">;</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">preu</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">120.99</span><span class="p">;</span>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">mes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"gener"</span><span class="p">;</span>
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="n">descompte</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">preu</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">(</span><span class="n">preu</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">100</span><span class="p">);</span>
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="n">valor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">5</span><span class="p">);</span>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">25</span><span class="p">;</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="n">preu</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">120.99</span><span class="p">;</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="n">mes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"gener"</span><span class="p">;</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="n">descompte</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">preu</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">(</span><span class="n">preu</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">100</span><span class="p">);</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="n">valor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">5</span><span class="p">);</span>
 </span></code></pre></div>
 <p>Quan s'utilitzen literals, és molt important tindre en compte que Java és un <strong>llenguatge fortament tipat</strong>, això vol dir que fa un control estricte dels tipus de dades que poden contindre les variables.</p>
 <p>Per exemple, si una variable s'ha declarat com a <code>int</code> no podrem assignar-li un valor de tipus <code>double</code>.</p>
-<div class="language-java highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2.5</span><span class="p">;</span><span class="w"> </span><span class="c1">// Esta assignació no és correcta i provocarà un error.</span>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2.5</span><span class="p">;</span><span class="w"> </span><span class="c1">// Esta assignació no és correcta i provocarà un error.</span>
 </span></code></pre></div>
 <p>Esta assignació provocaria un error, ja que estem assignant un valor no enter (2.5) a una variable declarada com a <code>int</code>. Per tant, és molt important saber de quin tipus és un literal per a treballar de manera correcta amb ells i no obtindre resultats inesperats.</p>
 <p>Els literals en Java poden ser:</p>
@@ -1039,21 +1070,21 @@ Conté un sol caràcter tancat entre cometes simples. És de tipus char. Les seq
 - <strong>Tipus</strong>. Conjunt de valors que pot prendre la variable (numèric, caràcter, etc.).
 - <strong>Valor</strong>. Informació que emmagatzema.</p>
 <p>Per a poder utilitzar una variable en un programa, primer hem de declarar-la. Declarar una variable significa assignar-li un nom i un tipus. Per exemple:</p>
-<div class="language-java highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">;</span><span class="w">   </span><span class="c1">//declarem la variable a de tipus int</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="kt">char</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w">  </span><span class="c1">//declarem la variable b de tipus char</span>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">;</span><span class="w">   </span><span class="c1">//declarem la variable a de tipus int</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="kt">char</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w">  </span><span class="c1">//declarem la variable b de tipus char</span>
 </span></code></pre></div>
 <p>També podem assignar-li un valor inicial a la variable quan es declara:</p>
-<div class="language-java highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w">            </span><span class="c1">//declarem la variable x de tipus int i li assignem el valor 5</span>
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="kt">char</span><span class="w"> </span><span class="n">caracter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">'b'</span><span class="p">;</span><span class="w">  </span><span class="c1">//declarem la variable caràcter de tipus char i li assignem el valor 'b'</span>
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="kt">double</span><span class="w"> </span><span class="n">altura</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">6.25</span><span class="p">;</span><span class="w"> </span><span class="c1">//declarem la variable altura de tipus double i li assignem el valor 6.25</span>
-</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="kt">int</span><span class="w"> </span><span class="n">comptador</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">    </span><span class="c1">//declarem la variable comptador de tipus int i li assignem el valor 0</span>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w">            </span><span class="c1">//declarem la variable x de tipus int i li assignem el valor 5</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="kt">char</span><span class="w"> </span><span class="n">caracter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">'b'</span><span class="p">;</span><span class="w">  </span><span class="c1">//declarem la variable caràcter de tipus char i li assignem el valor 'b'</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="kt">double</span><span class="w"> </span><span class="n">altura</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">6.25</span><span class="p">;</span><span class="w"> </span><span class="c1">//declarem la variable altura de tipus double i li assignem el valor 6.25</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="kt">int</span><span class="w"> </span><span class="n">comptador</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">    </span><span class="c1">//declarem la variable comptador de tipus int i li assignem el valor 0</span>
 </span></code></pre></div>
 <h3 id="constants">Constants.</h3>
 <p>Un programa pot contindre certs valors que no han de canviar durant la seua execució. Estos valors s'anomenen constants.</p>
 <p><strong>Definició</strong>: Una constant és una zona de memòria que es referencia amb un identificador, conegut com a nom de la constant, on s'emmagatzema un valor que no pot canviar durant l'execució del programa.
 Una constant en Java es declara de manera similar a una variable, anteposant la paraula final. Exemple:</p>
-<div class="language-java highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kd">final</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">PI</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3.141591</span><span class="p">;</span>
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="kd">final</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">diesSetmana</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">7</span><span class="p">;</span>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kd">final</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">PI</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3.141591</span><span class="p">;</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="kd">final</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">diesSetmana</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">7</span><span class="p">;</span>
 </span></code></pre></div>
 
 
