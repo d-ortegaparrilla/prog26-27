@@ -688,6 +688,67 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#instruccio-switch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Instrucció switch
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Instrucció switch">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instruccio-amb-fallthrough-statement-forma-classica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Instrucció amb : (Fallthrough Statement - Forma Clàssica)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instruccio-amb-fletxa-no-fallthrough-statement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Instrucció amb fletxa -&gt; (No Fallthrough Statement)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expressio-amb-fletxa-no-fallthrough-expression" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Expressió amb fletxa -&gt; (No Fallthrough Expression)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expressio-amb-fallthrough-expression" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Expressió amb : (Fallthrough Expression)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -833,6 +894,67 @@
       
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instruccio-switch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Instrucció switch
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Instrucció switch">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instruccio-amb-fallthrough-statement-forma-classica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Instrucció amb : (Fallthrough Statement - Forma Clàssica)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instruccio-amb-fletxa-no-fallthrough-statement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Instrucció amb fletxa -&gt; (No Fallthrough Statement)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expressio-amb-fletxa-no-fallthrough-expression" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Expressió amb fletxa -&gt; (No Fallthrough Expression)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expressio-amb-fallthrough-expression" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Expressió amb : (Fallthrough Expression)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1034,10 +1156,170 @@ Per a aquest cas, la taula següent mostra les variables que es requereixen en l
 </span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">num</span><span class="p">;</span>
 </span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>
 </span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="w">    </span><span class="n">IO</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Introduïu número: "</span><span class="p">);</span>
-</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="w">    </span><span class="n">num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Integer</span><span class="p">.</span><span class="na">ParseInt</span><span class="p">(</span><span class="n">IO</span><span class="p">.</span><span class="na">readline</span><span class="p">());</span>
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="w">    </span><span class="n">num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Integer</span><span class="p">.</span><span class="na">parseInt</span><span class="p">(</span><span class="n">IO</span><span class="p">.</span><span class="na">readline</span><span class="p">());</span>
 </span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>
 </span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="w">    </span><span class="n">IO</span><span class="p">.</span><span class="na">println</span><span class="p">((</span><span class="n">num</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s">"PARELL"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s">"IMPARELL"</span><span class="p">);</span>
 </span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="p">}</span>
+</span></code></pre></div>
+<h3 id="instruccio-switch">Instrucció switch</h3>
+<p>S'utilitza per seleccionar una d'entre múltiples alternatives. </p>
+<p>La sintaxi clàssica de la instrucció switch en Java és la següent:</p>
+<p><img alt="Image title" src="images/switch1.png" style="display: block; margin: auto; " /> </p>
+<p>El funcionament d'aquesta sintaxi és el següent:</p>
+<ul>
+<li>Primer s'avalua l'expressió i salta al case la constant del qual coincidisca amb el valor de l'expressió.</li>
+<li>S'executen les instruccions que segueixen al case seleccionat fins que es troba un break o fins al final del switch. El break produeix un salt a la següent instrucció a continuació del switch.</li>
+<li>Si cap d'aquests casos es compleix s'executa el bloc default (si existeix). No és obligatori que existisca un bloc default i no té per què posar-se sempre al final, encara que és l'habitual.</li>
+</ul>
+<p>A partir de la versió 14 de Java es pot utilitzar amb la següent sintaxi:</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">expressió</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="n">valor1</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">        </span><span class="n">instruccions</span><span class="p">;</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="n">valor2</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="w">      </span><span class="n">instruccions</span><span class="p">;</span>
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="w">    </span><span class="err">·</span><span class="w"> </span><span class="err">·</span><span class="w"> </span><span class="err">·</span>
+</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="w">    </span><span class="k">default</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="w">      </span><span class="n">instruccions</span><span class="p">;</span>
+</span><span id="__span-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-10-13"><a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>Tradicionalment s'ha utilitzat com una instrucció (statement), però en les versions més recents de Java el switch s'ha millorat per a poder utilitzar-se de quatre formes diferents. Les 2 primeres formes són les vistes anteriorment i s'utilitzen com a instrucció (només per a executar codi).</p>
+<p>Les altres formes funcionen com a Expressió (per a retornar un valor i assignar-lo directament a una variable), tenint l'opció d'utilitzar la nova sintaxi amb fletxa <code>-&gt;</code> (sense caiguda o No Fallthrough) o la clàssica amb dos punts <code>:</code> (amb caiguda o Fallthrough).   La instrucció switch es pot usar amb dades de tipus <code>byte</code>, <code>short</code>, <code>char</code>, <code>int</code> i <code>String</code>. A més, les noves versions permeten agrupar múltiples valors en un mateix <code>case</code> separant-los per comes (per exemple, case "Summer", "Winter") per a no haver de repetir codi.   A continuació s'expliquen les quatre formes amb un exemple:</p>
+<h4 id="instruccio-amb-fallthrough-statement-forma-classica">Instrucció amb : (Fallthrough Statement - Forma Clàssica)</h4>
+<p>És el comportament tradicional. Primer s'avalua l'expressió i salta al case coincident. L'execució continua cap avall passant pels casos següents (fallthrough) fins que es troba un break o s'arriba al final del switch.   </p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">seasonName</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">   </span><span class="k">case</span><span class="w"> </span><span class="s">"Spring"</span><span class="p">:</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">      </span><span class="n">IO</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"spring time!"</span><span class="p">);</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">   </span><span class="k">case</span><span class="w"> </span><span class="s">"Summer"</span><span class="p">,</span><span class="w"> </span><span class="s">"Winter"</span><span class="p">:</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w">      </span><span class="n">numLetters</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">6</span><span class="p">;</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="w">      </span><span class="k">break</span><span class="p">;</span>
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="w">   </span><span class="k">case</span><span class="w"> </span><span class="s">"Fall"</span><span class="p">:</span>
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="w">      </span><span class="n">numLetters</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span>
+</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="w">      </span><span class="k">break</span><span class="p">;</span>
+</span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="w">   </span><span class="k">default</span><span class="p">:</span>
+</span><span id="__span-11-11"><a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="w">      </span><span class="n">numLetters</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+</span><span id="__span-11-12"><a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a><span class="p">}</span>
+</span></code></pre></div>
+<h4 id="instruccio-amb-fletxa-no-fallthrough-statement">Instrucció amb fletxa -&gt; (No Fallthrough Statement)</h4>
+<p>Aïlla cada cas de manera independent. Si hi ha coincidència, només s'executa el codi que hi ha a la dreta de la fletxa i el switch acaba automàticament sense necessitat d'utilitzar la instrucció break.   </p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">seasonName</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="s">"Spring"</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">        </span><span class="n">IO</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"spring time!"</span><span class="p">);</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">        </span><span class="n">numLetters</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">6</span><span class="p">;</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="s">"Summer"</span><span class="p">,</span><span class="w"> </span><span class="s">"Winter"</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">numLetters</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">6</span><span class="p">;</span>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="s">"Fall"</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">numLetters</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span>
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="w">    </span><span class="k">default</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">numLetters</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="p">}</span>
+</span></code></pre></div>
+<h4 id="expressio-amb-fletxa-no-fallthrough-expression">Expressió amb fletxa -&gt; (No Fallthrough Expression)</h4>
+<p>Permet assignar el resultat final del switch directament a una variable (com int numLetters = switch(...)). A la dreta de la fletxa es pot posar directament el valor que es vol retornar. Si es requereix executar diverses instruccions dins d'un mateix case, s'obrin claus {} i s'utilitza la nova paraula clau yield per a indicar quin serà el valor que es retornarà. </p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">numLetters</span><span class="p">;</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="n">numLetters</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">seasonName</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="s">"Spring"</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w">        </span><span class="n">IO</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"spring time!"</span><span class="p">);</span>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="w">        </span><span class="kd">yield</span><span class="w"> </span><span class="mi">6</span><span class="p">;</span>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="s">"Summer"</span><span class="p">,</span><span class="w"> </span><span class="s">"Winter"</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="mi">6</span><span class="p">;</span>
+</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="s">"Fall"</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span>
+</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="w">    </span><span class="k">default</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+</span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="p">};</span><span class="w"> </span><span class="c1">// Cal posar punt i coma en acabar l'expressió</span>
+</span></code></pre></div>
+<h4 id="expressio-amb-fallthrough-expression">Expressió amb : (Fallthrough Expression)</h4>
+<p>També assigna el resultat a una variable, però manté el comportament tradicional de "caure" cap als casos inferiors (fallthrough). És obligatori utilitzar yield per a retornar el valor final i aturar l'execució. Si un case no té yield (com al cas "Spring" de l'exemple), s'executen les seues instruccions i l'execució continua caient al cas següent fins a trobar un yield que retorne el valor definitiu.   </p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">numLetters</span><span class="p">;</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="n">numLetters</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">seasonName</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="s">"Spring"</span><span class="p">:</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="w">        </span><span class="n">IO</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"spring time!"</span><span class="p">);</span>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="w">        </span><span class="c1">// Ací no hi ha yield, així que l'execució "cau" al següent cas</span>
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="s">"Summer"</span><span class="p">,</span><span class="w"> </span><span class="s">"Winter"</span><span class="p">:</span>
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="w">        </span><span class="kd">yield</span><span class="w"> </span><span class="mi">6</span><span class="p">;</span>
+</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a><span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="s">"Fall"</span><span class="p">:</span>
+</span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a><span class="w">        </span><span class="kd">yield</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span>
+</span><span id="__span-14-10"><a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a><span class="w">    </span><span class="k">default</span><span class="p">:</span>
+</span><span id="__span-14-11"><a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a><span class="w">        </span><span class="kd">yield</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+</span><span id="__span-14-12"><a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a><span class="p">};</span>
+</span></code></pre></div>
+<p><strong>Exemple 10</strong>. Programa Java que conté una instrucció switch.   </p>
+<p><div class="language-java highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="cm">/*</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="cm"> * Programa que demana un número de mes i mostra el nom corresponent</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="cm"> */</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">mes</span><span class="p">;</span>
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>
+</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="w">    </span><span class="n">IO</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Introduïu un número de mes: "</span><span class="p">);</span>
+</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="w">    </span><span class="n">mes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Integer</span><span class="p">.</span><span class="na">parseInt</span><span class="p">(</span><span class="n">IO</span><span class="p">.</span><span class="na">readln</span><span class="p">());</span>
+</span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a>
+</span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a><span class="w">    </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">mes</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-15-11"><a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span><span class="w">  </span><span class="n">IO</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"GENER"</span><span class="p">);</span>
+</span><span id="__span-15-12"><a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a><span class="w">                 </span><span class="k">break</span><span class="p">;</span>
+</span><span id="__span-15-13"><a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="mi">2</span><span class="p">:</span><span class="w">  </span><span class="n">IO</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"FEBRER"</span><span class="p">);</span>
+</span><span id="__span-15-14"><a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a><span class="w">                 </span><span class="k">break</span><span class="p">;</span>
+</span><span id="__span-15-15"><a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="mi">3</span><span class="p">:</span><span class="w">  </span><span class="n">IO</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"MARÇ"</span><span class="p">);</span>
+</span><span id="__span-15-16"><a id="__codelineno-15-16" name="__codelineno-15-16" href="#__codelineno-15-16"></a><span class="w">                 </span><span class="k">break</span><span class="p">;</span>
+</span><span id="__span-15-17"><a id="__codelineno-15-17" name="__codelineno-15-17" href="#__codelineno-15-17"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="mi">4</span><span class="p">:</span><span class="w">  </span><span class="n">IO</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"ABRIL"</span><span class="p">);</span>
+</span><span id="__span-15-18"><a id="__codelineno-15-18" name="__codelineno-15-18" href="#__codelineno-15-18"></a><span class="w">                 </span><span class="k">break</span><span class="p">;</span>
+</span><span id="__span-15-19"><a id="__codelineno-15-19" name="__codelineno-15-19" href="#__codelineno-15-19"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="mi">5</span><span class="p">:</span><span class="w">  </span><span class="n">IO</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"MAIG"</span><span class="p">);</span>
+</span><span id="__span-15-20"><a id="__codelineno-15-20" name="__codelineno-15-20" href="#__codelineno-15-20"></a><span class="w">                 </span><span class="k">break</span><span class="p">;</span>
+</span><span id="__span-15-21"><a id="__codelineno-15-21" name="__codelineno-15-21" href="#__codelineno-15-21"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="mi">6</span><span class="p">:</span><span class="w">  </span><span class="n">IO</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"JUNY"</span><span class="p">);</span>
+</span><span id="__span-15-22"><a id="__codelineno-15-22" name="__codelineno-15-22" href="#__codelineno-15-22"></a><span class="w">                 </span><span class="k">break</span><span class="p">;</span>
+</span><span id="__span-15-23"><a id="__codelineno-15-23" name="__codelineno-15-23" href="#__codelineno-15-23"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="mi">7</span><span class="p">:</span><span class="w">  </span><span class="n">IO</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"JULIOL"</span><span class="p">);</span>
+</span><span id="__span-15-24"><a id="__codelineno-15-24" name="__codelineno-15-24" href="#__codelineno-15-24"></a><span class="w">                 </span><span class="k">break</span><span class="p">;</span>
+</span><span id="__span-15-25"><a id="__codelineno-15-25" name="__codelineno-15-25" href="#__codelineno-15-25"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="mi">8</span><span class="p">:</span><span class="w">  </span><span class="n">IO</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"AGOST"</span><span class="p">);</span>
+</span><span id="__span-15-26"><a id="__codelineno-15-26" name="__codelineno-15-26" href="#__codelineno-15-26"></a><span class="w">                 </span><span class="k">break</span><span class="p">;</span>
+</span><span id="__span-15-27"><a id="__codelineno-15-27" name="__codelineno-15-27" href="#__codelineno-15-27"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="mi">9</span><span class="p">:</span><span class="w">  </span><span class="n">IO</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"SETEMBRE"</span><span class="p">);</span>
+</span><span id="__span-15-28"><a id="__codelineno-15-28" name="__codelineno-15-28" href="#__codelineno-15-28"></a><span class="w">                 </span><span class="k">break</span><span class="p">;</span>
+</span><span id="__span-15-29"><a id="__codelineno-15-29" name="__codelineno-15-29" href="#__codelineno-15-29"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="mi">10</span><span class="p">:</span><span class="w"> </span><span class="n">IO</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"OCTUBRE"</span><span class="p">);</span>
+</span><span id="__span-15-30"><a id="__codelineno-15-30" name="__codelineno-15-30" href="#__codelineno-15-30"></a><span class="w">                 </span><span class="k">break</span><span class="p">;</span>
+</span><span id="__span-15-31"><a id="__codelineno-15-31" name="__codelineno-15-31" href="#__codelineno-15-31"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="mi">11</span><span class="p">:</span><span class="w"> </span><span class="n">IO</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"NOVEMBRE"</span><span class="p">);</span>
+</span><span id="__span-15-32"><a id="__codelineno-15-32" name="__codelineno-15-32" href="#__codelineno-15-32"></a><span class="w">                 </span><span class="k">break</span><span class="p">;</span>
+</span><span id="__span-15-33"><a id="__codelineno-15-33" name="__codelineno-15-33" href="#__codelineno-15-33"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="mi">12</span><span class="p">:</span><span class="w"> </span><span class="n">IO</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"DESEMBRE"</span><span class="p">);</span>
+</span><span id="__span-15-34"><a id="__codelineno-15-34" name="__codelineno-15-34" href="#__codelineno-15-34"></a><span class="w">                 </span><span class="k">break</span><span class="p">;</span>
+</span><span id="__span-15-35"><a id="__codelineno-15-35" name="__codelineno-15-35" href="#__codelineno-15-35"></a><span class="w">        </span><span class="k">default</span><span class="p">:</span><span class="w"> </span><span class="n">IO</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Mes no vàlid"</span><span class="p">);</span>
+</span><span id="__span-15-36"><a id="__codelineno-15-36" name="__codelineno-15-36" href="#__codelineno-15-36"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-15-37"><a id="__codelineno-15-37" name="__codelineno-15-37" href="#__codelineno-15-37"></a><span class="p">}</span>
+</span></code></pre></div>
+<strong>Exemple 11</strong>. Programa Java que conté una instrucció switch.</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="cm">/*</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="cm"> * Programa que demana dos números i un operador, i mostra el resultat</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="cm"> */</span>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="n">B</span><span class="p">,</span><span class="w"> </span><span class="n">resultat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">operador</span><span class="p">;</span>
+</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="w">    </span><span class="kt">boolean</span><span class="w"> </span><span class="n">calculat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+</span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a>
+</span><span id="__span-16-9"><a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a><span class="w">    </span><span class="n">IO</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Introduïu un número enter:"</span><span class="p">);</span>
+</span><span id="__span-16-10"><a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a><span class="w">    </span><span class="n">A</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Integer</span><span class="p">.</span><span class="na">parseInt</span><span class="p">(</span><span class="n">IO</span><span class="p">.</span><span class="na">readln</span><span class="p">());</span>
+</span><span id="__span-16-11"><a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a><span class="w">    </span><span class="n">IO</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Introduïu un altre número enter:"</span><span class="p">);</span>
+</span><span id="__span-16-12"><a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a><span class="w">    </span><span class="n">B</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Integer</span><span class="p">.</span><span class="na">parseInt</span><span class="p">(</span><span class="n">IO</span><span class="p">.</span><span class="na">readln</span><span class="p">());</span>
+</span><span id="__span-16-13"><a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a><span class="w">    </span><span class="n">IO</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Introduïu un operador (+,-,*,/):"</span><span class="p">);</span>
+</span><span id="__span-16-14"><a id="__codelineno-16-14" name="__codelineno-16-14" href="#__codelineno-16-14"></a>
+</span><span id="__span-16-15"><a id="__codelineno-16-15" name="__codelineno-16-15" href="#__codelineno-16-15"></a><span class="w">    </span><span class="c1">//Llegeix un caràcter. No existeix el mètode nextChar()</span>
+</span><span id="__span-16-16"><a id="__codelineno-16-16" name="__codelineno-16-16" href="#__codelineno-16-16"></a><span class="w">    </span><span class="n">operador</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">next</span><span class="p">().</span><span class="na">charAt</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span><span class="w"> </span>
+</span><span id="__span-16-17"><a id="__codelineno-16-17" name="__codelineno-16-17" href="#__codelineno-16-17"></a><span class="w">    </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">operador</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-16-18"><a id="__codelineno-16-18" name="__codelineno-16-18" href="#__codelineno-16-18"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="sc">'-'</span><span class="p">:</span><span class="w"> </span><span class="n">resultat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">B</span><span class="p">;</span>
+</span><span id="__span-16-19"><a id="__codelineno-16-19" name="__codelineno-16-19" href="#__codelineno-16-19"></a><span class="w">                  </span><span class="k">break</span><span class="p">;</span>
+</span><span id="__span-16-20"><a id="__codelineno-16-20" name="__codelineno-16-20" href="#__codelineno-16-20"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="sc">'+'</span><span class="p">:</span><span class="w"> </span><span class="n">resultat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">B</span><span class="p">;</span>
+</span><span id="__span-16-21"><a id="__codelineno-16-21" name="__codelineno-16-21" href="#__codelineno-16-21"></a><span class="w">                  </span><span class="k">break</span><span class="p">;</span>
+</span><span id="__span-16-22"><a id="__codelineno-16-22" name="__codelineno-16-22" href="#__codelineno-16-22"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="sc">'*'</span><span class="p">:</span><span class="w"> </span><span class="n">resultat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">B</span><span class="p">;</span>
+</span><span id="__span-16-23"><a id="__codelineno-16-23" name="__codelineno-16-23" href="#__codelineno-16-23"></a><span class="w">                  </span><span class="k">break</span><span class="p">;</span>
+</span><span id="__span-16-24"><a id="__codelineno-16-24" name="__codelineno-16-24" href="#__codelineno-16-24"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="sc">'/'</span><span class="p">:</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">B</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-16-25"><a id="__codelineno-16-25" name="__codelineno-16-25" href="#__codelineno-16-25"></a><span class="w">                      </span><span class="n">resultat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">B</span><span class="p">;</span>
+</span><span id="__span-16-26"><a id="__codelineno-16-26" name="__codelineno-16-26" href="#__codelineno-16-26"></a><span class="w">                  </span><span class="p">}</span>
+</span><span id="__span-16-27"><a id="__codelineno-16-27" name="__codelineno-16-27" href="#__codelineno-16-27"></a><span class="w">                  </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-16-28"><a id="__codelineno-16-28" name="__codelineno-16-28" href="#__codelineno-16-28"></a><span class="w">                      </span><span class="n">IO</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"\nNo es pot dividir per zero"</span><span class="p">);</span>
+</span><span id="__span-16-29"><a id="__codelineno-16-29" name="__codelineno-16-29" href="#__codelineno-16-29"></a><span class="w">                      </span><span class="n">calculat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+</span><span id="__span-16-30"><a id="__codelineno-16-30" name="__codelineno-16-30" href="#__codelineno-16-30"></a><span class="w">                  </span><span class="p">}</span>
+</span><span id="__span-16-31"><a id="__codelineno-16-31" name="__codelineno-16-31" href="#__codelineno-16-31"></a><span class="w">                  </span><span class="k">break</span><span class="p">;</span>
+</span><span id="__span-16-32"><a id="__codelineno-16-32" name="__codelineno-16-32" href="#__codelineno-16-32"></a><span class="w">        </span><span class="k">default</span><span class="p">:</span><span class="w"> </span><span class="n">IO</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"\nOperador no vàlid"</span><span class="p">);</span>
+</span><span id="__span-16-33"><a id="__codelineno-16-33" name="__codelineno-16-33" href="#__codelineno-16-33"></a><span class="w">                 </span><span class="n">calculat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+</span><span id="__span-16-34"><a id="__codelineno-16-34" name="__codelineno-16-34" href="#__codelineno-16-34"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-16-35"><a id="__codelineno-16-35" name="__codelineno-16-35" href="#__codelineno-16-35"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">calculat</span><span class="p">)</span>
+</span><span id="__span-16-36"><a id="__codelineno-16-36" name="__codelineno-16-36" href="#__codelineno-16-36"></a><span class="w">        </span><span class="n">IO</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"\nEl resultat és: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">resultat</span><span class="p">);</span>
+</span><span id="__span-16-37"><a id="__codelineno-16-37" name="__codelineno-16-37" href="#__codelineno-16-37"></a><span class="p">}</span>
 </span></code></pre></div>
 
 
