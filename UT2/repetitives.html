@@ -1,0 +1,982 @@
+
+<!doctype html>
+<html lang="ca" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://d-ortegaparrilla.github.io/prog26-27/UT2/repetitives.html">
+      
+      
+        <link rel="prev" href="introduccio.html">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Estructures repetitivas - Programació</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="orange" data-md-color-accent="deep-orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#estructures-repetitivas" class="md-skip">
+          Salta el contingut
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Capçalera">
+    <a href="../index.html" title="Programació" class="md-header__button md-logo" aria-label="Programació" data-md-component="logo">
+      
+  <img src="../favicon.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Programació
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Estructures repetitivas
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Cerca" placeholder="Cerca" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Cerca">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Neteja" aria-label="Neteja" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicialitzant cerca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegació" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="Programació" class="md-nav__button md-logo" aria-label="Programació" data-md-component="logo">
+      
+  <img src="../favicon.png" alt="logo">
+
+    </a>
+    Programació
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UT1. Elements bàsics d'un programa informàtic.
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    UT1. Elements bàsics d'un programa informàtic.
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UT1/introduccio.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introducció
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UT1/representacions.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Representacions d'algorismes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UT1/java.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    El llenguatge de programació Java
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UT1/conceptes_basics.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Conceptes bàsics de programació en llenguatge Java
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UT1/tipus_dades.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tipus de dades i literals en Java.
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UT1/operadors.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operadors en Java
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UT2. Estructures de control.
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    UT2. Estructures de control.
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="introduccio.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introducció
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="condicionals.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Estructures condicionals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Taula de continguts">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="estructures-repetitivas">Estructures repetitivas</h1>
+<p>Quan es requereix que un procés s'efectue de manera cíclica, s'utilitzen estructures que permeten el control de cicles. Aquestes estructures s'utilitzen basant-se en les condicions pròpies de cada problema. Els noms amb els quals es coneixen són: “Mentre”, “Repeteix fins a” i “Des de … fins a”.   Per al cas de l'estructura “Mentre”, el cicle es repeteix mentre que la condició lògica siga vertadera; en canvi, en l'estructura “Fins a”, el cicle es repeteix sempre que el resultat de la condició lògica siga fals; a més, com es pot veure a la figura següent, en l'estructura “Mentre” primer s'avalua i després es realitza el procés; i per al cas de “Fins a”, primer es realitza el procés i després s'avalua, per consegüent aquest tipus d'estructura sempre realitzarà almenys un procés.   Les estructures de tipus “Des de … fins a” s'apliquen quan es té definit el número de vegades que es realitzarà el procés dins del cicle, la qual cosa la fa diferent de les altres és que aquelles es poden utilitzar fins que les condicions canvien dins del mateix cicle, aquestes condicions poden deure's a una dada proporcionada des de l'exterior, o bé, al resultat d'un procés executat dins del mateix, el qual marca el final. A més, en el cicle “Des de … fins a”, el seu increment és automàtic, per la qual cosa no s'ha d'efectuar mitjançant un procés addicional, com en els altres dos tipus. En els següents exemples es mostrarà l'aplicació dels tres tipus de cicles abans esmentats.   Exemple 12: Es requereix un algorisme per a obtindre la suma de deu quantitats mitjançant la utilització d'un cicle “Mentre”. Realitza el diagrama de flux i el pseudocodi.   La solució d'aquest problema mitjançant el cicle Mentre, que també és conegut com a cicle While en els diferents llenguatges de programació.   Inici   Fer SU = 0   Fer C = 1   Mentre C &lt; = 10
+Llegir VA
+Fer SU = SU + VA
+Fer C = C + 1
+Fi mentre   Escriure SU   Fi   Exemple 13: Es requereix un algorisme per a obtindre la suma de deu quantitats mitjançant la utilització d'un cicle Repeteix. Realitza el diagrama de flux i el pseudocodi.
+El cicle Repeteix fins a també és conegut com a cicle Do-While en els diferents llenguatges de programació. Les variables que es requereixen són les que es mostren en la taula de l'exemple anterior.   Inici   Fer SU = 0   Fer C = 1   Repeteix
+Llegir VA
+Fer SU = SU + VA
+Fer C = C + 1
+Fins que C &gt; 10   Escriure SU   Fi   Exemple 14: Es requereix un algorisme per a obtindre la suma de deu quantitats mitjançant la utilització d'un cicle Des de. Realitza el diagrama de flux i el pseudocodi.
+El cicle Des de...fins a també és conegut com a cicle For en els diferents llenguatges de programació. S'utilitzaran les mateixes variables que en els dos exemples anteriors.   Inici   Fer SU = 0   Des de C = 1 fins a C &gt; 10
+Llegir VA
+Fer SU = SU + VA
+Fi des de   Escriure SU   Fi   ESTRUCTURES REPETITIVES EN JAVA.
+En Java les estructures repetitives existents executen les instruccions mentre es complisca una determinada condició.
+Tipus d'estructures repetitives:   Cicle while.   Cicle do – while.   Cicle for.   Cicle while
+Les instruccions es repeteixen mentre la condició siga certa. La condició es comprova al principi del bucle per la qual cosa les accions es poden executar zero o més vegades.
+L'execució del bucle while segueix els següents passos:   Primer s'avalua la condició.   Si el resultat és false, les instruccions no s'executen i el programa continua executant-se per la següent instrucció a continuació del while.   Si el resultat és true, s'executen les instruccions del while i es torna al pas 1.   Exemple 15. Programa Java que conté una instrucció while.   Java/<em>
+ * Programa que llegeix números fins que es llegeix un negatiu i mostra la
+ * suma dels números llegits
+ </em>/
+import java.util.Scanner;
+public class Exemple1While {
+   public static void main(String[] args) {
+      int suma = 0, num;
+      Scanner sc = new Scanner(System.in);
+      System.out.print("Introduïu un número: ");
+      num = sc.nextInt();
+      while (num &gt;= 0) {
+         suma = suma + num;
+         System.out.print("Introduïu un número: ");
+         num = sc.nextInt();
+      }
+      System.out.println("La suma és: " + suma);
+   }
+}
+Exemple 16. Programa Java que conté una instrucció while.   Java/<em>
+ * programa que llegeix un número n i mostra n asteriscs
+ </em>/
+import java.util.Scanner;
+public class Exemple2While {
+   public static void main(String[] args) {
+      Scanner sc = new Scanner(System.in);
+      int n, comptador = 0;
+      System.out.print("Introdueix un número: ");
+      n = sc.nextInt();
+      while (comptador &lt; n) {
+         System.out.println(" * ");
+         comptador++;
+      }
+   }
+}
+Exemple 17. Programa Java amb una instrucció while.   Java/<em>
+ * Programa que mostra una taula d'equivalències entre
+ * graus Fahrenheit i graus celsius
+ </em>/
+public class Exemple3While {
+   public static void main(String[] args) {
+      final int VALOR_INICIAL = 10; // límit inferior en taula
+      final int VALOR_FINAL = 100; // límit superior en taula
+      final int PAS = 10; // increment
+      int fah; //fahrenheit
+      double cel; //celsius
+      fah = VALOR_INICIAL;
+      System.out.println("Fahrenheit \t Celsius");
+      while (fah &lt;= VALOR_FINAL) {
+         cel = 5 * (fah - 32) / 9.0;
+         System.out.println(fah + "\t" + cel);
+         fah = fah + PAS;
+      }
+   }
+}
+Cicle do-while
+Les instruccions s'executen mentre la condició siga certa. La condició es comprova al final del bucle, per la qual cosa el bloc d'instruccions s'executarà almenys una vegada.
+Aquesta és la diferència fonamental amb la instrucció while. Les instruccions d'un bucle while no s'executaven si la condició inicialment era falsa.
+L'execució del bucle do - while segueix els següents passos:   Primer s'executen les instruccions a partir de do {...   S'avalua la condició.   Si el resultat és false, el programa continua executant-se per la següent instrucció a continuació del while.   Si el resultat és true, es torna al pas 1.   Nota. Mentre que en l'anterior apartat es va introduir el concepte d'estructura clàssica repetir-fins a, el do-while de Java seria una estructura repetir-mentre.   Exemple 18. Programa Java que conté una instrucció do - while.   Java/<em>
+ * Programa que obliga l'usuari a introduir un número menor que 100
+ </em>/
+import java.util.Scanner;
+public class Exemple1DoWhile {
+   public static void main(String[] args) {
+      int valor;
+      Scanner sc = new Scanner(System.in);
+      do {
+         System.out.print("Escriu un enter &lt; 100: ");
+         valor = sc.nextInt();
+      } while (valor &gt;= 100);
+      System.out.println("Heu introduït: " + valor);
+   }
+}
+Exemple 19. Programa Java que conté una instrucció do – while.   Java/<em>
+* Programa que llegeix un número entre 1 i 10 ambdós inclosos
+</em>/
+import java.util.Scanner;
+public class Exemple2DoWhile {
+   public static void main(String[] args) {
+      int n;
+      Scanner sc = new Scanner(System.in);
+      do {
+         System.out.print("Escriu un número entre 1 i 10: ");
+         n = sc.nextInt();
+      } while (n &lt; 1 || n &gt; 10);
+      System.out.println("Heu introduït: " + n);
+   }
+}
+Cicle for
+La instrucció for fa que una instrucció o bloc d'instruccions es repetisquen un número determinat de vegades mentre es complisca la condició.
+L'estructura general d'una instrucció for en Java és la següent:   Javafor (inicialització; condició; increment/decrement) {
+   instrucció 1;
+   ...........
+   instrucció N;
+}
+A continuació de la paraula for i entre parèntesis hi ha d'haver sempre tres zones separades per punt i coma:   zona d'inicialització.   zona de condició o avaluació.   zona d'increment o decrement.   Si en alguna ocasió no és necessari escriure alguna d'elles es poden deixar en blanc, però els dos punts i coma han d'aparèixer.   Inicialització: és la part en la qual la variable o variables de control del bucle prenen el seu valor inicial. Pot haver-hi una o més instruccions en la inicialització, separades per comes. La inicialització es realitza una sola vegada.   Avaluació: és una expressió booleana que fa que s'execute la sentència o bloc de sentències mentre aquesta expressió siga certa. Generalment en la condició es compara la variable de control amb un valor límit.   Increment/decrement: és una expressió que decrementa o incrementa la variable o variables de control de bucle.   L'execució d'un bucle for segueix els següents passos:   S'inicialitza la variable o variables de control (inicialització).   S'avalua la condició (avaluació).   Si la condició és certa s'executen les instruccions. Si és falsa, finalitza l'execució del bucle i continua el programa en la següent instrucció després del for.   S'actualitza la variable o variables de control (increment / decrement).   Es torna al pas 2.   Nota. Igual que en el do-while el for de Java es repeteix mentre es complisca la condició.   Exemple 20. Programa Java que conté una instrucció for.   Java/<em>
+ * programa que mostra els números de l'1 al 10
+ </em>/
+public class Exemple0For {
+   public static void main(String[] args) {
+      int i;
+      for (i = 1; i &lt;= 10; i++)
+         System.out.println(i + " ");
+   }
+}
+La instrucció for de l'exemple anterior la podem interpretar així: assigna a i el valor inicial 1, avalua si i és menor o igual a 10 i en eixe cas mostra i + " ", a continuació, incrementa el valor d'i i comprova de nou la condició.   Exemple 21. Programa Java amb una instrucció for.   Java/<em>
+ * programa que mostra els números del 10 a l'1
+ </em>/
+public class Exemple2For {
+   public static void main(String[] args) {
+      int i;
+      for (i = 10; i &gt; 0; i--)
+         System.out.println(i + " ");
+   }
+}
+Exemple 22. Programa Java amb una instrucció for:   Java/<em>
+ * programa que mostra una taula d'equivalències entre
+ * graus Fahrenheit i graus celsius
+ </em>/
+public class Exemple1For {
+   public static void main(String[] args) {
+      final int VALOR_INICIAL = 10; // límit inferior de taula
+      final int VALOR_FINAL = 100; // límit superior de taula
+      final int PAS = 10; // increment
+      int fah; //fahrenheit
+      double cel; //celsius
+      fah = VALOR_INICIAL;
+      System.out.println("Fahrenheit \t Celsius");
+      for (fah = VALOR_INICIAL; fah &lt;= VALOR_FINAL; fah=fah + PAS) {
+         cel = 5 * (fah - 32) / 9.0;
+         System.out.println(fah + "\t" + cel);
+      }
+   }
+}
+En les zones d'inicialització i increment/decrement pot aparèixer més d'una variable. En eixe cas han d'anar separades per comes.
+Exemple 23.   Java/<em>
+ * programa que mostra el valor de a, b i la seua suma mentre que la suma <br />
+ * d'ambdues és menor de 10. En cada iteració el valor de a s'incrementa<br />
+ * en 1 unitat i el de b en 2.
+ </em>/
+public class Exemple3For {
+   public static void main(String[] args) {
+      int a, b;
+      for (a = 1, b = 1; a + b &lt; 10; a++, b = b + 2) {
+         System.out.println("a = " + a + " b = " + b + " a + b = " +(a+b));
+      }
+   }
+}
+La sortida d'aquest programa és:
+a = 1 b = 1 a + b = 2
+a = 2 b = 3 a + b = 5
+a = 3 b = 5 a + b = 8   Encara que la instrucció repetitiva for, igual que les instruccions while i do-while, es pot utilitzar per a realitzar repeticions quan no se sap a priori el número d'iteracions (número de passades) pel bucle, aquesta instrucció és especialment indicada per a bucles on es conega el número d'iteracions.
+Com a regla pràctica podríem dir que les instruccions while i do-while s'utilitzen generalment quan no es coneix a priori el número d'iteracions, i la instrucció for s'usa generalment quan sí que es coneix les vegades que s'iterarà.
+S'ha de tindre cura amb escriure el punt i coma ( ; ) després del parèntesi final del bucle for. Un bucle for no porta punt i coma final.
+Per exemple, el bucle:   Javaint i;
+for (i = 1; i &lt;= 10; i++); //el ; finalitza el for
+{
+   System.out.println("Elements de Programació");
+}
+no visualitza la frase "Elements de Programació" 10 vegades, ni produeix un missatge d'error per part del compilador. En realitat, el que succeeix és que es visualitza una vegada la frase "Elements de Programació", ja que ací la sentència for és una sentència buida en acabar amb un punt i coma (;). La sentència for en aquest cas fa que i comence en 1 i acabe en 11 i després d'eixes iteracions, s'executa la sentència System.out.println("Elements de Programació");   Bucles infinits en Java
+Java permet construir bucles infinits, els quals s'executaran indefinidament, llevat que provoquem la seua interrupció. Tres exemples:   Javafor (;;) {
+   instruccions
+}
+for(; true;) {
+instruccions
+}
+while(true) {
+   instruccions
+}
+Bucles niats
+Bucles niats són aquells que inclouen instruccions for, while o do-while unes dins d'altres. Hem de tindre en compte que les variables de control que utilitzem han de ser diferents. Els anidaments d'estructures han de ser correctes, és a dir, que una estructura niada dins d'una altra ho ha d'estar totalment.   Exemple 24. Programa Java amb bucles niats:   Java/<em>
+ * Programa que dibuixa un rectangle sòlid d'asteriscs.
+ * El número de files i columnes es demana per teclat
+ </em>/
+import java.util.Scanner;
+public class Exemple1BuclesNiats {
+   public static void main(String[] args) {
+      Scanner sc = new Scanner(System.in);
+      int files, columnes;
+      //llegir número de files fins que siga un número &gt; 0
+      do {
+         System.out.print("Introdueix número de files: ");
+         files = sc.nextInt();
+      } while (files &lt; 1);
+      //llegir número de columnes fins que siga un número &gt; 0
+      do {
+         System.out.print("Introdueix número de columnes: ");
+         columnes = sc.nextInt();
+      } while (columnes &lt; 1);
+      //Es pot declarar la variable iterador dins del for
+      for (int i = 1; i &lt;= files; i++) { //files
+         for (int j = 1; j &lt;= columnes; j++) { //columnes
+            System.out.print("*"); //Un asterisc per columna
+         }
+         System.out.println(); //Acaba la fila i salta de línia
+      }
+   }
+}
+La sortida d'aquest programa per a files = 4 i columnes = 10 és:</p>
+<hr />
+<hr />
+<hr />
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li>Exemple 25. Programa Java amb bucles niats:   Java/*</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Programa que mostra una taula amb les potències de x (x x2 x3 x4)</li>
+<li>per a valors de x des d'1 fins a XMAX
+ <em>/
+public class Exemple2BuclesNiats {
+   public static void main(String[] args) {
+      final int XMAX = 7;
+      int x, n;
+      //mostrar la capçalera de la taula
+      System.out.println("x","x^2","x^3","x^4");
+      for (x = 1; x &lt;= XMAX; x++) { //files
+         for (n = 1; n &lt;= 4; n++) { //columnes
+            //Math.pow(x,n) 
+            System.out.println(Math.pow(x,n)); 
+         }
+         System.out.println();
+      }
+   }
+}
+La sortida d'aquest programa és:
+x x^2 x^3 x^4
+1 1 1 1
+2 4 8 16
+3 9 27 81
+4 16 64 256
+5 25 125 625
+6 36 216 1296
+7 49 343 2401   Sentència break
+Anteriorment vam veure que la sentència break finalitza l'execució d'una sentència switch. Doncs bé, quan s'utilitza break en el bloc corresponent a una sentència while, do (do-while) o for, fa el mateix: finalitza l'execució del bucle.
+Quan les sentències switch, while, do o for estiguen niades, la sentència break només finalitza l'execució del bucle on estiga inclosa.   Exemple 26:   Java/</em></li>
+<li>Programa que mostra valors d'i des d'1 fins a 10
+ <em>/
+public class SentenciaBreak1 {
+   public static void main(String[] args) {
+      //Bucle for infinit ja que es repeteix sempre
+      for (int i = 1; ; i++) {
+         System.out.print(i + " | ");
+         if (i == 10)
+            break; //Permet la sortida del bucle infinit
+      }
+   }
+}
+Exemple 27:   Java/</em></li>
+<li>Programa que mostra valors d'i des d'1 fins a 5 i els valors de j  </li>
+<li>des d'1 fins a 10
+ <em>/
+public class SentenciaBreak2 {
+   public static void main(String[] args) {
+      for (int i = 1; i &lt;= 5; i++) { 
+         for (int j = 1; ; j++) { 
+            System.out.print(j + "," + i + " | ");
+            if (j == 10)
+               break; //surt del for interior
+         }
+         System.out.println();
+      }
+   }
+}
+Nota. S'ha d'intentar limitar l'ús de les instruccions break i només utilitzar-les quan això simplifique l'enteniment del programa. Es pot implementar qualsevol bucle sense l'ús de la instrucció break.   Sentència continue
+La sentència continue obliga a executar la següent iteració del bucle while, do o for en què està continguda. Executa el següent programa i observa que cada vegada que s'executa la sentència continue, s'inicia l'execució del bloc de sentències for per a un nou valor de n.   Exemple 28:   Java/</em></li>
+<li>Programa que mostra tots els números entre 1 i 100 que són múltiples </li>
+<li>de 5.
+ */
+public class SentenciaContinue{
+   public static void main(String[] args) {
+      for (int n = 0; n &lt;= 100; n++) { 
+         if (n % 5 != 0) 
+            continue; //si n no és múltiple, següent iteració
+         System.out.println(n + " "); //imprimeix següent múltiple
+      }
+   }
+}
+Nota. S'ha d'intentar limitar l'ús de les instruccions continue i només utilitzar-les quan això simplifique l'enteniment del programa. Es pot implementar qualsevol bucle sense l'ús de la instrucció continue.   Etiquetes
+Amb les sentències break i continue es pot també utilitzar una etiqueta per a indicar on s'ha de reprendre l'execució. L'ús d'etiquetes és una mala pràctica en programació, per la qual cosa ha de reduir-se a casos excepcionals, però es comenta ací per a tindre consciència de la seua existència.   </li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["header.autohide", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiat al porta-retalls", "clipboard.copy": "C\u00f2pia al porta-retalls", "search.result.more.one": "1 m\u00e9s en aquesta p\u00e0gina", "search.result.more.other": "# m\u00e9s en aquesta p\u00e0gina", "search.result.none": "Cap document coincideix", "search.result.one": "1 document coincident", "search.result.other": "# documents coincidents", "search.result.placeholder": "Escriu per a comen\u00e7ar a cercar", "search.result.term.missing": "Desaparegut", "select.version": "Selecciona la versi\u00f3"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
