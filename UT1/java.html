@@ -813,12 +813,16 @@
     No cal ací subministrar l'extensió del fitxer, ja que sempre ha de ser un fitxer .class.</p>
 </li>
 </ul>
-<p>Des de la versió 11, el JDK permet executar un fitxer de codi font directament amb l'ordre <code>java</code>, sense necessitat d'utilitzar <code>javac</code> prèviament.</p>
-<p>La seua sintaxi és: <strong><code>java Exemple.java</code></strong> <em>(nota que ací sí que s'inclou l'extensió .java)</em></p>
-<p>Quan ho fem així, el JDK compila l'arxiu directament en la memòria principal i l'executa sobre la marxa. L'avantatge principal és que <strong>no es genera cap fitxer <code>.class</code></strong> al disc, la qual cosa ho fa ideal per a provar xicotets scripts o fer proves ràpides sense embrutar el directori de treball.</p>
+<div class="admonition tip">
+<p class="admonition-title">Execució directa de fitxers font (Java 11+)</p>
+<p>Des de la versió 11, el JDK permet executar directament un fitxer font amb l'ordre: <strong><code>java Exemple.java</code></strong> <em>(incloent l'extensió <code>.java</code>)</em>. El compilador processa el codi directament en memòria RAM i l'executa sobre la marxa, <strong>sense generar cap fitxer <code>.class</code></strong> al disc.</p>
+</div>
 <h3 id="jshell-proves-rapides-interactives-repl">JShell: Proves ràpides interactives (REPL)</h3>
 <p>A partir de Java 9, el JDK inclou una eina interactiva de línia d'ordres anomenada <strong>JShell</strong>. És el que en programació es coneix com un entorn REPL (<em>Read-Eval-Print Loop</em>).</p>
-<p>JShell permet escriure i executar fragments de codi Java (declarar variables, fer operacions matemàtiques, provar mètodes) <strong>immediatament</strong>, sense necessitat de crear una classe, escriure el mètode <code>main</code> ni compilar cap arxiu. És l'eina perfecta per a experimentar o resoldre dubtes ràpids de sintaxi mentre aprens.</p>
+<div class="admonition info">
+<p class="admonition-title">Què és un entorn REPL?</p>
+<p>Un entorn REPL llegeix la instrucció que introduïu, l'avalua al moment i en retorna el resultat per pantalla. És l'eina ideal per a practicar la sintaxi de Java, experimentar amb operadors o provar mètodes sense haver de crear una classe ni un mètode <code>main</code>.</p>
+</div>
 <p>Per a utilitzar-lo, només cal obrir la consola o terminal i escriure l'ordre <code>jshell</code>:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>$<span class="w"> </span>jshell
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="p">|</span><span class="w">  </span>Welcome<span class="w"> </span>to<span class="w"> </span>JShell<span class="w"> </span>--<span class="w"> </span>Version<span class="w"> </span><span class="m">25</span>

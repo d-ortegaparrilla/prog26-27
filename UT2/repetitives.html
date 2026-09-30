@@ -888,7 +888,15 @@
 <p>Quan es requereix que un procés s'efectue de manera cíclica, s'utilitzen estructures que permeten el control de cicles. Aquestes estructures s'utilitzen basant-se en les condicions pròpies de cada problema. Els noms amb els quals es coneixen són: “Mentre”, “Repeteix fins a” i “Des de … fins a”.  </p>
 <p>Per al cas de l'estructura “Mentre”, el cicle es repeteix mentre que la condició lògica siga vertadera; en canvi, en l'estructura “Fins a”, el cicle es repeteix sempre que el resultat de la condició lògica siga fals; a més, com es pot veure a la figura següent, en l'estructura “Mentre” primer s'avalua i després es realitza el procés; i per al cas de “Fins a”, primer es realitza el procés i després s'avalua, per consegüent aquest tipus d'estructura sempre realitzarà almenys un procés.   </p>
 <p><img alt="Image title" src="images/repetitives1.png" style="display: block; margin: auto; " /> </p>
-<p>Les estructures de tipus “Des de … fins a” s'apliquen quan es té definit el número de vegades que es realitzarà el procés dins del cicle, la qual cosa la fa diferent de les altres és que aquelles es poden utilitzar fins que les condicions canvien dins del mateix cicle, aquestes condicions poden deure's a una dada proporcionada des de l'exterior, o bé, al resultat d'un procés executat dins del mateix, el qual marca el final. A més, en el cicle “Des de … fins a”, el seu increment és automàtic, per la qual cosa no s'ha d'efectuar mitjançant un procés addicional, com en els altres dos tipus. En els següents exemples es mostrarà l'aplicació dels tres tipus de cicles abans esmentats.   </p>
+<div class="admonition info">
+<p class="admonition-title">Resum: Quan utilitzar cada estructura repetitiva?</p>
+<ul>
+<li><strong>Mentre (<code>while</code>):</strong> La condició s'avalua <strong>a l'inici</strong>. Si la condició és falsa des del principi, el bloc <strong>no s'executarà mai</strong> (0 o més iteracions). Útil quan no sabem quantes vegades cal repetir o depenem d'un valor sentinella.</li>
+<li><strong>Repeteix fins a (<code>do-while</code>):</strong> La condició s'avalua <strong>al final</strong>. El bloc s'executarà <strong>sempre com a mínim una vegada</strong> (1 o més iteracions). Ideal per a la validació d'entrades per teclat.</li>
+<li><strong>Des de... fins a (<code>for</code>):</strong> El nombre d'iteracions és <strong>conegut per endavant</strong> o fixat abans d'iniciar el cicle. L'increment o decrement de la variable de control és automàtic a cada volta.</li>
+</ul>
+</div>
+<p>Les estructures de tipus “Des de … fins a” s'apliquen quan es té definit el número de vegades que es realitzarà el procés dins del cicle, la qual cosa la fa diferent de les altres és que aquelles es poden utilitzar fins que les condicions canvien dins del mateix cicle, aquestes condicions poden deure's a una dada proporcionada des de l'exterior, o bé, al resultat d'un procés executat dins del mateix, el qual marca el final. A més, en el cicle “Des de … fins a”, el seu increment és automàtic, per la qual cosa no s'ha d'efectuar mitjançant un procés addicional, com en els altres dos tipus. En els següents exemples es mostrarà l'aplicació dels tres tipus de cicles abans esmentats.</p>
 <p><strong>Exemple 1</strong>. Es requereix un algorisme per a obtindre la suma de deu quantitats mitjançant la utilització d'un cicle “Mentre”. Realitza el diagrama de flux i el pseudocodi.  </p>
 <p><img alt="Image title" src="images/repetitives2.png" style="display: block; margin: auto; " /> </p>
 <p>La solució d'aquest problema mitjançant el cicle Mentre, que també és conegut com a cicle While en els diferents llenguatges de programació. </p>
@@ -986,7 +994,15 @@ El cicle Des de...fins a també és conegut com a cicle For en els diferents lle
 </ol>
 <p><img alt="Image title" src="images/repetitives7.png" style="display: block; margin: auto; " /> </p>
 <p>Mentre que en l'anterior apartat es va introduir el concepte d'estructura clàssica repetir-fins a, el do-while de Java seria una estructura repetir-mentre.   </p>
-<p><strong>Exemple 7</strong>. Programa Java que conté una instrucció do - while.   </p>
+<div class="admonition warning">
+<p class="admonition-title">Diferència clau en la condició de Java <code>do-while</code></p>
+<p>En pseudocodi clàssic, <em>Repeteix fins a</em> s'atura quan la condició és certa. En canvi, a Java el <code>do-while</code> continua iterant <strong>mentre la condició siga certa</strong> (<code>true</code>) i només finalitza quan s'avalua a falsa (<code>false</code>).</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Cas d'ús ideal de <code>do-while</code>: Validació d'entrades per teclat</p>
+<p>El bucle <code>do-while</code> és el patró estàndard per a obligar l'usuari a introduir una dada correcta, ja que com a mínim cal demanar el valor una primera vegada abans de poder comprovar si compleix els requisits.</p>
+</div>
+<p><strong>Exemple 7</strong>. Programa Java que conté una instrucció do - while.</p>
 <div class="language-java highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="cm">/*</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="cm"> * Programa que obliga l'usuari a introduir un número menor que 100</span>
 </span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="cm"> */</span>
@@ -1116,21 +1132,32 @@ L'eixida d'aquest programa és:</p>
 </span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">   </span><span class="n">IO</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Elements de Programació"</span><span class="p">);</span>
 </span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="p">}</span>
 </span></code></pre></div>
-<p>no visualitza la frase "Elements de Programació" 10 vegades, ni produeix un missatge d'error per part del compilador. En realitat, el que succeeix és que es visualitza una vegada la frase "Elements de Programació", ja que ací la sentència for és una sentència buida en acabar amb un punt i coma <code>;</code>. La sentència for en aquest cas fa que i comence en 1 i acabe en 11 i després d'eixes iteracions, s'executa la sentència <code>IO.println("Elements de Programació");</code>   </p>
+<div class="admonition danger">
+<p class="admonition-title">Error típic: el punt i coma accidental després del <code>for</code> o <code>while</code></p>
+<p>El codi anterior <strong>no visualitza</strong> la frase "Elements de Programació" 10 vegades, ni genera cap error de compilació. En realitat es visualitza <strong>una sola vegada</strong>, ja que el punt i coma <code>;</code> fa que el cos del <code>for</code> siga una instrucció buida. El bucle itera deu vegades sense fer res i, en acabar, s'executa el bloc <code>{ IO.println(...); }</code>.</p>
+</div>
 <h3 id="bucles-infinits-en-java">Bucles infinits en Java</h3>
 <p>Java permet construir bucles infinits, els quals s'executaran indefinidament, llevat que provoquem la seua interrupció. Tres exemples:   </p>
 <div class="language-java highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="k">for</span><span class="w"> </span><span class="p">(;;)</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">   </span><span class="n">instruccions</span>
 </span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="p">}</span>
 </span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="k">for</span><span class="p">(;</span><span class="w"> </span><span class="kc">true</span><span class="p">;)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="n">instruccions</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">   </span><span class="n">instruccions</span>
 </span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="p">}</span>
 </span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="k">while</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="w">   </span><span class="n">instruccions</span>
 </span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="p">}</span>
 </span></code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Atenció als bucles infinits involuntaris</p>
+<p>Un bucle infinit ocorre quan la condició de terminació mai es compleix (mai es fa <code>false</code>). Assegureu-vos sempre que dins del cos del bucle s'actualitza la variable de control (per exemple, incrementant o decrementant el comptador).</p>
+</div>
 <h3 id="bucles-niats">Bucles niats</h3>
 <p>Bucles niats són aquells que inclouen instruccions for, while o do-while unes dins d'altres. Hem de tindre en compte que les variables de control que utilitzem han de ser diferents. Els anidaments d'estructures han de ser correctes, és a dir, que una estructura niada dins d'una altra ho ha d'estar totalment.   </p>
+<div class="admonition tip">
+<p class="admonition-title">Gestió de variables en bucles niats</p>
+<p>Utilitzeu sempre variables de control independents i amb noms representatius per a cada nivell d'anidament (com <code>fila</code> i <code>columna</code>). Modificar accidentalment la variable del bucle exterior des de l'interior provocarà comportaments erràtics o bucles infinits.</p>
+</div>
 <p><strong>Exemple 12</strong>. Programa Java amb bucles niats:   </p>
 <div class="language-java highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="cm">/*</span>
 </span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="cm"> * Programa que dibuixa un rectangle sòlid d'asteriscs.</span>
@@ -1175,11 +1202,11 @@ L'eixida d'aquest programa és:</p>
 </span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="w">   </span><span class="kd">final</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">XMAX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">7</span><span class="p">;</span>
 </span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="w">   </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
 </span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="w">   </span><span class="c1">//mostrar la capçalera de la taula</span>
-</span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a><span class="w">   </span><span class="n">IO</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"x"</span><span class="p">,</span><span class="s">"x^2"</span><span class="p">,</span><span class="s">"x^3"</span><span class="p">,</span><span class="s">"x^4"</span><span class="p">);</span>
+</span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a><span class="w">   </span><span class="n">IO</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"x x^2 x^3 x^4"</span><span class="p">);</span>
 </span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a>
 </span><span id="__span-15-11"><a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a><span class="w">   </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">XMAX</span><span class="p">;</span><span class="w"> </span><span class="n">x</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">//files</span>
 </span><span id="__span-15-12"><a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a><span class="w">      </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span><span class="w"> </span><span class="n">n</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">//columnes</span>
-</span><span id="__span-15-13"><a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a><span class="w">         </span><span class="n">IO</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">Math</span><span class="p">.</span><span class="na">pow</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">n</span><span class="p">));</span><span class="w"> </span>
+</span><span id="__span-15-13"><a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a><span class="w">         </span><span class="n">IO</span><span class="p">.</span><span class="na">print</span><span class="p">((</span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">pow</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">" "</span><span class="p">);</span><span class="w"> </span>
 </span><span id="__span-15-14"><a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a><span class="w">      </span><span class="p">}</span>
 </span><span id="__span-15-15"><a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a><span class="w">      </span><span class="n">IO</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
 </span><span id="__span-15-16"><a id="__codelineno-15-16" name="__codelineno-15-16" href="#__codelineno-15-16"></a><span class="w">   </span><span class="p">}</span>
@@ -1227,7 +1254,10 @@ L'eixida d'aquest programa és:</p>
 </span><span id="__span-18-13"><a id="__codelineno-18-13" name="__codelineno-18-13" href="#__codelineno-18-13"></a><span class="w">   </span><span class="p">}</span>
 </span><span id="__span-18-14"><a id="__codelineno-18-14" name="__codelineno-18-14" href="#__codelineno-18-14"></a><span class="p">}</span>
 </span></code></pre></div>
-<p>S'ha d'intentar limitar l'ús de les instruccions break i només utilitzar-les quan això simplifique l'enteniment del programa. Es pot implementar qualsevol bucle sense l'ús de la instrucció break.   </p>
+<div class="admonition warning">
+<p class="admonition-title">Ús responsable de <code>break</code> i <code>continue</code></p>
+<p>Tot i ser ferramentes vàlides del llenguatge, un ús excessiu de <code>break</code> i <code>continue</code> sol indicar que el disseny de la condició del bucle no és l'òptim. Sempre que siga possible, prioritzeu expressar la lògica mitjançant la pròpia condició de control del cicle.</p>
+</div>
 <h3 id="sentencia-continue">Sentència continue</h3>
 <p>La sentència continue obliga a executar la següent iteració del bucle while, do o for en què està continguda. Executa el següent programa i observa que cada vegada que s'executa la sentència continue, s'inicia l'execució del bloc de sentències for per a un nou valor de n.   </p>
 <p><strong>Exemple 16</strong>:   </p>
@@ -1243,9 +1273,17 @@ L'eixida d'aquest programa és:</p>
 </span><span id="__span-19-10"><a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a><span class="w">   </span><span class="p">}</span>
 </span><span id="__span-19-11"><a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a><span class="p">}</span>
 </span></code></pre></div>
-<p>S'ha d'intentar limitar l'ús de les instruccions continue i només utilitzar-les quan això simplifique l'enteniment del programa. Es pot implementar qualsevol bucle sense l'ús de la instrucció continue.   </p>
 <h3 id="etiquetes">Etiquetes</h3>
-<p>Amb les sentències break i continue es pot també utilitzar una etiqueta per a indicar on s'ha de reprendre l'execució. L'ús d'etiquetes és una mala pràctica en programació, per la qual cosa ha de reduir-se a casos excepcionals, però es comenta ací per a tindre consciència de la seua existència.   </p>
+<p>Amb les sentències break i continue es pot també utilitzar una etiqueta per a indicar on s'ha de reprendre l'execució.</p>
+<div class="admonition caution">
+<p class="admonition-title">Desaconsellat: Ús d'etiquetes</p>
+<p>L'ús d'etiquetes s'assimila a la instrucció <code>goto</code> d'altres llenguatges i genera el que es coneix com a <em>codi espagueti</em>, difícil de llegir i depurar. Se'n desaconsella totalment el seu ús en projectes reals, tot i que cal conèixer la seua existència per a poder interpretar codi aliè.</p>
+</div>
+<hr />
+<div class="admonition tip">
+<p class="admonition-title">Exercicis resolts</p>
+<p>Podeu consultar més casos pràctics resolts pas a pas d'estructures iteratives a l'apartat d'<a href="exemples.html#estructures-repetitives">Exercicis resolts: Estructures repetitives</a>.</p>
+</div>
 
 
 
