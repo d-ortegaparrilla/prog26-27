@@ -1113,10 +1113,8 @@ Per a aquest cas, la taula següent mostra les variables que es requereixen en l
 <p>S'obté niant sentències <code>if … else</code>. Permet construir estructures de selecció més complexes.</p>
 <p><img alt="Image title" src="images/if3.png" style="display: block; margin: auto; width: 500px;" /></p>
 <p>Cada <code>else</code> es correspon amb l'<code>if</code> més pròxim que no haja estat emparellat. Una vegada que s'executa un bloc d'instruccions, l'execució continua en la següent instrucció que aparega després de les sentències <code>if … else</code> niades.   </p>
-<div class="admonition warning">
-<p class="admonition-title">Compte amb l'associació d'if i else (<em>Dangling Else</em>)</p>
-<p>Quan s'escriuen condicionals niats sense claus, el compilador associa sempre el <code>else</code> a l'<code>if</code> immediatament anterior no tancat, independentment de la indentació que tinga el codi. L'ús de claus <code>{ }</code> és la millor garantia per a evitar aquest error.</p>
-</div>
+<p>!!! warning "Compte amb l'associació d'if i else
+    Quan s'escriuen condicionals niats sense claus, el compilador associa sempre el <code>else</code> a l'<code>if</code> immediatament anterior no tancat, independentment de la indentació que tinga el codi. L'ús de claus <code>{ }</code> és la millor garantia per a evitar aquest error.</p>
 <p><strong>Exemple 7</strong>. Programa Java que conté una estructura condicional múltiple.</p>
 <div class="language-java highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="cm">/*</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="cm"> * Programa que mostra una salutació diferent segons l'hora introduïda</span>
