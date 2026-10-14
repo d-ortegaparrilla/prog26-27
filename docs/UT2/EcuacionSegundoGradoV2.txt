@@ -1,0 +1,43 @@
+/*
+    Programa que lee 3 números reales y calcula las
+    2 soluciones de una ecuación de segundo grado
+*/
+void main() {
+    double a, b, c, res1, res2;
+    double raiz; // cálculo intermedio de la raíz
+    String linea;
+
+    // Lectura por teclado de los 3 números reales
+    linea = IO.readln("Introduce el valor de a: ");
+    a = Double.parseDouble(linea);
+
+    
+    if (a == 0) { // Muestro error
+        IO.println("NO SE PUEDE HACER LA DIVISIÓN POR CERO"); 
+    }
+    else {
+        // Sigo leyendo b, leyendo c
+        linea = IO.readln("Introduce el valor de b: ");
+        b = Double.parseDouble(linea);
+        linea = IO.readln("Introduce el valor de c: ");
+        c = Double.parseDouble(linea);
+
+        // Calculo interior de la raíz
+        raiz = Math.pow(b, 2) - 4*a*c;  // b^2 - 4ac no puede ser < 0
+        
+        if (raiz < 0) {
+            IO.println("La raíz no puede ser negativa");
+        }
+        else {
+            // Voy a poder hacer el cálculo de la raíz
+
+            raiz = Math.sqrt(raiz);
+
+            res1 = (-b + raiz) / (2 * a);
+            res2 = (-b - raiz) / (2 * a);
+
+            IO.println("Primera solución = " + res1);
+            IO.println("Segunda solución = " + res2);
+        }    
+    }
+}

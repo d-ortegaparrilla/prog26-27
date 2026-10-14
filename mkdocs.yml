@@ -1,0 +1,82 @@
+site_name: Programació
+site_url: https://d-ortegaparrilla.github.io/prog26-27/
+site_description: Apunts del mòdul de Programació (1DAM)
+site_author: David Ortega Parrilla
+repo_name: d-ortegaparrilla/prog26-27
+repo_url: https://github.com/d-ortegaparrilla/prog26-27
+
+use_directory_urls: false
+
+theme:
+  name: material
+  language: ca
+  favicon: favicon.png
+  logo: favicon.png
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: orange
+      accent: deep orange
+      toggle:
+        icon: material/brightness-7
+        name: Canviar a mode fosc
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: orange
+      accent: deep orange
+      toggle:
+        icon: material/brightness-4
+        name: Canviar a mode clar
+  font:
+    text: Roboto
+    code: Roboto Mono
+  features:
+    - header.autohide
+    - content.code.copy
+    - content.code.annotate
+    - navigation.top
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - search.suggest
+    - search.highlight
+
+extra:
+  search:
+    language: "es"
+
+extra_css:
+  - stylesheets/extra.css
+
+plugins:
+  - search
+  - awesome-pages
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
