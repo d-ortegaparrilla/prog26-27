@@ -6,6 +6,10 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
+        <meta name="description" content="Apunts del mòdul de Programació (1DAM)">
+      
+      
+        <meta name="author" content="David Ortega Parrilla">
       
       
         <link rel="canonical" href="https://d-ortegaparrilla.github.io/prog26-27/UT2/condicionals.html">
@@ -51,6 +55,8 @@
       
     
     
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -61,6 +67,8 @@
   
   
     
+    
+      
     
     
     
@@ -86,9 +94,7 @@
     
       
 
-  
-
-<header class="md-header md-header--shadow" data-md-component="header">
+<header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Capçalera">
     <a href="../index.html" title="Programació" class="md-header__button md-logo" aria-label="Programació" data-md-component="logo">
       
@@ -117,7 +123,33 @@
     </div>
     
       
+        <form class="md-header__option" data-md-component="palette">
+  
     
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="orange" data-md-color-accent="deep-orange"  aria-label="Canviar a mode fosc"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Canviar a mode fosc" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="orange" data-md-color-accent="deep-orange"  aria-label="Canviar a mode clar"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Canviar a mode clar" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
     
@@ -146,6 +178,8 @@
         </button>
       </nav>
       
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
@@ -162,6 +196,18 @@
       
     
     
+      <div class="md-header__source">
+        <a href="https://github.com/d-ortegaparrilla/prog26-27" title="Ves al repositori" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    d-ortegaparrilla/prog26-27
+  </div>
+</a>
+      </div>
+    
   </nav>
   
 </header>
@@ -170,6 +216,76 @@
       
       
         
+          
+            
+<nav class="md-tabs" aria-label="Pestanyes" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../index.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../UT1/introduccio.html" class="md-tabs__link">
+          
+  
+  
+  UT1. Elements bàsics d'un programa informàtic.
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="introduccio.html" class="md-tabs__link">
+          
+  
+  
+  UT2. Estructures de control.
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
           
         
       
@@ -184,8 +300,10 @@
                     
 
 
+  
 
-<nav class="md-nav md-nav--primary" aria-label="Navegació" data-md-level="0">
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegació" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../index.html" title="Programació" class="md-nav__button md-logo" aria-label="Programació" data-md-component="logo">
       
@@ -194,6 +312,18 @@
     </a>
     Programació
   </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/d-ortegaparrilla/prog26-27" title="Ves al repositori" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    d-ortegaparrilla/prog26-27
+  </div>
+</a>
+    </div>
   
   <ul class="md-nav__list" data-md-scrollfix>
     
@@ -234,12 +364,19 @@
     
     
     
+      
+      
+        
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -458,15 +595,23 @@
     
     
     
+      
+        
+        
+      
+      
+        
+      
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   
@@ -1037,9 +1182,12 @@
                   
 
 
+  
+  
 
-<h1 id="estructures-condicionals">Estructures condicionals</h1>
-<h2 id="estructures-condicionals-amb-pseudocodi-i-diagrames-de-flux">Estructures condicionals amb pseudocodi i diagrames de flux.</h2>
+
+<h1 id="estructures-condicionals">Estructures condicionals<a class="headerlink" href="#estructures-condicionals" title="Permanent link">&para;</a></h1>
+<h2 id="estructures-condicionals-amb-pseudocodi-i-diagrames-de-flux">Estructures condicionals amb pseudocodi i diagrames de flux.<a class="headerlink" href="#estructures-condicionals-amb-pseudocodi-i-diagrames-de-flux" title="Permanent link">&para;</a></h2>
 <p>Els algorismes, en determinats moments, requereixen ser selectius pel que fa a les accions que han de seguir. D'ací ve que les estructures selectives per als algorismes siguen tan importants, de manera que en la majoria dels problemes es té present una estructura selectiva, que implica seguir o no un determinat flux de seqüència del problema.</p>
 <p>En els algorismes per a la solució de problemes on s'utilitzen estructures selectives s'utilitzen frases que estan estructurades de forma adequada dins del pseudocodi. En el cas del diagrama de flux, també s'estructura d'una forma pareguda.</p>
 <p><img alt="Image title" src="images/condicionals1.png" style="display: block; margin: auto; width: 500px;" /></p>
@@ -1058,14 +1206,14 @@ Per a aquest cas, la taula següent mostra les variables que es requereixen en l
 <p><strong>Exemple 3</strong>. Es requereix determinar quina de les tres quantitats proporcionades és la major. Realitza el seu respectiu algorisme i representa'l mitjançant un diagrama de flux i pseudocodi. Les variables que intervenen en la solució d'aquest problema es mostren a continuació.</p>
 <p><img alt="Image title" src="images/condicionals8.png" style="display: block; margin: auto; width: 500px;" /></p>
 <p><img alt="Image title" src="images/condicionals9.png" style="display: block; margin: auto;" /></p>
-<h2 id="estructures-condicionals-amb-java">Estructures condicionals amb Java.</h2>
+<h2 id="estructures-condicionals-amb-java">Estructures condicionals amb Java.<a class="headerlink" href="#estructures-condicionals-amb-java" title="Permanent link">&para;</a></h2>
 <p>En Java l'estructura condicional s'implementa mitjançant:   </p>
 <ul>
 <li>Instrucció if.</li>
 <li>Instrucció switch.</li>
 <li>Instrucció condicional ? :  </li>
 </ul>
-<h3 id="instruccio-if">Instrucció IF</h3>
+<h3 id="instruccio-if">Instrucció IF<a class="headerlink" href="#instruccio-if" title="Permanent link">&para;</a></h3>
 <p>Pot ser del tipus:</p>
 <ul>
 <li>Condicional simple: if   </li>
@@ -1073,7 +1221,7 @@ Per a aquest cas, la taula següent mostra les variables que es requereixen en l
 <li>Condicional múltiple: if … else if …   </li>
 </ul>
 <p>La condició ha de ser una <strong>expressió booleana</strong> (condició), és a dir, ha de donar com a resultat un valor booleà (<code>true</code> o <code>false</code>).</p>
-<h4 id="condicional-simple">Condicional simple</h4>
+<h4 id="condicional-simple">Condicional simple<a class="headerlink" href="#condicional-simple" title="Permanent link">&para;</a></h4>
 <p>S'avalua la condició i si aquesta es compleix s'executa una determinada acció o grup d'accions. En cas contrari se salten aquest grup d'accions.   </p>
 <p><img alt="Image title" src="images/if1.png" style="display: block; margin: auto; width: 500px;" /></p>
 <div class="admonition tip">
@@ -1098,7 +1246,7 @@ Per a aquest cas, la taula següent mostra les variables que es requereixen en l
 </span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">    </span><span class="p">}</span>
 </span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="p">}</span>
 </span></code></pre></div>
-<h4 id="condicional-doble">Condicional doble</h4>
+<h4 id="condicional-doble">Condicional doble<a class="headerlink" href="#condicional-doble" title="Permanent link">&para;</a></h4>
 <p>S'avalua la condició i si aquesta es compleix s'executa una determinada instrucció o grup d'instruccions. Si no es compleix s'executa una altra instrucció o grup d'instruccions.   </p>
 <p><img alt="Image title" src="images/if2.png" style="display: block; margin: auto; width: 500px;" /></p>
 <p><strong>Exemple 5</strong>. Programa Java que conté una estructura condicional doble.   </p>
@@ -1137,7 +1285,7 @@ Per a aquest cas, la taula següent mostra les variables que es requereixen en l
 </span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">        </span><span class="n">IO</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"IMPARELL"</span><span class="p">);</span>
 </span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="p">}</span>
 </span></code></pre></div>
-<h4 id="condicional-multiple">Condicional múltiple</h4>
+<h4 id="condicional-multiple">Condicional múltiple<a class="headerlink" href="#condicional-multiple" title="Permanent link">&para;</a></h4>
 <p>S'obté niant sentències <code>if … else</code>. Permet construir estructures de selecció més complexes.</p>
 <p><img alt="Image title" src="images/if3.png" style="display: block; margin: auto; width: 500px;" /></p>
 <p>Cada <code>else</code> es correspon amb l'<code>if</code> més pròxim que no haja estat emparellat. Una vegada que s'executa un bloc d'instruccions, l'execució continua en la següent instrucció que aparega després de les sentències <code>if … else</code> niades.   </p>
@@ -1191,7 +1339,7 @@ Per a aquest cas, la taula següent mostra les variables que es requereixen en l
 </span><span id="__span-4-25"><a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a><span class="w">        </span><span class="n">IO</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Suspès"</span><span class="p">);</span>
 </span><span id="__span-4-26"><a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a><span class="p">}</span>
 </span></code></pre></div>
-<h5 id="comparar-string-en-java">Comparar String en Java</h5>
+<h5 id="comparar-string-en-java">Comparar String en Java<a class="headerlink" href="#comparar-string-en-java" title="Permanent link">&para;</a></h5>
 <p>Per comparar el contingut de dues cadenes en Java s'usa el mètode <code>equals</code>:   </p>
 <div class="language-java highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">cadena1</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">cadena2</span><span class="p">))</span><span class="w"> </span><span class="c1">// cadena1 i cadena2 són variables de tipus String</span>
 </span></code></pre></div>
@@ -1205,7 +1353,7 @@ Per a aquest cas, la taula següent mostra les variables que es requereixen en l
 </span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">cadena1</span><span class="p">.</span><span class="na">compareTo</span><span class="p">(</span><span class="n">cadena2</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="c1">// cadena1 va després que cadena2</span>
 </span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">cadena1</span><span class="p">.</span><span class="na">compareTo</span><span class="p">(</span><span class="n">cadena2</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="c1">// cadena1 és igual que cadena2</span>
 </span></code></pre></div>
-<h3 id="operador-condicional">Operador condicional ? :</h3>
+<h3 id="operador-condicional">Operador condicional ? :<a class="headerlink" href="#operador-condicional" title="Permanent link">&para;</a></h3>
 <p>Es pot utilitzar en substitució de la sentència de control <code>if-else</code>. Els formen els caràcters <code>?</code> i <code>:</code></p>
 <p>S'utilitza de la forma següent:   </p>
 <div class="language-java highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">expressió1</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">expressió2</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">expressió3</span>
@@ -1228,7 +1376,7 @@ Per a aquest cas, la taula següent mostra les variables que es requereixen en l
 </span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="w">    </span><span class="n">IO</span><span class="p">.</span><span class="na">println</span><span class="p">((</span><span class="n">num</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s">"PARELL"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s">"IMPARELL"</span><span class="p">);</span>
 </span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="p">}</span>
 </span></code></pre></div>
-<h3 id="instruccio-switch">Instrucció switch</h3>
+<h3 id="instruccio-switch">Instrucció switch<a class="headerlink" href="#instruccio-switch" title="Permanent link">&para;</a></h3>
 <p>S'utilitza per seleccionar una d'entre múltiples alternatives. </p>
 <p>La sintaxi clàssica de la instrucció switch en Java és la següent:</p>
 <p><img alt="Image title" src="images/switch1.png" style="display: block; margin: auto; " /> </p>
@@ -1266,7 +1414,7 @@ Per a aquest cas, la taula següent mostra les variables que es requereixen en l
 <li>Les versions modernes permeten agrupar múltiples valors en un mateix <code>case</code> separant-los per comes (per exemple: <code>case "Summer", "Winter"</code> o <code>case 1, 2, 3 -&gt;</code>) evitant duplicar codi.</li>
 </ul>
 </div>
-<h4 id="instruccio-amb-fallthrough-statement-forma-classica">Instrucció amb : (Fallthrough Statement - Forma Clàssica)</h4>
+<h4 id="instruccio-amb-fallthrough-statement-forma-classica">Instrucció amb : (Fallthrough Statement - Forma Clàssica)<a class="headerlink" href="#instruccio-amb-fallthrough-statement-forma-classica" title="Permanent link">&para;</a></h4>
 <p>És el comportament tradicional. Primer s'avalua l'expressió i salta al case coincident. L'execució continua cap avall passant pels casos següents (fallthrough) fins que es troba un break o s'arriba al final del switch.   </p>
 <div class="language-java highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">seasonName</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">   </span><span class="k">case</span><span class="w"> </span><span class="s">"Spring"</span><span class="p">:</span>
@@ -1281,7 +1429,7 @@ Per a aquest cas, la taula següent mostra les variables que es requereixen en l
 </span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="w">      </span><span class="n">numLetters</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">;</span>
 </span><span id="__span-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a><span class="p">}</span>
 </span></code></pre></div>
-<h4 id="instruccio-amb-fletxa-no-fallthrough-statement">Instrucció amb fletxa -&gt; (No Fallthrough Statement)</h4>
+<h4 id="instruccio-amb-fletxa-no-fallthrough-statement">Instrucció amb fletxa -&gt; (No Fallthrough Statement)<a class="headerlink" href="#instruccio-amb-fletxa-no-fallthrough-statement" title="Permanent link">&para;</a></h4>
 <p>Aïlla cada cas de manera independent. Si hi ha coincidència, només s'executa el codi que hi ha a la dreta de la fletxa i el switch acaba automàticament sense necessitat d'utilitzar la instrucció break.   </p>
 <div class="language-java highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">seasonName</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="s">"Spring"</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span>
@@ -1293,7 +1441,7 @@ Per a aquest cas, la taula següent mostra les variables que es requereixen en l
 </span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="w">    </span><span class="k">default</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">numLetters</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">;</span>
 </span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="p">}</span>
 </span></code></pre></div>
-<h4 id="expressio-amb-fletxa-no-fallthrough-expression">Expressió amb fletxa -&gt; (No Fallthrough Expression)</h4>
+<h4 id="expressio-amb-fletxa-no-fallthrough-expression">Expressió amb fletxa -&gt; (No Fallthrough Expression)<a class="headerlink" href="#expressio-amb-fletxa-no-fallthrough-expression" title="Permanent link">&para;</a></h4>
 <p>Permet assignar el resultat final del switch directament a una variable (com int numLetters = switch(...)). A la dreta de la fletxa es pot posar directament el valor que es vol retornar. Si es requereix executar diverses instruccions dins d'un mateix case, s'obrin claus {} i s'utilitza la nova paraula clau yield per a indicar quin serà el valor que es retornarà. </p>
 <div class="language-java highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">numLetters</span><span class="p">;</span>
 </span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="n">numLetters</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">seasonName</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -1306,7 +1454,7 @@ Per a aquest cas, la taula següent mostra les variables que es requereixen en l
 </span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="w">    </span><span class="k">default</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">;</span>
 </span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="p">};</span><span class="w"> </span><span class="c1">// Cal posar punt i coma en acabar l'expressió</span>
 </span></code></pre></div>
-<h4 id="expressio-amb-fallthrough-expression">Expressió amb : (Fallthrough Expression)</h4>
+<h4 id="expressio-amb-fallthrough-expression">Expressió amb : (Fallthrough Expression)<a class="headerlink" href="#expressio-amb-fallthrough-expression" title="Permanent link">&para;</a></h4>
 <p>També assigna el resultat a una variable, però manté el comportament tradicional de "caure" cap als casos inferiors (fallthrough). És obligatori utilitzar yield per a retornar el valor final i aturar l'execució. Si un case no té yield (com al cas "Spring" de l'exemple), s'executen les seues instruccions i l'execució continua caient al cas següent fins a trobar un yield que retorne el valor definitiu.   </p>
 <div class="language-java highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">numLetters</span><span class="p">;</span>
 </span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="n">numLetters</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">seasonName</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -1428,6 +1576,12 @@ Per a aquest cas, la taula següent mostra les variables que es requereixen en l
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Torna a l'inici
+</button>
+        
       </main>
       
         <footer class="md-footer">
@@ -1457,7 +1611,7 @@ Per a aquest cas, la taula següent mostra les variables que es requereixen en l
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["header.autohide", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiat al porta-retalls", "clipboard.copy": "C\u00f2pia al porta-retalls", "search.result.more.one": "1 m\u00e9s en aquesta p\u00e0gina", "search.result.more.other": "# m\u00e9s en aquesta p\u00e0gina", "search.result.none": "Cap document coincideix", "search.result.one": "1 document coincident", "search.result.other": "# documents coincidents", "search.result.placeholder": "Escriu per a comen\u00e7ar a cercar", "search.result.term.missing": "Desaparegut", "select.version": "Selecciona la versi\u00f3"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["header.autohide", "content.code.copy", "content.code.annotate", "navigation.top", "navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.expand", "search.suggest", "search.highlight"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiat al porta-retalls", "clipboard.copy": "C\u00f2pia al porta-retalls", "search.result.more.one": "1 m\u00e9s en aquesta p\u00e0gina", "search.result.more.other": "# m\u00e9s en aquesta p\u00e0gina", "search.result.none": "Cap document coincideix", "search.result.one": "1 document coincident", "search.result.other": "# documents coincidents", "search.result.placeholder": "Escriu per a comen\u00e7ar a cercar", "search.result.term.missing": "Desaparegut", "select.version": "Selecciona la versi\u00f3"}, "version": null}</script>
     
     
       <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>

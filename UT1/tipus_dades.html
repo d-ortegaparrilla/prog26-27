@@ -6,6 +6,10 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
+        <meta name="description" content="Apunts del mòdul de Programació (1DAM)">
+      
+      
+        <meta name="author" content="David Ortega Parrilla">
       
       
         <link rel="canonical" href="https://d-ortegaparrilla.github.io/prog26-27/UT1/tipus_dades.html">
@@ -51,6 +55,8 @@
       
     
     
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -61,6 +67,8 @@
   
   
     
+    
+      
     
     
     
@@ -86,9 +94,7 @@
     
       
 
-  
-
-<header class="md-header md-header--shadow" data-md-component="header">
+<header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Capçalera">
     <a href="../index.html" title="Programació" class="md-header__button md-logo" aria-label="Programació" data-md-component="logo">
       
@@ -117,7 +123,33 @@
     </div>
     
       
+        <form class="md-header__option" data-md-component="palette">
+  
     
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="orange" data-md-color-accent="deep-orange"  aria-label="Canviar a mode fosc"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Canviar a mode fosc" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="orange" data-md-color-accent="deep-orange"  aria-label="Canviar a mode clar"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Canviar a mode clar" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
     
@@ -146,6 +178,8 @@
         </button>
       </nav>
       
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
@@ -162,6 +196,18 @@
       
     
     
+      <div class="md-header__source">
+        <a href="https://github.com/d-ortegaparrilla/prog26-27" title="Ves al repositori" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    d-ortegaparrilla/prog26-27
+  </div>
+</a>
+      </div>
+    
   </nav>
   
 </header>
@@ -170,6 +216,76 @@
       
       
         
+          
+            
+<nav class="md-tabs" aria-label="Pestanyes" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../index.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="introduccio.html" class="md-tabs__link">
+          
+  
+  
+  UT1. Elements bàsics d'un programa informàtic.
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../UT2/introduccio.html" class="md-tabs__link">
+          
+  
+  
+  UT2. Estructures de control.
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
           
         
       
@@ -184,8 +300,10 @@
                     
 
 
+  
 
-<nav class="md-nav md-nav--primary" aria-label="Navegació" data-md-level="0">
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegació" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../index.html" title="Programació" class="md-nav__button md-logo" aria-label="Programació" data-md-component="logo">
       
@@ -194,6 +312,18 @@
     </a>
     Programació
   </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/d-ortegaparrilla/prog26-27" title="Ves al repositori" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    d-ortegaparrilla/prog26-27
+  </div>
+</a>
+    </div>
   
   <ul class="md-nav__list" data-md-scrollfix>
     
@@ -236,15 +366,23 @@
     
     
     
+      
+        
+        
+      
+      
+        
+      
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   
@@ -666,12 +804,19 @@
     
     
     
+      
+      
+        
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -1025,9 +1170,12 @@
                   
 
 
+  
+  
 
-<h1 id="tipus-de-dades-i-literals-en-java">Tipus de dades i literals en Java.</h1>
-<h2 id="tipus-de-dades-en-java">Tipus de dades en Java</h2>
+
+<h1 id="tipus-de-dades-i-literals-en-java">Tipus de dades i literals en Java.<a class="headerlink" href="#tipus-de-dades-i-literals-en-java" title="Permanent link">&para;</a></h1>
+<h2 id="tipus-de-dades-en-java">Tipus de dades en Java<a class="headerlink" href="#tipus-de-dades-en-java" title="Permanent link">&para;</a></h2>
 <p>Una dada sempre porta associada un tipus de dada, que determina el conjunt de valors que pot prendre.
 A Java tota la informació que utilitza un programa està representada per dos tipus principals de dades:</p>
 <ol>
@@ -1122,14 +1270,14 @@ Els tipus de dades primitives que suporta Java són:</p>
 </tr>
 </tbody>
 </table>
-<h3 id="dades-numeriques-enteres">Dades numèriques enteres.</h3>
+<h3 id="dades-numeriques-enteres">Dades numèriques enteres.<a class="headerlink" href="#dades-numeriques-enteres" title="Permanent link">&para;</a></h3>
 <p>Les dades numèriques són representades en Java pels tipus: <code>byte</code>, <code>short</code>, <code>int</code>, <code>long</code>. El tipus de dada numèric enter és un subconjunt finit dels números enters del món real. Poden ser positius o negativus.</p>
 <p>Exemple de declaració de variables enteres:</p>
 <div class="language-java highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kt">byte</span><span class="w"> </span><span class="n">n1</span><span class="p">,</span><span class="w"> </span><span class="n">n2</span><span class="p">;</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kt">short</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
 </span></code></pre></div>
-<h3 id="dades-numeriques-reals">Dades numèriques reals.</h3>
+<h3 id="dades-numeriques-reals">Dades numèriques reals.<a class="headerlink" href="#dades-numeriques-reals" title="Permanent link">&para;</a></h3>
 <p>En Java els representen els tipus: <code>float</code>, <code>double</code>. El tipus de dada numèric real és un subconjunt finit dels números reals. Sempre porten un punt decimal i també poden ser positius o negatius. Els números reals tenen una part entera i una part decimal.</p>
 <p>Per exemple: 0.08   -54.0001</p>
 <p>Exemple de declaració de variables reals:</p>
@@ -1143,7 +1291,7 @@ Els tipus de dades primitives que suporta Java són:</p>
 <p class="admonition-title">Sufix <code>F</code> obligatori per a literals <code>float</code></p>
 <p>En Java, qualsevol número amb punt decimal (com <code>2.5</code>) s'interpreta per defecte com a <code>double</code> (64 bits). Si s'assigna a una variable <code>float</code> (32 bits) sense afegir el sufix <code>F</code> o <code>f</code> (<code>float altura = 2.5F;</code>), el compilador indicarà un error de possible pèrdua de precisió.</p>
 </div>
-<h3 id="dades-de-tipus-caracter">Dades de tipus caràcter.</h3>
+<h3 id="dades-de-tipus-caracter">Dades de tipus caràcter.<a class="headerlink" href="#dades-de-tipus-caracter" title="Permanent link">&para;</a></h3>
 <p>En Java es representa amb el tipus <code>char</code>. Una dada de tipus caràcter s'utilitza per a representar un caràcter dins el rang \u0000 a \uFFFF (números des de 0 fins al 65535) en Unicode.</p>
 <p>En Java s'utilitza el codi Unicode per a la representació de caràcters. Aquest codi actualment representa els caràcters de la majoria d'idiomes escrits en tot el món. Els 127 primers caràcters d'Unicode corresponen al codi ASCII.</p>
 <p>El codi ASCII (American Standard Code for Information Interchange) assigna valors numèrics a les lletres, números, signes de puntuació i alguns altres caràcters especiales.</p>
@@ -1153,14 +1301,14 @@ Els tipus de dades primitives que suporta Java són:</p>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kt">char</span><span class="w"> </span><span class="n">lletra1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">'z'</span><span class="p">;</span>
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="kt">char</span><span class="w"> </span><span class="n">lletra</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">'\u0061'</span><span class="p">;</span><span class="w"> </span><span class="c1">//codi unicode del caràcter 'a'</span>
 </span></code></pre></div>
-<h3 id="dades-de-tipus-logic">Dades de tipus lògic.</h3>
+<h3 id="dades-de-tipus-logic">Dades de tipus lògic.<a class="headerlink" href="#dades-de-tipus-logic" title="Permanent link">&para;</a></h3>
 <p>Es representen amb el tipus <code>boolean</code>. Les dades d'aquest tipus sols poden contindre dos valors: <code>true</code> (vertader) o <code>false</code> (fals).</p>
 <p>Exemple de declaració de variables lògiques:</p>
 <div class="language-java highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kt">boolean</span><span class="w"> </span><span class="n">primer</span><span class="p">;</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="kt">boolean</span><span class="w"> </span><span class="n">parell</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
 </span></code></pre></div>
 <p>Els tipus de dades lògics són també coneguts com a <strong>booleans</strong>, en honor del matemàtic anglès <em>George Boole</em>, que va desenvolupar la teoria coneguda com a àlgebra de boole, que va ser la base per a la representació dels circuits lògics.</p>
-<h3 id="dades-de-tipus-enumerat">Dades de tipus enumerat.</h3>
+<h3 id="dades-de-tipus-enumerat">Dades de tipus enumerat.<a class="headerlink" href="#dades-de-tipus-enumerat" title="Permanent link">&para;</a></h3>
 <p>De vegades, una variable només ha de contenir un conjunt restringit de valors. Per exemple, pots vendre roba o pizzes en quatre talles: petita, mitjana, gran i extragran. És clar que podries codificar aquestes talles com a nombres enters (1, 2, 3, 4) o com a caràcters (S, M, L, X), però aquesta és una solució propensa a errors. És massa fàcil que una variable acabe tenint un valor incorrecte (com un 0 o una m).</p>
 <p>Es pot definir el teu propi tipus enumerat sempre que es presente una situació així. Un tipus enumerat té un nombre finit de valors amb nom. Per exemple:</p>
 <div class="language-java highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kd">enum</span><span class="w"> </span><span class="n">Size</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">SMALL</span><span class="p">,</span><span class="w"> </span><span class="n">MEDIUM</span><span class="p">,</span><span class="w"> </span><span class="n">LARGE</span><span class="p">,</span><span class="w"> </span><span class="n">EXTRA_LARGE</span><span class="w"> </span><span class="p">};</span>
@@ -1169,8 +1317,8 @@ Els tipus de dades primitives que suporta Java són:</p>
 <div class="language-java highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">Size</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Size</span><span class="p">.</span><span class="na">MEDIUM</span><span class="p">;</span>
 </span></code></pre></div>
 <p>Una variable de tipus <code>Size</code> només pot contenir un dels valors llistats en la declaració del tipus, o bé el valor especial <code>null</code>, que indica que la variable no té assignat cap valor.</p>
-<h2 id="literals-en-java-variables-i-constants">Literals en Java. Variables i constants.</h2>
-<h3 id="literals">Literals.</h3>
+<h2 id="literals-en-java-variables-i-constants">Literals en Java. Variables i constants.<a class="headerlink" href="#literals-en-java-variables-i-constants" title="Permanent link">&para;</a></h2>
+<h3 id="literals">Literals.<a class="headerlink" href="#literals" title="Permanent link">&para;</a></h3>
 <p>Un literal és un valor de tipus enter, real, lògic, caràcter, cadena de caràcters o un valor nul (null) que pot aparéixer dins d'un programa.</p>
 <p>Per exemple: 150, 12.4, "ANA", null, 't'</p>
 <p>Els literals solen aparéixer en l'assignació de valors a les variables o formant part d'expressions aritmètiques o lògiques. Per exemple:</p>
@@ -1192,7 +1340,7 @@ Els tipus de dades primitives que suporta Java són:</p>
 <li>Literals de tipus caràcter</li>
 <li>Literals de cadenes de caràcters</li>
 </ul>
-<h4 id="literal-java-de-tipus-enter">Literal Java de tipus enter.</h4>
+<h4 id="literal-java-de-tipus-enter">Literal Java de tipus enter.<a class="headerlink" href="#literal-java-de-tipus-enter" title="Permanent link">&para;</a></h4>
 <p>El tipus del literal enter és <code>int</code> a menys que el seu valor absolut siga major que el d'un int o que s'especifique el sufix l (ela) o L, cas en què serà de tipus long. El signe + al principi és opcional i el signe – serà obligatori si el número és negatiu.</p>
 <p>982                   literal enter de tipus int
 -25                   literal enter de tipus int
@@ -1200,7 +1348,7 @@ Els tipus de dades primitives que suporta Java són:</p>
 1234                  literal enter de tipus int
 1234L                 literal enter de tipus long. El tipus long l'indica la L
 123400000000          literal enter de tipus long. El valor del número supera el rang d'un int</p>
-<h4 id="literal-java-de-tipus-real">Literal Java de tipus real.</h4>
+<h4 id="literal-java-de-tipus-real">Literal Java de tipus real.<a class="headerlink" href="#literal-java-de-tipus-real" title="Permanent link">&para;</a></h4>
 <p>Són números en base 10, que han de portar una part sencera, un punt decimal i una part fraccionària. Si la part sencera és zero, es pot ometre. El signe + al principi és opcional i el signe – serà obligatori si el número és negatiu. Per exemple:</p>
 <p>12.2303
 -3.44
@@ -1224,7 +1372,7 @@ Conté un sol caràcter tancat entre cometes simples. És de tipus char. Les seq
 '4'
 '\n'
 '\u0061'</p>
-<h4 id="literal-java-de-tipus-cadena-de-caracters">Literal Java de tipus cadena de caràcters.</h4>
+<h4 id="literal-java-de-tipus-cadena-de-caracters">Literal Java de tipus cadena de caràcters.<a class="headerlink" href="#literal-java-de-tipus-cadena-de-caracters" title="Permanent link">&para;</a></h4>
 <p>Està format per 0 o més caràcters tancats entre cometes dobles. Poden incloure seqüències d'escapament. Per exemple:</p>
 <p>"Açò és una cadena de caràcters"
 "Prem "C" per a continuar"
@@ -1238,7 +1386,7 @@ Conté un sol caràcter tancat entre cometes simples. És de tipus char. Les seq
 <li><code>"T"</code>: És un objecte de la classe <code>String</code>, tancat entre cometes dobles (<code>"</code>). Encara que continga un sol símbol, disposa de mètodes i propietats d'objecte i no es pot assignar directament a una variable de tipus <code>char</code>.</li>
 </ul>
 </div>
-<h3 id="variables">Variables.</h3>
+<h3 id="variables">Variables.<a class="headerlink" href="#variables" title="Permanent link">&para;</a></h3>
 <p>Les dades que gestiona un programa s'emmagatzemen en la memòria de l'ordinador. Per a accedir-hi s'utilitza la seua adreça de memòria o posició dins de la memòria on es troba la dada. Per a facilitar la referència a les posicions de memòria, es pot substituir la cadena binària de zeros i uns que indica l'adreça per un identificador.</p>
 <p><strong>Un identificador és el nom que se li dóna a un component dins d'un programa</strong> (una variable, una constant, un mètode, una classe, etc.). Exemple d'identificadors: nom, matriculaAlumne, $suma5, any, etc.</p>
 <p><strong>Definició</strong>: Una variable és una zona de memòria que es referencia amb un identificador, conegut com a nom de la variable, on s'emmagatzema el valor d'una dada <strong>que pot canviar</strong> durant l'execució del programa.</p>
@@ -1256,7 +1404,7 @@ Conté un sol caràcter tancat entre cometes simples. És de tipus char. Les seq
 </span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="kt">double</span><span class="w"> </span><span class="n">altura</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">6.25</span><span class="p">;</span><span class="w"> </span><span class="c1">//declarem la variable altura de tipus double i li assignem el valor 6.25</span>
 </span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="kt">int</span><span class="w"> </span><span class="n">comptador</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">    </span><span class="c1">//declarem la variable comptador de tipus int i li assignem el valor 0</span>
 </span></code></pre></div>
-<h3 id="constants">Constants.</h3>
+<h3 id="constants">Constants.<a class="headerlink" href="#constants" title="Permanent link">&para;</a></h3>
 <p>Un programa pot contindre certs valors que no han de canviar durant la seua execució. Estos valors s'anomenen constants.</p>
 <p><strong>Definició</strong>: Una constant és una zona de memòria que es referencia amb un identificador, conegut com a nom de la constant, on s'emmagatzema un valor que no pot canviar durant l'execució del programa.
 Una constant en Java es declara de manera similar a una variable, anteposant la paraula final. Exemple:</p>
@@ -1287,6 +1435,12 @@ Una constant en Java es declara de manera similar a una variable, anteposant la 
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Torna a l'inici
+</button>
+        
       </main>
       
         <footer class="md-footer">
@@ -1316,7 +1470,7 @@ Una constant en Java es declara de manera similar a una variable, anteposant la 
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["header.autohide", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiat al porta-retalls", "clipboard.copy": "C\u00f2pia al porta-retalls", "search.result.more.one": "1 m\u00e9s en aquesta p\u00e0gina", "search.result.more.other": "# m\u00e9s en aquesta p\u00e0gina", "search.result.none": "Cap document coincideix", "search.result.one": "1 document coincident", "search.result.other": "# documents coincidents", "search.result.placeholder": "Escriu per a comen\u00e7ar a cercar", "search.result.term.missing": "Desaparegut", "select.version": "Selecciona la versi\u00f3"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["header.autohide", "content.code.copy", "content.code.annotate", "navigation.top", "navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.expand", "search.suggest", "search.highlight"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiat al porta-retalls", "clipboard.copy": "C\u00f2pia al porta-retalls", "search.result.more.one": "1 m\u00e9s en aquesta p\u00e0gina", "search.result.more.other": "# m\u00e9s en aquesta p\u00e0gina", "search.result.none": "Cap document coincideix", "search.result.one": "1 document coincident", "search.result.other": "# documents coincidents", "search.result.placeholder": "Escriu per a comen\u00e7ar a cercar", "search.result.term.missing": "Desaparegut", "select.version": "Selecciona la versi\u00f3"}, "version": null}</script>
     
     
       <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>

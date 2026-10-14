@@ -6,6 +6,10 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
+        <meta name="description" content="Apunts del mòdul de Programació (1DAM)">
+      
+      
+        <meta name="author" content="David Ortega Parrilla">
       
       
         <link rel="canonical" href="https://d-ortegaparrilla.github.io/prog26-27/UT2/exemples.html">
@@ -49,6 +53,8 @@
       
     
     
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -59,6 +65,8 @@
   
   
     
+    
+      
     
     
     
@@ -84,9 +92,7 @@
     
       
 
-  
-
-<header class="md-header md-header--shadow" data-md-component="header">
+<header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Capçalera">
     <a href="../index.html" title="Programació" class="md-header__button md-logo" aria-label="Programació" data-md-component="logo">
       
@@ -115,7 +121,33 @@
     </div>
     
       
+        <form class="md-header__option" data-md-component="palette">
+  
     
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="orange" data-md-color-accent="deep-orange"  aria-label="Canviar a mode fosc"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Canviar a mode fosc" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="orange" data-md-color-accent="deep-orange"  aria-label="Canviar a mode clar"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Canviar a mode clar" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
     
@@ -144,6 +176,8 @@
         </button>
       </nav>
       
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
@@ -160,6 +194,18 @@
       
     
     
+      <div class="md-header__source">
+        <a href="https://github.com/d-ortegaparrilla/prog26-27" title="Ves al repositori" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    d-ortegaparrilla/prog26-27
+  </div>
+</a>
+      </div>
+    
   </nav>
   
 </header>
@@ -168,6 +214,76 @@
       
       
         
+          
+            
+<nav class="md-tabs" aria-label="Pestanyes" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../index.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../UT1/introduccio.html" class="md-tabs__link">
+          
+  
+  
+  UT1. Elements bàsics d'un programa informàtic.
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="introduccio.html" class="md-tabs__link">
+          
+  
+  
+  UT2. Estructures de control.
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
           
         
       
@@ -182,8 +298,10 @@
                     
 
 
+  
 
-<nav class="md-nav md-nav--primary" aria-label="Navegació" data-md-level="0">
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegació" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../index.html" title="Programació" class="md-nav__button md-logo" aria-label="Programació" data-md-component="logo">
       
@@ -192,6 +310,18 @@
     </a>
     Programació
   </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/d-ortegaparrilla/prog26-27" title="Ves al repositori" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    d-ortegaparrilla/prog26-27
+  </div>
+</a>
+    </div>
   
   <ul class="md-nav__list" data-md-scrollfix>
     
@@ -232,12 +362,19 @@
     
     
     
+      
+      
+        
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -456,15 +593,23 @@
     
     
     
+      
+        
+        
+      
+      
+        
+      
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   
@@ -969,12 +1114,15 @@
                   
 
 
+  
+  
 
-<h1 id="exercicis-resolts-de-la-ut2">Exercicis resolts de la UT2</h1>
+
+<h1 id="exercicis-resolts-de-la-ut2">Exercicis resolts de la UT2<a class="headerlink" href="#exercicis-resolts-de-la-ut2" title="Permanent link">&para;</a></h1>
 <p>En aquest apartat es recullen diversos exercicis resolts pas a pas corresponents als continguts de la <strong>Unitat Temàtica 2: Estructures de control</strong>. S'inclouen tant resolucions mitjançant algorismes (pseudocodi i taules de variables) com la seua implementació en llenguatge <strong>Java</strong>.</p>
 <hr />
-<h2 id="estructures-condicionals">Estructures condicionals</h2>
-<h3 id="exercici-1-calcul-de-tarifes-de-banquets-la-llagosta-fumada">Exercici 1: Càlcul de tarifes de banquets ("La llagosta fumada")</h3>
+<h2 id="estructures-condicionals">Estructures condicionals<a class="headerlink" href="#estructures-condicionals" title="Permanent link">&para;</a></h2>
+<h3 id="exercici-1-calcul-de-tarifes-de-banquets-la-llagosta-fumada">Exercici 1: Càlcul de tarifes de banquets ("La llagosta fumada")<a class="headerlink" href="#exercici-1-calcul-de-tarifes-de-banquets-la-llagosta-fumada" title="Permanent link">&para;</a></h3>
 <p><strong>Enunciat:</strong><br />
 El restaurant "La llagosta fumada" està especialitzat en l'organització de banquets. Aplica les tarifes següents segons el nombre de comensals ($NP$):</p>
 <ul>
@@ -985,7 +1133,7 @@ El restaurant "La llagosta fumada" està especialitzat en l'organització de ban
 <p>Dissenyeu un algorisme mitjançant pseudocodi i implementeu-lo en Java per a calcular el pressupost total ($TOT$) que cal presentar al client en funció dels assistents previstos.</p>
 <details class="tip">
 <summary>Taula de variables i pseudocodi</summary>
-<h4 id="taula-de-variables">Taula de variables</h4>
+<h4 id="taula-de-variables">Taula de variables<a class="headerlink" href="#taula-de-variables" title="Permanent link">&para;</a></h4>
 <table>
 <thead>
 <tr>
@@ -1007,7 +1155,7 @@ El restaurant "La llagosta fumada" està especialitzat en l'organització de ban
 </tr>
 </tbody>
 </table>
-<h4 id="pseudocodi">Pseudocodi</h4>
+<h4 id="pseudocodi">Pseudocodi<a class="headerlink" href="#pseudocodi" title="Permanent link">&para;</a></h4>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>1. Inici
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>2. Llegir NP
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>3. Si NP &gt; 300 Aleshores
@@ -1049,7 +1197,7 @@ El restaurant "La llagosta fumada" està especialitzat en l'organització de ban
 </span></code></pre></div>
 </details>
 <hr />
-<h3 id="exercici-2-estacions-de-lany-segons-el-mes-switch">Exercici 2: Estacions de l'any segons el mes (<code>switch</code>)</h3>
+<h3 id="exercici-2-estacions-de-lany-segons-el-mes-switch">Exercici 2: Estacions de l'any segons el mes (<code>switch</code>)<a class="headerlink" href="#exercici-2-estacions-de-lany-segons-el-mes-switch" title="Permanent link">&para;</a></h3>
 <p><strong>Enunciat:</strong><br />
 Creeu un programa que demane a l'usuari un número de mes (de l'1 al 12), determine a quina estació de l'any pertany i la mostre per pantalla:</p>
 <ul>
@@ -1117,14 +1265,14 @@ Creeu un programa que demane a l'usuari un número de mes (de l'1 al 12), determ
 </span></code></pre></div>
 </details>
 <hr />
-<h2 id="estructures-repetitives">Estructures repetitives</h2>
-<h3 id="exercici-3-calcul-de-la-mitjana-dedats-comparativa-dels-3-bucles">Exercici 3: Càlcul de la mitjana d'edats (Comparativa dels 3 bucles)</h3>
+<h2 id="estructures-repetitives">Estructures repetitives<a class="headerlink" href="#estructures-repetitives" title="Permanent link">&para;</a></h2>
+<h3 id="exercici-3-calcul-de-la-mitjana-dedats-comparativa-dels-3-bucles">Exercici 3: Càlcul de la mitjana d'edats (Comparativa dels 3 bucles)<a class="headerlink" href="#exercici-3-calcul-de-la-mitjana-dedats-comparativa-dels-3-bucles" title="Permanent link">&para;</a></h3>
 <p><strong>Enunciat:</strong><br />
 Es requereix un algorisme per a obtindre l'edat mitjana (<code>PROMEDIO</code>) d'un grup de <code>NUMA</code> alumnes, valor que es demana inicialment per teclat. L'edat de cada alumne la denominem <code>EA</code>.<br />
 Dissenyeu les solucions en pseudocodi emprant els tres tipus de bucles (<code>Mentre</code>, <code>Repeteix fins a</code> i <code>Des de... fins a</code>), i la corresponent implementació en Java.</p>
 <details class="tip">
 <summary>Taula de variables i pseudocodi dels 3 cicles</summary>
-<h4 id="taula-de-variables_1">Taula de variables</h4>
+<h4 id="taula-de-variables_1">Taula de variables<a class="headerlink" href="#taula-de-variables_1" title="Permanent link">&para;</a></h4>
 <table>
 <thead>
 <tr>
@@ -1161,8 +1309,10 @@ Dissenyeu les solucions en pseudocodi emprant els tres tipus de bucles (<code>Me
 </tr>
 </tbody>
 </table>
-<p>=== "a) Cicle Mentre (while)"
-    <div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>1. Inici
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">a) Cicle Mentre (while)</label><label for="__tabbed_1_2">b) Cicle Repeteix fins a (do-while)</label><label for="__tabbed_1_3">c) Cicle Des de... fins a (for)</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>1. Inici
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>2. Fer SUMA = 0
 </span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>3. Llegir NUMA
 </span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>4. Fer C = 1
@@ -1174,9 +1324,10 @@ Dissenyeu les solucions en pseudocodi emprant els tres tipus de bucles (<code>Me
 </span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>6. Fer PROMEDIO = SUMA / NUMA
 </span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>7. Escriure "L'edat mitjana és: ", PROMEDIO
 </span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>8. Fi
-</span></code></pre></div></p>
-<p>=== "b) Cicle Repeteix fins a (do-while)"
-    <div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>1. Inici
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>1. Inici
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>2. Fer SUMA = 0
 </span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>3. Llegir NUMA
 </span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>4. Fer C = 1
@@ -1188,9 +1339,10 @@ Dissenyeu les solucions en pseudocodi emprant els tres tipus de bucles (<code>Me
 </span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>6. Fer PROMEDIO = SUMA / NUMA
 </span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>7. Escriure "L'edat mitjana és: ", PROMEDIO
 </span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>8. Fi
-</span></code></pre></div></p>
-<p>=== "c) Cicle Des de... fins a (for)"
-    <div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>1. Inici
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>1. Inici
 </span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>2. Fer SUMA = 0
 </span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>3. Llegir NUMA
 </span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>4. Des de C = 1 fins a NUMA fer
@@ -1200,7 +1352,10 @@ Dissenyeu les solucions en pseudocodi emprant els tres tipus de bucles (<code>Me
 </span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>5. Fer PROMEDIO = SUMA / NUMA
 </span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>6. Escriure "L'edat mitjana és: ", PROMEDIO
 </span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>7. Fi
-</span></code></pre></div></p>
+</span></code></pre></div>
+</div>
+</div>
+</div>
 </details>
 <details class="example">
 <summary>Solució en Java</summary>
@@ -1229,7 +1384,7 @@ Dissenyeu les solucions en pseudocodi emprant els tres tipus de bucles (<code>Me
 </span></code></pre></div>
 </details>
 <hr />
-<h3 id="exercici-4-cerca-del-valor-maxim-amb-sentinella-larbre-mes-alt">Exercici 4: Cerca del valor màxim amb sentinella ("L'arbre més alt")</h3>
+<h3 id="exercici-4-cerca-del-valor-maxim-amb-sentinella-larbre-mes-alt">Exercici 4: Cerca del valor màxim amb sentinella ("L'arbre més alt")<a class="headerlink" href="#exercici-4-cerca-del-valor-maxim-amb-sentinella-larbre-mes-alt" title="Permanent link">&para;</a></h3>
 <p><strong>Enunciat:</strong><br />
 Un centre d'investigació de la flora urbana necessita una aplicació que permeta registrar l'alçada en centímetres d'un conjunt d'arbres i determine quin és l'arbre més alt i quina és la seua etiqueta identificativa.</p>
 <ul>
@@ -1280,7 +1435,7 @@ Un centre d'investigació de la flora urbana necessita una aplicació que permet
 </span></code></pre></div>
 </details>
 <hr />
-<h3 id="exercici-5-triangle-rectangle-dasteriscs-bucles-niats">Exercici 5: Triangle rectangle d'asteriscs (Bucles niats)</h3>
+<h3 id="exercici-5-triangle-rectangle-dasteriscs-bucles-niats">Exercici 5: Triangle rectangle d'asteriscs (Bucles niats)<a class="headerlink" href="#exercici-5-triangle-rectangle-dasteriscs-bucles-niats" title="Permanent link">&para;</a></h3>
 <p><strong>Enunciat:</strong><br />
 Creeu un programa que demane a l'usuari la mida del catet d'un triangle (nombre de línies) i dibuixe per pantalla un triangle rectangle sòlid format per asteriscs (<code>*</code>), utilitzant bucles niats.</p>
 <p><em>Exemple d'eixida per a catet = 4:</em>
@@ -1334,6 +1489,12 @@ Creeu un programa que demane a l'usuari la mida del catet d'un triangle (nombre 
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Torna a l'inici
+</button>
+        
       </main>
       
         <footer class="md-footer">
@@ -1363,7 +1524,7 @@ Creeu un programa que demane a l'usuari la mida del catet d'un triangle (nombre 
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["header.autohide", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiat al porta-retalls", "clipboard.copy": "C\u00f2pia al porta-retalls", "search.result.more.one": "1 m\u00e9s en aquesta p\u00e0gina", "search.result.more.other": "# m\u00e9s en aquesta p\u00e0gina", "search.result.none": "Cap document coincideix", "search.result.one": "1 document coincident", "search.result.other": "# documents coincidents", "search.result.placeholder": "Escriu per a comen\u00e7ar a cercar", "search.result.term.missing": "Desaparegut", "select.version": "Selecciona la versi\u00f3"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["header.autohide", "content.code.copy", "content.code.annotate", "navigation.top", "navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.expand", "search.suggest", "search.highlight"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiat al porta-retalls", "clipboard.copy": "C\u00f2pia al porta-retalls", "search.result.more.one": "1 m\u00e9s en aquesta p\u00e0gina", "search.result.more.other": "# m\u00e9s en aquesta p\u00e0gina", "search.result.none": "Cap document coincideix", "search.result.one": "1 document coincident", "search.result.other": "# documents coincidents", "search.result.placeholder": "Escriu per a comen\u00e7ar a cercar", "search.result.term.missing": "Desaparegut", "select.version": "Selecciona la versi\u00f3"}, "version": null}</script>
     
     
       <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>

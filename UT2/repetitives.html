@@ -6,6 +6,10 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
+        <meta name="description" content="Apunts del mòdul de Programació (1DAM)">
+      
+      
+        <meta name="author" content="David Ortega Parrilla">
       
       
         <link rel="canonical" href="https://d-ortegaparrilla.github.io/prog26-27/UT2/repetitives.html">
@@ -51,6 +55,8 @@
       
     
     
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -61,6 +67,8 @@
   
   
     
+    
+      
     
     
     
@@ -86,9 +94,7 @@
     
       
 
-  
-
-<header class="md-header md-header--shadow" data-md-component="header">
+<header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Capçalera">
     <a href="../index.html" title="Programació" class="md-header__button md-logo" aria-label="Programació" data-md-component="logo">
       
@@ -117,7 +123,33 @@
     </div>
     
       
+        <form class="md-header__option" data-md-component="palette">
+  
     
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="orange" data-md-color-accent="deep-orange"  aria-label="Canviar a mode fosc"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Canviar a mode fosc" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="orange" data-md-color-accent="deep-orange"  aria-label="Canviar a mode clar"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Canviar a mode clar" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
     
@@ -146,6 +178,8 @@
         </button>
       </nav>
       
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
@@ -162,6 +196,18 @@
       
     
     
+      <div class="md-header__source">
+        <a href="https://github.com/d-ortegaparrilla/prog26-27" title="Ves al repositori" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    d-ortegaparrilla/prog26-27
+  </div>
+</a>
+      </div>
+    
   </nav>
   
 </header>
@@ -170,6 +216,76 @@
       
       
         
+          
+            
+<nav class="md-tabs" aria-label="Pestanyes" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../index.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../UT1/introduccio.html" class="md-tabs__link">
+          
+  
+  
+  UT1. Elements bàsics d'un programa informàtic.
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="introduccio.html" class="md-tabs__link">
+          
+  
+  
+  UT2. Estructures de control.
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
           
         
       
@@ -184,8 +300,10 @@
                     
 
 
+  
 
-<nav class="md-nav md-nav--primary" aria-label="Navegació" data-md-level="0">
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegació" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../index.html" title="Programació" class="md-nav__button md-logo" aria-label="Programació" data-md-component="logo">
       
@@ -194,6 +312,18 @@
     </a>
     Programació
   </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/d-ortegaparrilla/prog26-27" title="Ves al repositori" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    d-ortegaparrilla/prog26-27
+  </div>
+</a>
+    </div>
   
   <ul class="md-nav__list" data-md-scrollfix>
     
@@ -234,12 +364,19 @@
     
     
     
+      
+      
+        
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -458,15 +595,23 @@
     
     
     
+      
+        
+        
+      
+      
+        
+      
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   
@@ -913,8 +1058,11 @@
                   
 
 
+  
+  
 
-<h1 id="estructures-repetitives">Estructures repetitives</h1>
+
+<h1 id="estructures-repetitives">Estructures repetitives<a class="headerlink" href="#estructures-repetitives" title="Permanent link">&para;</a></h1>
 <p>Quan es requereix que un procés s'efectue de manera cíclica, s'utilitzen estructures que permeten el control de cicles. Aquestes estructures s'utilitzen basant-se en les condicions pròpies de cada problema. Els noms amb els quals es coneixen són: “Mentre”, “Repeteix fins a” i “Des de … fins a”.  </p>
 <p>Per al cas de l'estructura “Mentre”, el cicle es repeteix mentre que la condició lògica siga vertadera; en canvi, en l'estructura “Fins a”, el cicle es repeteix sempre que el resultat de la condició lògica siga fals; a més, com es pot veure a la figura següent, en l'estructura “Mentre” primer s'avalua i després es realitza el procés; i per al cas de “Fins a”, primer es realitza el procés i després s'avalua, per consegüent aquest tipus d'estructura sempre realitzarà almenys un procés.   </p>
 <p><img alt="Image title" src="images/repetitives1.png" style="display: block; margin: auto; " /> </p>
@@ -937,7 +1085,7 @@ El cicle Repeteix fins a també és conegut com a cicle Do-While en els diferent
 <p><strong>Exemple 3</strong>. Es requereix un algorisme per a obtindre la suma de deu quantitats mitjançant la utilització d'un cicle Des de. Realitza el diagrama de flux i el pseudocodi.
 El cicle Des de...fins a també és conegut com a cicle For en els diferents llenguatges de programació. S'utilitzaran les mateixes variables que en els dos exemples anteriors.   </p>
 <p><img alt="Image title" src="images/repetitives5.png" style="display: block; margin: auto; " /> </p>
-<h2 id="estructures-repetitives-en-java">Estructures repetitives en Java.</h2>
+<h2 id="estructures-repetitives-en-java">Estructures repetitives en Java.<a class="headerlink" href="#estructures-repetitives-en-java" title="Permanent link">&para;</a></h2>
 <p>En Java les estructures repetitives existents executen les instruccions <strong>mentre</strong> es complisca una determinada condició.</p>
 <p>Tipus d'estructures repetitives:   </p>
 <ul>
@@ -945,7 +1093,7 @@ El cicle Des de...fins a també és conegut com a cicle For en els diferents lle
 <li>Cicle do – while.   </li>
 <li>Cicle for.   </li>
 </ul>
-<h3 id="cicle-while">Cicle while</h3>
+<h3 id="cicle-while">Cicle while<a class="headerlink" href="#cicle-while" title="Permanent link">&para;</a></h3>
 <p>Les instruccions es repeteixen mentre la condició siga certa. La condició es <strong>comprova al principi</strong> del bucle per la qual cosa les accions es poden executar <strong>zero o més vegades</strong>.</p>
 <p>L'execució del bucle while segueix els següents passos:   </p>
 <ol>
@@ -1012,7 +1160,7 @@ El cicle Des de...fins a també és conegut com a cicle For en els diferents lle
 </span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="w">   </span><span class="p">}</span>
 </span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="p">}</span>
 </span></code></pre></div>
-<h3 id="cicle-do-while">Cicle do-while</h3>
+<h3 id="cicle-do-while">Cicle do-while<a class="headerlink" href="#cicle-do-while" title="Permanent link">&para;</a></h3>
 <p>Les instruccions s'executen mentre la condició siga certa. La condició es <strong>comprova al final</strong> del bucle, per la qual cosa el bloc d'instruccions s'executarà <strong>almenys una vegada</strong>.</p>
 <p>Aquesta és la diferència fonamental amb la instrucció while. Les instruccions d'un bucle while no s'executaven si la condició inicialment era falsa.</p>
 <p>L'execució del bucle do - while segueix els següents passos:   </p>
@@ -1062,7 +1210,7 @@ El cicle Des de...fins a també és conegut com a cicle For en els diferents lle
 </span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">   </span><span class="n">IO</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Heu introduït: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">n</span><span class="p">);</span>
 </span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="p">}</span>
 </span></code></pre></div>
-<h3 id="cicle-for">Cicle for</h3>
+<h3 id="cicle-for">Cicle for<a class="headerlink" href="#cicle-for" title="Permanent link">&para;</a></h3>
 <p>La instrucció for fa que una instrucció o bloc d'instruccions es repetisquen un número determinat de vegades mentre es complisca la condició.</p>
 <p>L'estructura general d'una instrucció for en Java és la següent:   </p>
 <div class="language-java highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">inicialització</span><span class="p">;</span><span class="w"> </span><span class="n">condició</span><span class="p">;</span><span class="w"> </span><span class="n">increment</span><span class="o">/</span><span class="n">decrement</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -1166,7 +1314,7 @@ L'eixida d'aquest programa és:</p>
 <p class="admonition-title">Error típic: el punt i coma accidental després del <code>for</code> o <code>while</code></p>
 <p>El codi anterior <strong>no visualitza</strong> la frase "Elements de Programació" 10 vegades, ni genera cap error de compilació. En realitat es visualitza <strong>una sola vegada</strong>, ja que el punt i coma <code>;</code> fa que el cos del <code>for</code> siga una instrucció buida. El bucle itera deu vegades sense fer res i, en acabar, s'executa el bloc <code>{ IO.println(...); }</code>.</p>
 </div>
-<h3 id="bucles-infinits-en-java">Bucles infinits en Java</h3>
+<h3 id="bucles-infinits-en-java">Bucles infinits en Java<a class="headerlink" href="#bucles-infinits-en-java" title="Permanent link">&para;</a></h3>
 <p>Java permet construir bucles infinits, els quals s'executaran indefinidament, llevat que provoquem la seua interrupció. Tres exemples:   </p>
 <div class="language-java highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="k">for</span><span class="w"> </span><span class="p">(;;)</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">   </span><span class="n">instruccions</span>
@@ -1182,7 +1330,7 @@ L'eixida d'aquest programa és:</p>
 <p class="admonition-title">Atenció als bucles infinits involuntaris</p>
 <p>Un bucle infinit ocorre quan la condició de terminació mai es compleix (mai es fa <code>false</code>). Assegureu-vos sempre que dins del cos del bucle s'actualitza la variable de control (per exemple, incrementant o decrementant el comptador).</p>
 </div>
-<h3 id="bucles-niats">Bucles niats</h3>
+<h3 id="bucles-niats">Bucles niats<a class="headerlink" href="#bucles-niats" title="Permanent link">&para;</a></h3>
 <p>Bucles niats són aquells que inclouen instruccions for, while o do-while unes dins d'altres. Hem de tindre en compte que les variables de control que utilitzem han de ser diferents. Els anidaments d'estructures han de ser correctes, és a dir, que una estructura niada dins d'una altra ho ha d'estar totalment.   </p>
 <div class="admonition tip">
 <p class="admonition-title">Gestió de variables en bucles niats</p>
@@ -1252,7 +1400,7 @@ L'eixida d'aquest programa és:</p>
 </span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="mi">6</span><span class="w"> </span><span class="mi">36</span><span class="w"> </span><span class="mi">216</span><span class="w"> </span><span class="mi">1296</span>
 </span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="mi">7</span><span class="w"> </span><span class="mi">49</span><span class="w"> </span><span class="mi">343</span><span class="w"> </span><span class="mi">2401</span>
 </span></code></pre></div>
-<h3 id="sentencia-break">Sentència break</h3>
+<h3 id="sentencia-break">Sentència break<a class="headerlink" href="#sentencia-break" title="Permanent link">&para;</a></h3>
 <p>Anteriorment vam veure que la sentència break finalitza l'execució d'una sentència switch. Doncs bé, quan s'utilitza break en el bloc corresponent a una sentència while, do (do-while) o for, fa el mateix: finalitza l'execució del bucle.</p>
 <p>Quan les sentències switch, while, do o for estiguen niades, la sentència break només finalitza l'execució del bucle on estiga inclosa.   </p>
 <p><strong>Exemple 14</strong>. </p>
@@ -1288,7 +1436,7 @@ L'eixida d'aquest programa és:</p>
 <p class="admonition-title">Ús responsable de <code>break</code> i <code>continue</code></p>
 <p>Tot i ser ferramentes vàlides del llenguatge, un ús excessiu de <code>break</code> i <code>continue</code> sol indicar que el disseny de la condició del bucle no és l'òptim. Sempre que siga possible, prioritzeu expressar la lògica mitjançant la pròpia condició de control del cicle.</p>
 </div>
-<h3 id="sentencia-continue">Sentència continue</h3>
+<h3 id="sentencia-continue">Sentència continue<a class="headerlink" href="#sentencia-continue" title="Permanent link">&para;</a></h3>
 <p>La sentència continue obliga a executar la següent iteració del bucle while, do o for en què està continguda. Executa el següent programa i observa que cada vegada que s'executa la sentència continue, s'inicia l'execució del bloc de sentències for per a un nou valor de n.   </p>
 <p><strong>Exemple 16</strong>:   </p>
 <div class="language-java highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="cm">/*</span>
@@ -1303,7 +1451,7 @@ L'eixida d'aquest programa és:</p>
 </span><span id="__span-19-10"><a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a><span class="w">   </span><span class="p">}</span>
 </span><span id="__span-19-11"><a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a><span class="p">}</span>
 </span></code></pre></div>
-<h3 id="etiquetes">Etiquetes</h3>
+<h3 id="etiquetes">Etiquetes<a class="headerlink" href="#etiquetes" title="Permanent link">&para;</a></h3>
 <p>Amb les sentències break i continue es pot també utilitzar una etiqueta per a indicar on s'ha de reprendre l'execució.</p>
 <div class="admonition caution">
 <p class="admonition-title">Desaconsellat: Ús d'etiquetes</p>
@@ -1334,6 +1482,12 @@ L'eixida d'aquest programa és:</p>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Torna a l'inici
+</button>
+        
       </main>
       
         <footer class="md-footer">
@@ -1363,7 +1517,7 @@ L'eixida d'aquest programa és:</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["header.autohide", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiat al porta-retalls", "clipboard.copy": "C\u00f2pia al porta-retalls", "search.result.more.one": "1 m\u00e9s en aquesta p\u00e0gina", "search.result.more.other": "# m\u00e9s en aquesta p\u00e0gina", "search.result.none": "Cap document coincideix", "search.result.one": "1 document coincident", "search.result.other": "# documents coincidents", "search.result.placeholder": "Escriu per a comen\u00e7ar a cercar", "search.result.term.missing": "Desaparegut", "select.version": "Selecciona la versi\u00f3"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["header.autohide", "content.code.copy", "content.code.annotate", "navigation.top", "navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.expand", "search.suggest", "search.highlight"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiat al porta-retalls", "clipboard.copy": "C\u00f2pia al porta-retalls", "search.result.more.one": "1 m\u00e9s en aquesta p\u00e0gina", "search.result.more.other": "# m\u00e9s en aquesta p\u00e0gina", "search.result.none": "Cap document coincideix", "search.result.one": "1 document coincident", "search.result.other": "# documents coincidents", "search.result.placeholder": "Escriu per a comen\u00e7ar a cercar", "search.result.term.missing": "Desaparegut", "select.version": "Selecciona la versi\u00f3"}, "version": null}</script>
     
     
       <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>

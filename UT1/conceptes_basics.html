@@ -6,6 +6,10 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
+        <meta name="description" content="Apunts del mòdul de Programació (1DAM)">
+      
+      
+        <meta name="author" content="David Ortega Parrilla">
       
       
         <link rel="canonical" href="https://d-ortegaparrilla.github.io/prog26-27/UT1/conceptes_basics.html">
@@ -51,6 +55,8 @@
       
     
     
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -61,6 +67,8 @@
   
   
     
+    
+      
     
     
     
@@ -86,9 +94,7 @@
     
       
 
-  
-
-<header class="md-header md-header--shadow" data-md-component="header">
+<header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Capçalera">
     <a href="../index.html" title="Programació" class="md-header__button md-logo" aria-label="Programació" data-md-component="logo">
       
@@ -117,7 +123,33 @@
     </div>
     
       
+        <form class="md-header__option" data-md-component="palette">
+  
     
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="orange" data-md-color-accent="deep-orange"  aria-label="Canviar a mode fosc"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Canviar a mode fosc" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="orange" data-md-color-accent="deep-orange"  aria-label="Canviar a mode clar"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Canviar a mode clar" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
     
@@ -146,6 +178,8 @@
         </button>
       </nav>
       
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
@@ -162,6 +196,18 @@
       
     
     
+      <div class="md-header__source">
+        <a href="https://github.com/d-ortegaparrilla/prog26-27" title="Ves al repositori" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    d-ortegaparrilla/prog26-27
+  </div>
+</a>
+      </div>
+    
   </nav>
   
 </header>
@@ -170,6 +216,76 @@
       
       
         
+          
+            
+<nav class="md-tabs" aria-label="Pestanyes" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../index.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="introduccio.html" class="md-tabs__link">
+          
+  
+  
+  UT1. Elements bàsics d'un programa informàtic.
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../UT2/introduccio.html" class="md-tabs__link">
+          
+  
+  
+  UT2. Estructures de control.
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
           
         
       
@@ -184,8 +300,10 @@
                     
 
 
+  
 
-<nav class="md-nav md-nav--primary" aria-label="Navegació" data-md-level="0">
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegació" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../index.html" title="Programació" class="md-nav__button md-logo" aria-label="Programació" data-md-component="logo">
       
@@ -194,6 +312,18 @@
     </a>
     Programació
   </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/d-ortegaparrilla/prog26-27" title="Ves al repositori" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    d-ortegaparrilla/prog26-27
+  </div>
+</a>
+    </div>
   
   <ul class="md-nav__list" data-md-scrollfix>
     
@@ -236,15 +366,23 @@
     
     
     
+      
+        
+        
+      
+      
+        
+      
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   
@@ -577,12 +715,19 @@
     
     
     
+      
+      
+        
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -847,9 +992,12 @@
                   
 
 
+  
+  
 
-<h1 id="conceptes-basics-de-programacio-en-llenguatge-java">Conceptes bàsics de programació en llenguatge Java</h1>
-<h2 id="conceptes-basics">Conceptes bàsics</h2>
+
+<h1 id="conceptes-basics-de-programacio-en-llenguatge-java">Conceptes bàsics de programació en llenguatge Java<a class="headerlink" href="#conceptes-basics-de-programacio-en-llenguatge-java" title="Permanent link">&para;</a></h1>
+<h2 id="conceptes-basics">Conceptes bàsics<a class="headerlink" href="#conceptes-basics" title="Permanent link">&para;</a></h2>
 <p>Els programes escrits en Java que es desenvoluparan en aquestes primeres unitats començaran amb la següent estructura:</p>
 <p><img alt="Image title" src="images/diagrama5.png" style="display: block; margin: auto;" /></p>
 <p>Quan necessitem emmagatzemar una dada en la memòria de l'ordinador, i aquesta pot canviar de valor al llarg del temps, utilitzem les <strong>variables</strong>. Les variables poden emmagatzemar tot tipus de dades (números enters, reals, text...) En Java hem d'assignar un nom únic a cada variable que utilitzem en el nostre programa. A més d'aquest nom, s'ha d'especificar quin tipus de dades va a emmagatzemar (no ocupa ho mateix un número enter que un número real). En la <strong>declaració</strong> d'una variable s'especifica tant el tipus de dades com el seu nom.</p>
@@ -927,7 +1075,7 @@
 <p class="admonition-title">Conversió de text a número (<em>Parsing</em>)</p>
 <p>El mètode <code>IO.readln()</code> sempre retorna un <code>String</code> (text). Per a poder utilitzar el valor en operacions matemàtiques cal convertir-lo a enter amb <code>Integer.parseInt(...)</code> o a número real amb <code>Double.parseDouble(...)</code>.</p>
 </div>
-<h2 id="caracters-i-sequencies-descapament-en-java">Caracters i seqüències d'escapament en Java</h2>
+<h2 id="caracters-i-sequencies-descapament-en-java">Caracters i seqüències d'escapament en Java<a class="headerlink" href="#caracters-i-sequencies-descapament-en-java" title="Permanent link">&para;</a></h2>
 <p>En aquest apartat estudiarem els caràcters que poden aparèixer en un programa Java. Ja sabem com crear un programa bàsic, ara veurem els caràcters que podem fer servir per construir programes més complexos.</p>
 <p>Els caràcters que poden aparèixer en un programa Java per formar les constants, les variables, les expressions, etc. són:</p>
 <ul>
@@ -1002,8 +1150,8 @@ Enrique</p>
 </span></code></pre></div>
 <p>Eixida per pantalla:</p>
 <p>"Dilluns","Dimarts",'Dimecres'</p>
-<h2 id="identificadors-i-paraules-reservades-en-java">Identificadors i paraules reservades en Java</h2>
-<h3 id="identificadors-en-java">Identificadors en Java</h3>
+<h2 id="identificadors-i-paraules-reservades-en-java">Identificadors i paraules reservades en Java<a class="headerlink" href="#identificadors-i-paraules-reservades-en-java" title="Permanent link">&para;</a></h2>
+<h3 id="identificadors-en-java">Identificadors en Java<a class="headerlink" href="#identificadors-en-java" title="Permanent link">&para;</a></h3>
 <p>Els identificadors són els noms que el programador assigna a les variables, constants, classes, mètodes, paquets, etc. un programa. Les seues característiques són:</p>
 <ul>
 <li>Estan formats per lletres i dígits.</li>
@@ -1027,11 +1175,11 @@ Edat nom_Preu $quantitat PreuVendaPúblic</p>
 <p class="admonition-title">Sensibilitat a majúscules i minúscules (<em>Case Sensitive</em>)</p>
 <p>Java distingeix estrictament entre majúscules i minúscules. Per tant, <code>edat</code>, <code>Edat</code> i <code>EDAT</code> són considerats pel compilador com a tres identificadors completament diferents.</p>
 </div>
-<h3 id="paraules-reservades-de-java">Paraules reservades de Java.</h3>
+<h3 id="paraules-reservades-de-java">Paraules reservades de Java.<a class="headerlink" href="#paraules-reservades-de-java" title="Permanent link">&para;</a></h3>
 <p>Les paraules reservades són identificadors predefinits que tenen un significat per al compilador i per tant no es poden fer servir com a identificadors creats per l'usuari en els programes.</p>
 <p>Les paraules reservades a Java ordenades alfabèticament són les següents:</p>
 <p><img alt="Image title" src="images/keywords.png" style="display: block; margin: auto;" /></p>
-<h2 id="comentaris-en-java">Comentaris en Java.</h2>
+<h2 id="comentaris-en-java">Comentaris en Java.<a class="headerlink" href="#comentaris-en-java" title="Permanent link">&para;</a></h2>
 <p>Un comentari és un text que s'escriu dins un programa amb la fi de facilitzar la comprensió del mateix. Els comentaris s'utilitzen per a explicar i documentar el codi font.
 En Java es poden utilitzar tres tipus de comentaris:</p>
 <ul>
@@ -1075,6 +1223,12 @@ Exemples de comentaris d'una línia:</p>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Torna a l'inici
+</button>
+        
       </main>
       
         <footer class="md-footer">
@@ -1104,7 +1258,7 @@ Exemples de comentaris d'una línia:</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["header.autohide", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiat al porta-retalls", "clipboard.copy": "C\u00f2pia al porta-retalls", "search.result.more.one": "1 m\u00e9s en aquesta p\u00e0gina", "search.result.more.other": "# m\u00e9s en aquesta p\u00e0gina", "search.result.none": "Cap document coincideix", "search.result.one": "1 document coincident", "search.result.other": "# documents coincidents", "search.result.placeholder": "Escriu per a comen\u00e7ar a cercar", "search.result.term.missing": "Desaparegut", "select.version": "Selecciona la versi\u00f3"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["header.autohide", "content.code.copy", "content.code.annotate", "navigation.top", "navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.expand", "search.suggest", "search.highlight"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiat al porta-retalls", "clipboard.copy": "C\u00f2pia al porta-retalls", "search.result.more.one": "1 m\u00e9s en aquesta p\u00e0gina", "search.result.more.other": "# m\u00e9s en aquesta p\u00e0gina", "search.result.none": "Cap document coincideix", "search.result.one": "1 document coincident", "search.result.other": "# documents coincidents", "search.result.placeholder": "Escriu per a comen\u00e7ar a cercar", "search.result.term.missing": "Desaparegut", "select.version": "Selecciona la versi\u00f3"}, "version": null}</script>
     
     
       <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
