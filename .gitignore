@@ -1,4 +1,5 @@
 site/
+borradores/
 .venv/
 .venvR/
 __pycache__/
