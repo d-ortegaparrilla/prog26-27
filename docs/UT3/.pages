@@ -6,3 +6,6 @@ nav:
     - pas_parametres.md
     - valor_retorn.md
     - sobrecarrega.md
+    - classes_metodes_statics.md
+    - api_java.md
+    - entrada_eixida_classica.md
