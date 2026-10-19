@@ -1,0 +1,2134 @@
+
+<!doctype html>
+<html lang="ca" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Apunts del mòdul de Programació (1DAM)">
+      
+      
+        <meta name="author" content="David Ortega Parrilla">
+      
+      
+        <link rel="canonical" href="https://d-ortegaparrilla.github.io/prog26-27/UT3/entrada_eixida_classica.html">
+      
+      
+        <link rel="prev" href="api_java.html">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Entrada i eixida clàssica: System.out, Scanner i formatat - Programació</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="orange" data-md-color-accent="deep-orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#entrada-i-eixida-classica-systemout-scanner-i-formatat" class="md-skip">
+          Salta el contingut
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Capçalera">
+    <a href="../index.html" title="Programació" class="md-header__button md-logo" aria-label="Programació" data-md-component="logo">
+      
+  <img src="../favicon.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Programació
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Entrada i eixida clàssica: System.out, Scanner i formatat
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="orange" data-md-color-accent="deep-orange"  aria-label="Canviar a mode fosc"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Canviar a mode fosc" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="orange" data-md-color-accent="deep-orange"  aria-label="Canviar a mode clar"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Canviar a mode clar" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Cerca" placeholder="Cerca" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Cerca">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Neteja" aria-label="Neteja" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicialitzant cerca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/d-ortegaparrilla/prog26-27" title="Ves al repositori" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    d-ortegaparrilla/prog26-27
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegació" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="Programació" class="md-nav__button md-logo" aria-label="Programació" data-md-component="logo">
+      
+  <img src="../favicon.png" alt="logo">
+
+    </a>
+    Programació
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/d-ortegaparrilla/prog26-27" title="Ves al repositori" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    d-ortegaparrilla/prog26-27
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inici
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UT1. Elements bàsics d'un programa informàtic.
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    UT1. Elements bàsics d'un programa informàtic.
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UT1/introduccio.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introducció
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UT1/representacions.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Representacions d'algorismes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UT1/java.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    El llenguatge de programació Java
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UT1/conceptes_basics.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Conceptes bàsics de programació en llenguatge Java
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UT1/tipus_dades.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tipus de dades i literals en Java.
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UT1/operadors.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operadors en Java
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UT2. Estructures de control.
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    UT2. Estructures de control.
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UT2/introduccio.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introducció
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UT2/condicionals.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Estructures condicionals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UT2/repetitives.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Estructures repetitives
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UT2/exemples.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercicis resolts de la UT2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UT3. Programació modular. API de Java
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    UT3. Programació modular. API de Java
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="introduccio.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introducció
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="conceptes_basics.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Conceptes bàsics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ambit_variables.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Àmbit de les variables
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="pas_parametres.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pas d'informació a una funció
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="valor_retorn.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Valor retornat per una funció
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sobrecarrega.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sobrecàrrega de funcions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="classes_metodes_statics.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Organització del codi: Classes i mètodes estàtics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="api_java.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L'API de Java i la classe Math
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Entrada i eixida clàssica: System.out, Scanner i formatat
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="entrada_eixida_classica.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Entrada i eixida clàssica: System.out, Scanner i formatat
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Taula de continguts">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Taula de continguts
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-eixida-estandard-per-consola-systemout-i-systemerr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Eixida estàndard per consola: System.out i System.err
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Eixida estàndard per consola: System.out i System.err">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#metodes-basics-dimpressio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mètodes bàsics d'impressió
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-formatat-de-leixida-systemoutprintf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Formatat de l'eixida: System.out.printf
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Formatat de l&#39;eixida: System.out.printf">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sintaxi-dels-especificadors-de-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sintaxi dels especificadors de format
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sintaxi dels especificadors de format">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#caracters-de-conversio-basics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Caràcters de conversió bàsics
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#control-de-decimals-en-valors-double-precisio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Control de decimals en valors double (precisió)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#control-damplaria-alineacio-i-ompliment-de-zeros" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Control d'amplària, alineació i ompliment de zeros
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Control d&#39;amplària, alineació i ompliment de zeros">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exemples-visuals-pas-a-pas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exemples visuals pas a pas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemple-practic-1-format-dhora-rellotge-digital" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exemple pràctic 1: Format d'hora (rellotge digital)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemple-practic-2-maquetacio-duna-taula-alineada-en-columnes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exemple pràctic 2: Maquetació d'una taula alineada en columnes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuracio-regional-locale-coma-o-punt-decimal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuració regional (Locale): Coma o punt decimal?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-entrada-estandard-per-consola-la-classe-javautilscanner" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Entrada estàndard per consola: La classe java.util.Scanner
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Entrada estàndard per consola: La classe java.util.Scanner">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#passos-per-a-utilitzar-scanner" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Passos per a utilitzar Scanner
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#principals-metodes-de-lectura-de-scanner" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Principals mètodes de lectura de Scanner
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#el-separador-decimal-en-scanner-coma-o-punt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        El separador decimal en Scanner: Coma (,) o punt (.)?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="El separador decimal en Scanner: Coma (,) o punt (.)?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#com-forcar-que-accepte-sempre-la-coma" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Com forçar que accepte sempre la coma (,)?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-el-funcionament-intern-del-bufer-i-el-problema-classic-del-salt-de-linia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. El funcionament intern del búfer i el problema clàssic del salt de línia
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. El funcionament intern del búfer i el problema clàssic del salt de línia">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exemple-de-lerror-tipic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exemple de l'error típic
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#com-solucionar-el-problema-del-bufer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Com solucionar el problema del búfer?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Com solucionar el problema del búfer?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#estrategia-1-netejar-el-bufer-manualment-amb-un-nextline-de-descart" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estratègia 1: Netejar el búfer manualment amb un nextLine() de descart
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estrategia-2-llegir-sempre-amb-nextline-i-convertir-metode-recomanat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estratègia 2: Llegir sempre amb nextLine() i convertir (Mètode recomanat)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-taula-comparativa-classe-io-java-25-vs-model-classic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Taula comparativa: Classe IO (Java 25) vs Model Clàssic
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Taula de continguts">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Taula de continguts
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-eixida-estandard-per-consola-systemout-i-systemerr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Eixida estàndard per consola: System.out i System.err
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Eixida estàndard per consola: System.out i System.err">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#metodes-basics-dimpressio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mètodes bàsics d'impressió
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-formatat-de-leixida-systemoutprintf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Formatat de l'eixida: System.out.printf
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Formatat de l&#39;eixida: System.out.printf">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sintaxi-dels-especificadors-de-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sintaxi dels especificadors de format
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sintaxi dels especificadors de format">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#caracters-de-conversio-basics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Caràcters de conversió bàsics
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#control-de-decimals-en-valors-double-precisio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Control de decimals en valors double (precisió)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#control-damplaria-alineacio-i-ompliment-de-zeros" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Control d'amplària, alineació i ompliment de zeros
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Control d&#39;amplària, alineació i ompliment de zeros">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exemples-visuals-pas-a-pas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exemples visuals pas a pas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemple-practic-1-format-dhora-rellotge-digital" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exemple pràctic 1: Format d'hora (rellotge digital)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemple-practic-2-maquetacio-duna-taula-alineada-en-columnes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exemple pràctic 2: Maquetació d'una taula alineada en columnes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuracio-regional-locale-coma-o-punt-decimal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuració regional (Locale): Coma o punt decimal?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-entrada-estandard-per-consola-la-classe-javautilscanner" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Entrada estàndard per consola: La classe java.util.Scanner
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Entrada estàndard per consola: La classe java.util.Scanner">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#passos-per-a-utilitzar-scanner" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Passos per a utilitzar Scanner
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#principals-metodes-de-lectura-de-scanner" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Principals mètodes de lectura de Scanner
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#el-separador-decimal-en-scanner-coma-o-punt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        El separador decimal en Scanner: Coma (,) o punt (.)?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="El separador decimal en Scanner: Coma (,) o punt (.)?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#com-forcar-que-accepte-sempre-la-coma" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Com forçar que accepte sempre la coma (,)?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-el-funcionament-intern-del-bufer-i-el-problema-classic-del-salt-de-linia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. El funcionament intern del búfer i el problema clàssic del salt de línia
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. El funcionament intern del búfer i el problema clàssic del salt de línia">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exemple-de-lerror-tipic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exemple de l'error típic
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#com-solucionar-el-problema-del-bufer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Com solucionar el problema del búfer?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Com solucionar el problema del búfer?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#estrategia-1-netejar-el-bufer-manualment-amb-un-nextline-de-descart" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estratègia 1: Netejar el búfer manualment amb un nextLine() de descart
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estrategia-2-llegir-sempre-amb-nextline-i-convertir-metode-recomanat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estratègia 2: Llegir sempre amb nextLine() i convertir (Mètode recomanat)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-taula-comparativa-classe-io-java-25-vs-model-classic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Taula comparativa: Classe IO (Java 25) vs Model Clàssic
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="entrada-i-eixida-classica-systemout-scanner-i-formatat">Entrada i eixida clàssica: System.out, Scanner i formatat<a class="headerlink" href="#entrada-i-eixida-classica-systemout-scanner-i-formatat" title="Permanent link">&para;</a></h1>
+<p>Fins ara, en les primeres unitats hem utilitzat la classe simplificada <strong><code>IO</code></strong> (introduïda en Java 25 per a facilitar l'aprenentatge inicial en programes sense classe explícita mitjançant <code>IO.print()</code>, <code>IO.println()</code> i <code>IO.readln()</code>).</p>
+<p>No obstant això, en el desenvolupament professional en Java, en projectes reals empresarials i en la gran majoria de biblioteques i codi existent, la interacció amb la consola es realitza mitjançant els mecanismes estàndard de la plataforma:</p>
+<ol>
+<li><strong><code>System.out</code> / <code>System.err</code></strong>: Per a l'eixida de dades per pantalla i missatges d'error.</li>
+<li><strong><code>java.util.Scanner</code></strong>: Per a l'entrada i processament de dades des del teclat.</li>
+<li><strong><code>System.out.printf()</code></strong>: Per a controlar el format exacte amb què es mostren les dades per pantalla (nombre de decimals, amplària de columnes, alineació, etc.).</li>
+</ol>
+<hr />
+<h2 id="1-eixida-estandard-per-consola-systemout-i-systemerr">1. Eixida estàndard per consola: <code>System.out</code> i <code>System.err</code><a class="headerlink" href="#1-eixida-estandard-per-consola-systemout-i-systemerr" title="Permanent link">&para;</a></h2>
+<p>La classe <strong><code>System</code></strong> pertany al paquet fonamental <code>java.lang</code> (que s'importa de manera automàtica en tots els fitxers Java). Dins d'aquesta classe trobem tres atributs estàtics que representen els fluxos (<em>streams</em>) estàndard del sistema:</p>
+<ul>
+<li><strong><code>System.out</code></strong>: Flux d'eixida estàndard (<em>Standard Output</em>), connectat a la pantalla o consola. És un objecte de la classe <code>java.io.PrintStream</code>.</li>
+<li><strong><code>System.err</code></strong>: Flux d'eixida d'errors (<em>Standard Error</em>), destinat a missatges d'error o diagnòstic. Sovint els entorns de desenvolupament (com IntelliJ IDEA o Eclipse) el ressalten en color roig.</li>
+<li><strong><code>System.in</code></strong>: Flux d'entrada estàndard (<em>Standard Input</em>), connectat al teclat.</li>
+</ul>
+<h3 id="metodes-basics-dimpressio">Mètodes bàsics d'impressió<a class="headerlink" href="#metodes-basics-dimpressio" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Mètode</th>
+<th style="text-align: left;">Descripció</th>
+<th style="text-align: left;">Exemple</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong><code>System.out.print(...)</code></strong></td>
+<td style="text-align: left;">Imprimeix la dada <strong>sense</strong> afegir cap salt de línia al final. El cursor es queda a la mateixa línia. Ideal per a demanar dades a l'usuari (<em>prompts</em>).</td>
+<td style="text-align: left;"><code>System.out.print("Introdueix l'edat: ");</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>System.out.println(...)</code></strong></td>
+<td style="text-align: left;">Imprimeix la dada i afig automàticament un <strong>salt de línia</strong> (<code>\n</code>) al final.</td>
+<td style="text-align: left;"><code>System.out.println("Operació completada.");</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>System.out.println()</code></strong></td>
+<td style="text-align: left;">Buit: genera únicament un salt de línia en blanc.</td>
+<td style="text-align: left;"><code>System.out.println();</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>System.err.println(...)</code></strong></td>
+<td style="text-align: left;">Imprimeix per la consola d'errors amb salt de línia.</td>
+<td style="text-align: left;"><code>System.err.println("Error: valor no vàlid!");</code></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Sobrecàrrega en <code>PrintStream</code></p>
+<p>Tant <code>print()</code> com <code>println()</code> estan sobrecarregats per a admetre qualsevol tipus de dada primitiu (<code>int</code>, <code>double</code>, <code>boolean</code>, <code>char</code>), cadenes <code>String</code> o qualsevol objecte. A més, podem utilitzar l'operador de concatenació <code>+</code> per a unir cadenes i variables abans d'imprimir:
+<div class="language-java highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">edat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">20</span><span class="p">;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Tens "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">edat</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">" anys."</span><span class="p">);</span>
+</span></code></pre></div></p>
+</div>
+<hr />
+<h2 id="2-formatat-de-leixida-systemoutprintf">2. Formatat de l'eixida: <code>System.out.printf</code><a class="headerlink" href="#2-formatat-de-leixida-systemoutprintf" title="Permanent link">&para;</a></h2>
+<p>Quan mostrem números decimals de tipus <code>double</code> o <code>float</code>, Java sol imprimir un nombre excessiu o imprecís de xifres decimals degut a la representació interna dels nombres en coma flotant:</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kt">double</span><span class="w"> </span><span class="n">preu</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">19.99</span><span class="p">;</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kt">double</span><span class="w"> </span><span class="n">iva</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">preu</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">0.21</span><span class="p">;</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"IVA: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">iva</span><span class="p">);</span><span class="w"> </span><span class="c1">// Mostra: IVA: 4.197900000000001</span>
+</span></code></pre></div>
+<p>Per a controlar amb exactitud quants decimals volem mostrar, com alinear les dades en columnes o com farcir amb zeros, disposem del mètode <strong><code>System.out.printf(...)</code></strong>:</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">"Plantilla de format amb especificadors"</span><span class="p">,</span><span class="w"> </span><span class="n">valor1</span><span class="p">,</span><span class="w"> </span><span class="n">valor2</span><span class="p">,</span><span class="w"> </span><span class="p">...);</span>
+</span></code></pre></div>
+<h3 id="sintaxi-dels-especificadors-de-format">Sintaxi dels especificadors de format<a class="headerlink" href="#sintaxi-dels-especificadors-de-format" title="Permanent link">&para;</a></h3>
+<p>Cada dada que volem incrustar en el text se substitueix per un <strong>especificador de format</strong> que comença pel caràcter <code>%</code>:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>%[indicadors][amplària][.precisió]conversió
+</span></code></pre></div>
+<h4 id="caracters-de-conversio-basics">Caràcters de conversió bàsics<a class="headerlink" href="#caracters-de-conversio-basics" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Especificador</th>
+<th style="text-align: left;">Tipus de dada associat</th>
+<th style="text-align: left;">Exemple d'ús</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong><code>%d</code></strong></td>
+<td style="text-align: left;">Nombres enters (<code>byte</code>, <code>short</code>, <code>int</code>, <code>long</code>).</td>
+<td style="text-align: left;"><code>System.out.printf("Edat: %d\n", 25);</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>%f</code></strong></td>
+<td style="text-align: left;">Nombres reals de coma flotant (<code>float</code>, <code>double</code>).</td>
+<td style="text-align: left;"><code>System.out.printf("Preu: %f\n", 19.99);</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>%s</code></strong></td>
+<td style="text-align: left;">Cadenes de text (<code>String</code>).</td>
+<td style="text-align: left;"><code>System.out.printf("Nom: %s\n", "Anna");</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>%c</code></strong></td>
+<td style="text-align: left;">Caràcter individual (<code>char</code>).</td>
+<td style="text-align: left;"><code>System.out.printf("Lletra: %c\n", 'A');</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>%b</code></strong></td>
+<td style="text-align: left;">Valors booleans (<code>boolean</code>).</td>
+<td style="text-align: left;"><code>System.out.printf("Actiu: %b\n", true);</code></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Compte amb <code>printf</code> i els salts de línia</p>
+<p>A diferència de <code>println()</code>, <strong><code>printf()</code> NO afig automàticament un salt de línia</strong> en acabar la impressió. Si volem canviar de línia, hem d'incloure explícitament el caràcter de salt de línia <strong><code>\n</code></strong> dins de la cadena de format.</p>
+</div>
+<hr />
+<h3 id="control-de-decimals-en-valors-double-precisio">Control de decimals en valors <code>double</code> (precisió)<a class="headerlink" href="#control-de-decimals-en-valors-double-precisio" title="Permanent link">&para;</a></h3>
+<p>Per a limitar el nombre de decimals mostrats per pantalla, afegim un punt seguit del nombre de decimals desitjats davant de la lletra <code>f</code> (<code>.precisió</code>):</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Especificador</th>
+<th style="text-align: left;">Descripció</th>
+<th style="text-align: left;">Exemple</th>
+<th style="text-align: left;">Eixida per pantalla</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong><code>%.2f</code></strong></td>
+<td style="text-align: left;">2 decimals amb arredoniment automàtic</td>
+<td style="text-align: left;"><code>System.out.printf("%.2f", 4.1979);</code></td>
+<td style="text-align: left;"><code>4.20</code> (o <code>4,20</code>)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>%.1f</code></strong></td>
+<td style="text-align: left;">1 sol decimal</td>
+<td style="text-align: left;"><code>System.out.printf("%.1f", 4.1979);</code></td>
+<td style="text-align: left;"><code>4.2</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>%.3f</code></strong></td>
+<td style="text-align: left;">3 decimals</td>
+<td style="text-align: left;"><code>System.out.printf("%.3f", Math.PI);</code></td>
+<td style="text-align: left;"><code>3.142</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>%.0f</code></strong></td>
+<td style="text-align: left;">Sense decimals (arredonit a enter)</td>
+<td style="text-align: left;"><code>System.out.printf("%.0f", 4.75);</code></td>
+<td style="text-align: left;"><code>5</code></td>
+</tr>
+</tbody>
+</table>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kt">double</span><span class="w"> </span><span class="n">pi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">PI</span><span class="p">;</span><span class="w"> </span><span class="c1">// 3.141592653589793</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="kt">double</span><span class="w"> </span><span class="n">salari</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1580.456</span><span class="p">;</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">"Pi amb 2 decimals: %.2f\n"</span><span class="p">,</span><span class="w"> </span><span class="n">pi</span><span class="p">);</span><span class="w">      </span><span class="c1">// 3.14</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">"Pi amb 4 decimals: %.4f\n"</span><span class="p">,</span><span class="w"> </span><span class="n">pi</span><span class="p">);</span><span class="w">      </span><span class="c1">// 3.1416</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">"Salari arredonit: %.2f €\n"</span><span class="p">,</span><span class="w"> </span><span class="n">salari</span><span class="p">);</span><span class="w"> </span><span class="c1">// 1580.46 €</span>
+</span></code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Arredoniment automàtic de <code>printf</code></p>
+<p>L'especificador de precisió no trunca el número, sinó que realitza un <strong>arredoniment matemàtic estàndard</strong>: si el dígit següent és ≥ 5, incrementa l'últim dígit en una unitat (per exemple, <code>4.1979</code> amb <code>%.2f</code> esdevé <code>4.20</code>).</p>
+</div>
+<hr />
+<h3 id="control-damplaria-alineacio-i-ompliment-de-zeros">Control d'amplària, alineació i ompliment de zeros<a class="headerlink" href="#control-damplaria-alineacio-i-ompliment-de-zeros" title="Permanent link">&para;</a></h3>
+<p>Podem afegir modificadors abans del tipus per a controlar l'espai que ocupa cada dada:</p>
+<ul>
+<li><strong>Amplària mínima (<code>%Nd</code> o <code>%Ns</code>):</strong> Reserva un espai mínim de <em>N</em> caràcters. Si el text o número és més curt, s'afigen espais en blanc a l'esquerra (alineació per defecte a la <strong>dreta</strong>).</li>
+<li><strong>Alineació a l'esquerra (<code>%-Nd</code> o <code>%-Ns</code>):</strong> Si afegim el signe menys <code>-</code>, els espais en blanc s'afigen al final, alineant la dada a l'<strong>esquerra</strong>.</li>
+<li><strong>ompliment amb zeros (<code>%0Nd</code>):</strong> Si col·loquem un <code>0</code> davant d'un enter, els espais buits s'omplin amb zeros en compte d'espais (molt útil per a hores, minuts, dates o codis).</li>
+<li><strong>Amplària total en decimals (<code>%N.Pf</code>):</strong> En un <code>double</code>, el primer número <em>N</em> indica l'<strong>amplària TOTAL</strong> de tot el camp (incloent dígits enters, el punt decimal, els decimals i els espais en blanc inicials).</li>
+</ul>
+<h4 id="exemples-visuals-pas-a-pas">Exemples visuals pas a pas<a class="headerlink" href="#exemples-visuals-pas-a-pas" title="Permanent link">&para;</a></h4>
+<p>Envoltem els exemples entre claudàtors <code>[...]</code> per a veure amb claredat com funcionen els espais reservats:</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">42</span><span class="p">;</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="c1">// Amplària mínima de 5 (alineat a la dreta per defecte): 3 espais + 2 dígits</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">"[%5d]\n"</span><span class="p">,</span><span class="w"> </span><span class="n">num</span><span class="p">);</span><span class="w">    </span><span class="c1">// Mostra: [   42]</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="c1">// Alineació a l'esquerra amb '-': 2 dígits + 3 espais</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">"[%-5d]\n"</span><span class="p">,</span><span class="w"> </span><span class="n">num</span><span class="p">);</span><span class="w">   </span><span class="c1">// Mostra: [42   ]</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="c1">// ompliment amb zeros amb '0': 3 zeros + 2 dígits</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">"[%05d]\n"</span><span class="p">,</span><span class="w"> </span><span class="n">num</span><span class="p">);</span><span class="w">   </span><span class="c1">// Mostra: [00042]</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="c1">// Amplària total de 8 caràcters amb 2 decimals (4 espais + "3.50")</span>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="kt">double</span><span class="w"> </span><span class="n">preu</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3.5</span><span class="p">;</span>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">"[%8.2f]\n"</span><span class="p">,</span><span class="w"> </span><span class="n">preu</span><span class="p">);</span><span class="w"> </span><span class="c1">// Mostra: [    3.50]</span>
+</span></code></pre></div>
+<h4 id="exemple-practic-1-format-dhora-rellotge-digital">Exemple pràctic 1: Format d'hora (rellotge digital)<a class="headerlink" href="#exemple-practic-1-format-dhora-rellotge-digital" title="Permanent link">&para;</a></h4>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">hores</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">9</span><span class="p">;</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="kt">int</span><span class="w"> </span><span class="n">minuts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">"Hora: %02d:%02d\n"</span><span class="p">,</span><span class="w"> </span><span class="n">hores</span><span class="p">,</span><span class="w"> </span><span class="n">minuts</span><span class="p">);</span><span class="w"> </span><span class="c1">// Mostra: Hora: 09:05</span>
+</span></code></pre></div>
+<h4 id="exemple-practic-2-maquetacio-duna-taula-alineada-en-columnes">Exemple pràctic 2: Maquetació d'una taula alineada en columnes<a class="headerlink" href="#exemple-practic-2-maquetacio-duna-taula-alineada-en-columnes" title="Permanent link">&para;</a></h4>
+<p>Combinant aquests modificadors podem alinear taules de dades de forma mil·limètrica:</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1">// Columnes:</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="c1">// 1. PRODUCTE: text alineat a l'esquerra de 15 caràcters (%-15s)</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="c1">// 2. UNITATS:  enter alineat a la dreta de 8 caràcters (%8d)</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="c1">// 3. PREU (€): decimal de 10 caràcters d'amplada total amb 2 decimals (%10.2f)</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">"%-15s %8s %10s\n"</span><span class="p">,</span><span class="w"> </span><span class="s">"PRODUCTE"</span><span class="p">,</span><span class="w"> </span><span class="s">"UNITATS"</span><span class="p">,</span><span class="w"> </span><span class="s">"PREU (€)"</span><span class="p">);</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"------------------------------------"</span><span class="p">);</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">"%-15s %8d %10.2f\n"</span><span class="p">,</span><span class="w"> </span><span class="s">"Poma Golden"</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mf">1.85</span><span class="p">);</span>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">"%-15s %8d %10.2f\n"</span><span class="p">,</span><span class="w"> </span><span class="s">"Llet sencera"</span><span class="p">,</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w"> </span><span class="mf">11.40</span><span class="p">);</span>
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">"%-15s %8d %10.2f\n"</span><span class="p">,</span><span class="w"> </span><span class="s">"Xocolata pura"</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mf">4.50</span><span class="p">);</span>
+</span></code></pre></div>
+<p><strong>Eixida generada per la taula:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>PRODUCTE         UNITATS   PREU (€)
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>------------------------------------
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>Poma Golden            3       1.85
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>Llet sencera          12      11.40
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>Xocolata pura          2       4.50
+</span></code></pre></div></p>
+<hr />
+<h3 id="configuracio-regional-locale-coma-o-punt-decimal">Configuració regional (<em>Locale</em>): Coma o punt decimal?<a class="headerlink" href="#configuracio-regional-locale-coma-o-punt-decimal" title="Permanent link">&para;</a></h3>
+<p>Segons la configuració del vostre sistema operatiu, els nombres decimals es mostraran per defecte amb un <strong>punt</strong> (com <code>3.14</code>, habitual en l'àmbit anglosaxó) o amb una <strong>coma</strong> (com <code>3,14</code>, habitual a Espanya).</p>
+<p>Si volem forçar que <code>printf</code> utilitze sempre la <strong>coma</strong>, podem indicar la configuració en espanyol mitjançant <code>Locale.of("es", "ES")</code> com a primer paràmetre:</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Locale</span><span class="p">;</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="kt">double</span><span class="w"> </span><span class="n">valor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">12.345</span><span class="p">;</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="n">Locale</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="s">"es"</span><span class="p">,</span><span class="w"> </span><span class="s">"ES"</span><span class="p">),</span><span class="w"> </span><span class="s">"Valor amb coma: %.2f\n"</span><span class="p">,</span><span class="w"> </span><span class="n">valor</span><span class="p">);</span><span class="w"> </span><span class="c1">// Mostra: 12,35</span>
+</span></code></pre></div>
+<hr />
+<h2 id="3-entrada-estandard-per-consola-la-classe-javautilscanner">3. Entrada estàndard per consola: La classe <code>java.util.Scanner</code><a class="headerlink" href="#3-entrada-estandard-per-consola-la-classe-javautilscanner" title="Permanent link">&para;</a></h2>
+<p>La classe <strong><code>Scanner</code></strong> es troba disponible des de Java 5 en el paquet <code>java.util</code>. S'encarrega de llegir fluxos de text (provinents del teclat, d'arxius o de cadenes) i fragmentar-los en xicotetes unitats anomenades <strong>testimonis</strong> (<em>tokens</em>), separats habitualment per caràcters en blanc (espais, tabuladors i salts de línia).</p>
+<h3 id="passos-per-a-utilitzar-scanner">Passos per a utilitzar <code>Scanner</code><a class="headerlink" href="#passos-per-a-utilitzar-scanner" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Importar la classe:</strong> Cal incloure la instrucció a l'inici del fitxer:
+   <div class="language-java highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Scanner</span><span class="p">;</span>
+</span></code></pre></div></li>
+<li><strong>Crear l'objecte associat al teclat (<code>System.in</code>):</strong>
+   <div class="language-java highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">Scanner</span><span class="w"> </span><span class="n">sc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+</span></code></pre></div></li>
+<li><strong>Cridar als mètodes de lectura segons el tipus de dada desitjat:</strong>
+   <div class="language-java highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">edat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
+</span></code></pre></div></li>
+<li><strong>Tancar l'escàner en finalitzar (bona pràctica):</strong>
+   <div class="language-java highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="n">sc</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
+</span></code></pre></div></li>
+</ol>
+<hr />
+<h3 id="principals-metodes-de-lectura-de-scanner">Principals mètodes de lectura de <code>Scanner</code><a class="headerlink" href="#principals-metodes-de-lectura-de-scanner" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Mètode</th>
+<th style="text-align: left;">Descripció</th>
+<th style="text-align: left;">Exemple</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong><code>sc.nextInt()</code></strong></td>
+<td style="text-align: left;">Llig el següent valor enter com a <code>int</code>.</td>
+<td style="text-align: left;"><code>int n = sc.nextInt();</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>sc.nextDouble()</code></strong></td>
+<td style="text-align: left;">Llig el següent valor real com a <code>double</code>.</td>
+<td style="text-align: left;"><code>double r = sc.nextDouble();</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>sc.nextLong()</code></strong></td>
+<td style="text-align: left;">Llig un enter de tipus <code>long</code>.</td>
+<td style="text-align: left;"><code>long p = sc.nextLong();</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>sc.nextBoolean()</code></strong></td>
+<td style="text-align: left;">Llig un booleà (<code>true</code> o <code>false</code>).</td>
+<td style="text-align: left;"><code>boolean b = sc.nextBoolean();</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>sc.next()</code></strong></td>
+<td style="text-align: left;">Llig una <strong>única paraula</strong> (ignora espais inicials i llig fins al següent espai en blanc o salt de línia).</td>
+<td style="text-align: left;"><code>String paraula = sc.next();</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>sc.nextLine()</code></strong></td>
+<td style="text-align: left;">Llig tota la <strong>línia sencera</strong> fins a trobar el caràcter de salt de línia (<code>\n</code>).</td>
+<td style="text-align: left;"><code>String nomComplet = sc.nextLine();</code></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Com llegir un caràcter individual (<code>char</code>) amb <code>Scanner</code>?</p>
+<p>Com que <code>Scanner</code> no disposa d'un mètode <code>nextChar()</code>, per a obtindre un caràcter llegim el text amb <code>next()</code> (o <code>nextLine()</code>) i n'extraiem el primer caràcter situat a la posició 0 mitjançant el mètode <strong><code>.charAt(0)</code></strong>:
+<div class="language-java highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Introdueix una opció (S/N): "</span><span class="p">);</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="kt">char</span><span class="w"> </span><span class="n">resposta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">next</span><span class="p">().</span><span class="na">charAt</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+</span></code></pre></div></p>
+</div>
+<hr />
+<h3 id="el-separador-decimal-en-scanner-coma-o-punt">El separador decimal en <code>Scanner</code>: Coma (,) o punt (.)?<a class="headerlink" href="#el-separador-decimal-en-scanner-coma-o-punt" title="Permanent link">&para;</a></h3>
+<p>De la mateixa manera, quan introduïm un número decimal per teclat amb <code>sc.nextDouble()</code>:</p>
+<ul>
+<li>Depenent de la configuració de l'ordinador, <code>Scanner</code> pot demanar el decimal amb un <strong>punt</strong> (<code>3.14</code>) o amb una <strong>coma</strong> (<code>3,14</code>).</li>
+<li>Si el vostre sistema espera una cosa i en teclegem una altra, el programa llançarà un error (<code>InputMismatchException</code>).</li>
+</ul>
+<h4 id="com-forcar-que-accepte-sempre-la-coma">Com forçar que accepte sempre la coma (,)?<a class="headerlink" href="#com-forcar-que-accepte-sempre-la-coma" title="Permanent link">&para;</a></h4>
+<p>Per a assegurar-nos que <code>Scanner</code> accepte sempre la <strong>coma</strong> (el format estàndard a Espanya), podem indicar la configuració regional en espanyol mitjançant <code>Locale.of("es", "ES")</code>:</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Locale</span><span class="p">;</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Scanner</span><span class="p">;</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="n">Scanner</span><span class="w"> </span><span class="n">sc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="n">sc</span><span class="p">.</span><span class="na">useLocale</span><span class="p">(</span><span class="n">Locale</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="s">"es"</span><span class="p">,</span><span class="w"> </span><span class="s">"ES"</span><span class="p">));</span><span class="w"> </span><span class="c1">// Ara sc.nextDouble() accepta sempre 3,14 amb coma!</span>
+</span></code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Forçar la coma en tot el programa</p>
+<p>Si voleu que tant <code>Scanner</code> com <code>printf</code> utilitzen sempre la coma sense haver de configurar-los per separat, podeu afegir aquesta línia a l'inici del vostre programa:
+<div class="language-java highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="n">Locale</span><span class="p">.</span><span class="na">setDefault</span><span class="p">(</span><span class="n">Locale</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="s">"es"</span><span class="p">,</span><span class="w"> </span><span class="s">"ES"</span><span class="p">));</span>
+</span></code></pre></div></p>
+</div>
+<hr />
+<h2 id="4-el-funcionament-intern-del-bufer-i-el-problema-classic-del-salt-de-linia">4. El funcionament intern del búfer i el problema clàssic del salt de línia<a class="headerlink" href="#4-el-funcionament-intern-del-bufer-i-el-problema-classic-del-salt-de-linia" title="Permanent link">&para;</a></h2>
+<p>Per a entendre com evitar els errors més comuns amb <code>Scanner</code>, és imprescindible conéixer com funciona internament la lectura des del teclat:</p>
+<pre class="mermaid"><code>flowchart LR
+    A["Teclat\n(Usuari escriu i prem Intro)"] --&gt;|"Caràcters + \n"| B["Búfer de memòria\n(System.in)"]
+    B --&gt;|"sc.nextInt() / sc.nextLine()"| C["Programa Java\n(Variables)"]</code></pre>
+<ol>
+<li>Quan l'usuari escriu per teclat i prem la tecla <strong>Intro</strong>, tots els caràcters teclejats —inclòs el caràcter invisible de retorn o salt de línia <strong><code>\n</code></strong>— s'emmagatzemen temporalment en una zona de memòria anomenada <strong>búfer d'entrada</strong>.</li>
+<li>Els mètodes que llegeixen valors numèrics o paraules (<code>nextInt()</code>, <code>nextDouble()</code>, <code>next()</code>, etc.) <strong>només consumeixen els caràcters de la dada</strong> i s'aturen just davant del primer delimitador. Això vol dir que el caràcter de salt de línia <strong><code>\n</code> es queda abandonat dins del búfer</strong>.</li>
+<li>Si a continuació invoquem <strong><code>nextLine()</code></strong>, aquest mètode està dissenyat per a consumir tot el contingut fins a trobar un salt de línia. Com que troba immediatament el <code>\n</code> que havia quedat penjat del número anterior, <strong>el consumeix al moment i retorna una cadena buida (<code>""</code>)</strong>, sense esperar mai que l'usuari puga escriure res!</li>
+</ol>
+<h3 id="exemple-de-lerror-tipic">Exemple de l'error típic<a class="headerlink" href="#exemple-de-lerror-tipic" title="Permanent link">&para;</a></h3>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="n">Scanner</span><span class="w"> </span><span class="n">sc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Introdueix la teua edat: "</span><span class="p">);</span>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="kt">int</span><span class="w"> </span><span class="n">edat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span><span class="w"> </span><span class="c1">// L'usuari escriu 25 i prem Intro</span>
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>
+</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Introdueix la teua adreça: "</span><span class="p">);</span>
+</span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="n">String</span><span class="w"> </span><span class="n">adreca</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextLine</span><span class="p">();</span><span class="w"> </span><span class="c1">// EL PROGRAMA NO S'ATURA! Llig directament el \n pendent!</span>
+</span><span id="__span-17-8"><a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a>
+</span><span id="__span-17-9"><a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Edat: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">edat</span><span class="p">);</span>
+</span><span id="__span-17-10"><a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Adreça: '"</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">adreca</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">"'"</span><span class="p">);</span><span class="w"> </span><span class="c1">// Queda buida: ''</span>
+</span></code></pre></div>
+<hr />
+<h3 id="com-solucionar-el-problema-del-bufer">Com solucionar el problema del búfer?<a class="headerlink" href="#com-solucionar-el-problema-del-bufer" title="Permanent link">&para;</a></h3>
+<p>Disposem de dues estratègies per a resoldre aquesta situació:</p>
+<h4 id="estrategia-1-netejar-el-bufer-manualment-amb-un-nextline-de-descart">Estratègia 1: Netejar el búfer manualment amb un <code>nextLine()</code> de descart<a class="headerlink" href="#estrategia-1-netejar-el-bufer-manualment-amb-un-nextline-de-descart" title="Permanent link">&para;</a></h4>
+<p>Consisteix a col·locar una instrucció buida <code>sc.nextLine();</code> just després de llegir un número i abans de llegir qualsevol línia de text:</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Introdueix la teua edat: "</span><span class="p">);</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="kt">int</span><span class="w"> </span><span class="n">edat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span><span class="w"> </span><span class="c1">// Llig l'enter</span>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="n">sc</span><span class="p">.</span><span class="na">nextLine</span><span class="p">();</span><span class="w"> </span><span class="c1">// NETEJA EL BÚFER: consumeix el \n pendent</span>
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>
+</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Introdueix la teua adreça: "</span><span class="p">);</span>
+</span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="n">String</span><span class="w"> </span><span class="n">adreca</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextLine</span><span class="p">();</span><span class="w"> </span><span class="c1">// Ara sí s'atura correctament a esperar el text!</span>
+</span></code></pre></div>
+<h4 id="estrategia-2-llegir-sempre-amb-nextline-i-convertir-metode-recomanat">Estratègia 2: Llegir sempre amb <code>nextLine()</code> i convertir (Mètode recomanat)<a class="headerlink" href="#estrategia-2-llegir-sempre-amb-nextline-i-convertir-metode-recomanat" title="Permanent link">&para;</a></h4>
+<p>En compte de mesclar <code>nextInt()</code> i <code>nextLine()</code>, podem llegir <strong>sempre</strong> línies completes com a text (<code>sc.nextLine()</code>) i transformar el text al tipus numèric necessari mitjançant els mètodes de conversió estàtics de Java (<code>Integer.parseInt()</code>, <code>Double.parseDouble()</code>), exactament com fèiem amb <code>IO.readln()</code>:</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Introdueix la teua edat: "</span><span class="p">);</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="kt">int</span><span class="w"> </span><span class="n">edat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Integer</span><span class="p">.</span><span class="na">parseInt</span><span class="p">(</span><span class="n">sc</span><span class="p">.</span><span class="na">nextLine</span><span class="p">());</span><span class="w"> </span><span class="c1">// Llig tota la línia i no deixa residus al búfer!</span>
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Introdueix el teu pes: "</span><span class="p">);</span>
+</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="kt">double</span><span class="w"> </span><span class="n">pes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Double</span><span class="p">.</span><span class="na">parseDouble</span><span class="p">(</span><span class="n">sc</span><span class="p">.</span><span class="na">nextLine</span><span class="p">());</span>
+</span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a>
+</span><span id="__span-19-7"><a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Introdueix la teua adreça: "</span><span class="p">);</span>
+</span><span id="__span-19-8"><a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a><span class="n">String</span><span class="w"> </span><span class="n">adreca</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextLine</span><span class="p">();</span><span class="w"> </span><span class="c1">// Funciona perfectament sense problemes!</span>
+</span></code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Per què aquesta és l'estratègia preferida en l'entorn professional?</p>
+<p>Llegir sempre línies senceres amb <code>sc.nextLine()</code> i convertir amb <code>Integer.parseInt()</code> o <code>Double.parseDouble()</code> és una pràctica molt recomanable perquè evita errors subtils de memòria cau, simplifica el control de flux i permet afegir blocs de validació i gestió d'errors de forma més neta.</p>
+</div>
+<hr />
+<h2 id="5-taula-comparativa-classe-io-java-25-vs-model-classic">5. Taula comparativa: Classe <code>IO</code> (Java 25) vs Model Clàssic<a class="headerlink" href="#5-taula-comparativa-classe-io-java-25-vs-model-classic" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Operació</th>
+<th style="text-align: left;">Amb la classe <code>IO</code> (Java 25)</th>
+<th style="text-align: left;">Model Clàssic (<code>System.out</code> / <code>Scanner</code>)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Imprimir sense salt de línia</strong></td>
+<td style="text-align: left;"><code>IO.print("Text");</code></td>
+<td style="text-align: left;"><code>System.out.print("Text");</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Imprimir amb salt de línia</strong></td>
+<td style="text-align: left;"><code>IO.println("Text");</code></td>
+<td style="text-align: left;"><code>System.out.println("Text");</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Imprimir amb format</strong></td>
+<td style="text-align: left;"><em>No disposa de format directe</em></td>
+<td style="text-align: left;"><code>System.out.printf("%.2f\n", valor);</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Imprimir errors</strong></td>
+<td style="text-align: left;"><code>IO.println("Error...");</code></td>
+<td style="text-align: left;"><code>System.err.println("Error...");</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Llegir una línia de text</strong></td>
+<td style="text-align: left;"><code>String s = IO.readln();</code></td>
+<td style="text-align: left;"><code>String s = sc.nextLine();</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Llegir un número enter</strong></td>
+<td style="text-align: left;"><code>int n = Integer.parseInt(IO.readln());</code></td>
+<td style="text-align: left;"><code>int n = sc.nextInt();</code><br><em>(o <code>Integer.parseInt(sc.nextLine())</code>)</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Llegir un número decimal</strong></td>
+<td style="text-align: left;"><code>double d = Double.parseDouble(IO.readln());</code></td>
+<td style="text-align: left;"><code>double d = sc.nextDouble();</code><br><em>(o <code>Double.parseDouble(sc.nextLine())</code>)</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Llegir un caràcter</strong></td>
+<td style="text-align: left;"><code>char c = IO.readln().charAt(0);</code></td>
+<td style="text-align: left;"><code>char c = sc.next().charAt(0);</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Preparació prèvia</strong></td>
+<td style="text-align: left;">Cap (automàtic en Java 25)</td>
+<td style="text-align: left;"><code>import java.util.Scanner;</code><br><code>Scanner sc = new Scanner(System.in);</code></td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Torna a l'inici
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["header.autohide", "content.code.copy", "content.code.annotate", "navigation.top", "navigation.instant", "navigation.tracking", "search.suggest", "search.highlight"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiat al porta-retalls", "clipboard.copy": "C\u00f2pia al porta-retalls", "search.result.more.one": "1 m\u00e9s en aquesta p\u00e0gina", "search.result.more.other": "# m\u00e9s en aquesta p\u00e0gina", "search.result.none": "Cap document coincideix", "search.result.one": "1 document coincident", "search.result.other": "# documents coincidents", "search.result.placeholder": "Escriu per a comen\u00e7ar a cercar", "search.result.term.missing": "Desaparegut", "select.version": "Selecciona la versi\u00f3"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

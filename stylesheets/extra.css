@@ -15,3 +15,8 @@
 .mermaid text {
     font-family: var(--md-text-font, "Roboto", sans-serif) !important;
 }
+
+/* Eixamplar el contenidor general per a aprofitar millor les pantalles i donar espai al contingut central */
+.md-grid {
+    max-width: 85rem; /* El valor per defecte de Material for MkDocs és de només 61rem */
+}
