@@ -15,8 +15,8 @@ A continuació es mostra el llistat d'UT, així com el seus RA associats:
 | [UT1. Elements bàsics d'un programa informàtic.](UT1/introduccio.md) | RA1
 | [UT2. Estructures de control.](UT2/introduccio.md) | RA3 
 | [UT3. Programació modular. API de Java](UT3/introduccio.md) | RA2, RA4, RA5
-| UT4. Introducció a la programació orientada a objectes. | RA2, RA4 
-| UT5. Arrays i cadenes de caràcters. | RA6 
+| [UT4. Arrays i cadenes de caràcters.](UT4/introduccio.md) | RA6
+| UT5. Introducció a la programació orientada a objectes. | RA2, RA4 
 | UT6. Herència, polimorfisme i interfícies. | RA4, RA7 
 | UT7. Gestió d'errors. | RA3 
 | UT8. Col·leccions. | RA6 
