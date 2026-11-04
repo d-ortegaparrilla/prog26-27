@@ -18,7 +18,7 @@
         <link rel="prev" href="arrays_unidimensionals.html">
       
       
-        <link rel="next" href="classe_string.html">
+        <link rel="next" href="arrays_caracters.html">
       
       
         
@@ -986,6 +986,460 @@
     
   
     Recursivitat
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UT4. Arrays i cadenes de caràcters
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    UT4. Arrays i cadenes de caràcters
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="introduccio.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introducció
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="arrays_unidimensionals.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arrays unidimensionals en Java
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operacions amb vectors: La classe Arrays
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="classe_array.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operacions amb vectors: La classe Arrays
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Taula de continguts">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Taula de continguts
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-mostrar-el-contingut-dun-array-arraystostring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Mostrar el contingut d'un array: Arrays.toString()
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-inicialitzacio-i-emplenat-arraysfill" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Inicialització i emplenat: Arrays.fill()
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Inicialització i emplenat: Arrays.fill()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-emplenar-tot-larray" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Emplenar tot l'array
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-emplenar-un-subrang-desde-finsa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Emplenar un subrang: [desDe, finsA)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-ordenacio-delements-arrayssort" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Ordenació d'elements: Arrays.sort()
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-cerca-en-arrays-arraysbinarysearch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Cerca en arrays: Arrays.binarySearch()
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Cerca en arrays: Arrays.binarySearch()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-cerca-en-taules-no-ordenades-cerca-sequencial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Cerca en taules no ordenades (Cerca seqüencial)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-cerca-en-taules-ordenades-cerca-dicotomica-binaria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Cerca en taules ordenades: Cerca dicotòmica / binària
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.2 Cerca en taules ordenades: Cerca dicotòmica / binària">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#interpretacio-del-resultat-retornat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interpretació del resultat retornat:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-copia-darrays-arrayscopyof-i-systemarraycopy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Còpia d'arrays: Arrays.copyOf() i System.arraycopy()
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Còpia d&#39;arrays: Arrays.copyOf() i System.arraycopy()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-arrayscopyof" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 Arrays.copyOf()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-arrayscopyofrange" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 Arrays.copyOfRange()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-systemarraycopy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 System.arraycopy()
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-algorismes-avancats-amb-la-classe-arrays" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Algorismes avançats amb la classe Arrays
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Algorismes avançats amb la classe Arrays">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-insercio-dun-nou-element-en-un-vector-no-ordenat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 Inserció d'un nou element en un vector no ordenat
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-insercio-ordenada-mantenint-lordre" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 Inserció ordenada (Mantenint l'ordre)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-eliminacio-dun-element" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 Eliminació d'un element
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-comparacio-darrays-arraysequals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Comparació d'arrays: Arrays.equals()
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-exemple-practic-complet-el-joc-de-la-cambra-secreta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Exemple pràctic complet: El joc de la cambra secreta
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="arrays_caracters.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arrays de caràcters en Java
   
 
     
