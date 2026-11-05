@@ -191,16 +191,11 @@ La combinació de `Arrays.copyOf()`, `Arrays.binarySearch()` i `System.arraycopy
 
 Consisteix a incrementar la grandària del vector en 1 posició i situar el nou element a l'últim lloc:
 
-```mermaid
-graph LR
-    subgraph Original (mida 4)
-        O["[0]: 3 | [1]: 13 | [2]: 26 | [3]: 6"]
-    end
-    subgraph Nova Còpia (mida 5)
-        N["[0]: 3 | [1]: 13 | [2]: 26 | [3]: 6 | [4]: NOU (12)"]
-    end
-    O -.->|Arrays.copyOf(t, t.length + 1)| N
-```
+| Fase | `[0]` | `[1]` | `[2]` | `[3]` | `[4]` *(nou)* |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| **1. Vector original `t`** | `3` | `13` | `26` | `6` | — |
+| **2. Còpia ampliada (`Arrays.copyOf`)** | `3` | `13` | `26` | `6` | `0` *(per defecte)* |
+| **3. Assignació del nou valor** | `3` | `13` | `26` | `6` | **`12`** |
 
 ```java
 int[] t = {3, 13, 26, 6};
@@ -319,60 +314,4 @@ boolean sonIguals = Arrays.equals(t1, t2);
 IO.println(sonIguals); // Mostra TRUE!
 ```
 
----
 
-## 8. Exemple pràctic complet: El joc de la cambra secreta
-
-Com a síntesi dels mètodes de la classe `Arrays`, implementem un joc on l'ordinador genera una combinació secreta de números aleatoris de longitud configurada per l'usuari. L'usuari ha d'anar introduint combinacions fins a encertar-la, emprant `Arrays.equals()` per a validar si la cambra secreta s'ha obert.
-
-??? example "Solució en Java"
-    ```java
-    import java.util.Arrays;
-
-    /*
-     * Joc de la cambra secreta:
-     * Compara la combinació de l'usuari amb la combinació secreta
-     * generada aleatòriament emprant Arrays.equals().
-     */
-    void main() {
-        IO.print("Indica la dificultat (longitud de la combinació de 1 a 5 dígits): ");
-        int longitud = Integer.parseInt(IO.readln());
-
-        int[] combSecreta = new int[longitud];
-        // Generem la combinació secreta amb dígits de l'1 al 5
-        for (int i = 0; i < combSecreta.length; i++) {
-            combSecreta[i] = (int) (Math.random() * 5) + 1;
-        }
-
-        int[] combJugador = new int[longitud];
-        boolean encertat = false;
-
-        IO.println("\n--- Que comence el joc de la Cambra Secreta! ---");
-
-        while (!encertat) {
-            IO.println("\nIntrodueix la teua combinació (" + longitud + " dígits entre 1 i 5):");
-            for (int i = 0; i < combJugador.length; i++) {
-                IO.print("Dígit [" + (i + 1) + "]: ");
-                combJugador[i] = Integer.parseInt(IO.readln());
-            }
-
-            // Comprovem si les dues taules són exactament iguals
-            if (Arrays.equals(combSecreta, combJugador)) {
-                encertat = true;
-                IO.println("\nEnhorabona! La cambra s'ha obert!");
-                IO.println("Combinació correcta: " + Arrays.toString(combSecreta));
-            } else {
-                IO.println("Combinació incorrecta. Pistes per posició:");
-                for (int i = 0; i < longitud; i++) {
-                    if (combJugador[i] < combSecreta[i]) {
-                        IO.println("- Dígit " + (i + 1) + " (" + combJugador[i] + "): És MAJOR");
-                    } else if (combJugador[i] > combSecreta[i]) {
-                        IO.println("- Dígit " + (i + 1) + " (" + combJugador[i] + "): És MENOR");
-                    } else {
-                        IO.println("- Dígit " + (i + 1) + " (" + combJugador[i] + "): CORRECTE (=)");
-                    }
-                }
-            }
-        }
-    }
-    ```
