@@ -18,9 +18,7 @@ Per a accedir a cada element individual d'un array s'utilitza el nom de l'array 
 * El segon element ocupa la posició **`1`**.
 * En un array de $n$ elements, l'**últim element** ocupa la posició **`n - 1`**.
 
-| Posició (Índex) | `[0]` | `[1]` | `[2]` | `[3]` | `[4]` | ... | `[19]` |
-| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| **Valor (`notes`)** | `7.5` | `4.2` | `9.0` | `5.8` | `6.3` | ... | `8.1` |
+![Representació gràfica de l'array notes](images/array_notes.png){ style="display: block; margin: 1.5em auto; max-width: 750px; width: 100%; border-radius: 4px;" }
 
 Per exemple, si guardem les notes de 20 estudiants en un vector anomenat `notes`, `notes[0]` conté la qualificació del primer alumne i `notes[19]` la de l'últim.
 
@@ -100,16 +98,7 @@ Com que els arrays són objectes, cal tindre molt present com s'emmagatzemen en 
 * **Variable referència (a l'Stack):** Emmagatzema únicament l'adreça de memòria on comença l'array.
 * **Elements de l'array (a l'Heap):** És el bloc consecutiu on es guarden els valors reals.
 
-```mermaid
-graph LR
-    subgraph Memòria Stack
-        V["vendes (Referència)"]
-    end
-    subgraph Memòria Heap
-        A["[0]: 0 | [1]: 0 | [2]: 0 | [3]: 0 | [4]: 0"]
-    end
-    V -->|Apunta a| A
-```
+![Diferència entre la referència i el contingut de l'array en memòria](images/referencia_memoria.png){ style="display: block; margin: 1.5em auto; max-width: 550px; width: 100%; border-radius: 4px;" }
 
 !!! warning "Còpia de referències vs. Còpia d'elements"
     Si fem `int[] b = vendes;`, **no** estem duplicant l'array! Estem fent que dues variables referencien exactament al mateix bloc de memòria. Qualsevol modificació feta mitjançant `b[0] = 99;` afectarà també a `vendes[0]`.
@@ -154,6 +143,10 @@ valors[0] = 10;          // Assignació d'un valor
 valors[1] = valors[0] * 2; // Ús com a operand (valors[1] valdrà 20)
 valors[2]++;             // Increment directe
 ```
+
+Un altre exemple:
+
+![Accés a un array](images/acces_elements.png){ style="display: block; margin: 1.5em auto; max-width: 750px; width: 100%; border-radius: 4px;" }
 
 Com a índex podem utilitzar qualsevol expressió que produïsca un nombre enter (`int`, `short`, `byte`, o una variable entera):
 

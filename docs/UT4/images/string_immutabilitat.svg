@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 310" width="100%" height="100%" style="background: white; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  <defs>
+    <!-- Arrow marker solid brown -->
+    <marker id="arrow-solid" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 1.5 L 10 5 L 0 8.5 z" fill="#b45309" />
+    </marker>
+    <!-- Filter for soft shadow -->
+    <filter id="shadow" x="-5%" y="-5%" width="115%" height="120%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.07" />
+    </filter>
+  </defs>
+
+  <!-- Background Card -->
+  <rect width="860" height="310" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5" />
+
+  <!-- ================= SECTION HEADERS ================= -->
+  <text x="165" y="38" fill="#475569" font-size="14" font-weight="bold" text-anchor="middle" letter-spacing="0.5">MEMÒRIA STACK</text>
+  <text x="545" y="38" fill="#475569" font-size="14" font-weight="bold" text-anchor="middle" letter-spacing="0.5">MEMÒRIA HEAP</text>
+
+  <!-- ================= LEFT: STACK REFERENCE ================= -->
+  <!-- Label: s -->
+  <text x="65" y="98" fill="#9a3412" font-size="24" font-family="'JetBrains Mono', 'Fira Code', 'Roboto Mono', Consolas, monospace" font-weight="bold">s</text>
+
+  <!-- Box: referencia -->
+  <rect x="95" y="68" width="140" height="44" rx="4" fill="#ffffff" stroke="#1e3a8a" stroke-width="2.2" filter="url(#shadow)" />
+  <text x="165" y="97" fill="#1e3a8a" font-size="18" font-style="italic" font-family="Georgia, serif" text-anchor="middle">referència</text>
+
+  <!-- ================= RIGHT: HEAP OBJECT 1 (abc) ================= -->
+  <g filter="url(#shadow)">
+    <rect x="465" y="60" width="160" height="30" fill="#f1f5f9" stroke="#1e3a8a" stroke-width="2" />
+    <text x="545" y="81" fill="#1e3a8a" font-size="16" font-weight="bold" text-anchor="middle">String</text>
+
+    <rect x="465" y="90" width="160" height="32" fill="#ffffff" stroke="#1e3a8a" stroke-width="2" />
+    <text x="545" y="113" fill="#0d9488" font-size="19" font-family="'JetBrains Mono', 'Fira Code', 'Roboto Mono', Consolas, monospace" font-weight="bold" text-anchor="middle">abc</text>
+  </g>
+
+  <!-- Red label: Orfe / Garbage Collector -->
+  <text x="640" y="112" fill="#dc2626" font-size="13" font-style="italic" font-family="system-ui, sans-serif">(orfe &#8594; Garbage Collector)</text>
+
+  <!-- ================= RIGHT: HEAP OBJECT 2 (ABC) ================= -->
+  <g filter="url(#shadow)">
+    <rect x="465" y="185" width="160" height="30" fill="#f1f5f9" stroke="#1e3a8a" stroke-width="2" />
+    <text x="545" y="206" fill="#1e3a8a" font-size="16" font-weight="bold" text-anchor="middle">String</text>
+
+    <rect x="465" y="215" width="160" height="32" fill="#ffffff" stroke="#1e3a8a" stroke-width="2" />
+    <text x="545" y="238" fill="#0d9488" font-size="19" font-family="'JetBrains Mono', 'Fira Code', 'Roboto Mono', Consolas, monospace" font-weight="bold" text-anchor="middle">ABC</text>
+  </g>
+
+  <!-- ================= ARROWS ================= -->
+  <!-- Old pointer to abc (interrupted) -->
+  <line x1="235" y1="90" x2="455" y2="90" stroke="#b45309" stroke-width="2" marker-end="url(#arrow-solid)" />
+
+  <!-- Red Cross over old pointer -->
+  <line x1="330" y1="74" x2="360" y2="106" stroke="#dc2626" stroke-width="3.5" stroke-linecap="round" />
+  <line x1="360" y1="74" x2="330" y2="106" stroke="#dc2626" stroke-width="3.5" stroke-linecap="round" />
+
+  <!-- New pointer to ABC -->
+  <line x1="235" y1="92" x2="455" y2="200" stroke="#b45309" stroke-width="2.5" marker-end="url(#arrow-solid)" />
+
+  <!-- Annotation at bottom -->
+  <text x="430" y="285" fill="#64748b" font-size="14" text-anchor="middle">En modificar l&apos;String es crea un nou objecte en memòria; l&apos;anterior queda sense referència.</text>
+</svg>

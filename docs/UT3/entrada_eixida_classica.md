@@ -168,16 +168,45 @@ Xocolata pura          2       4.50
 
 ### Configuració regional (*Locale*): Coma o punt decimal?
 
-Segons la configuració del vostre sistema operatiu, els nombres decimals es mostraran per defecte amb un **punt** (com `3.14`, habitual en l'àmbit anglosaxó) o amb una **coma** (com `3,14`, habitual a Espanya).
+Una confusió habitual és pensar que canviant la configuració regional es pot aconseguir que `System.out.println(4.5)` mostre `4,5`. Açò **no és possible**: `println` i `print` converteixen internament el número a `String` amb `Double.toString()`, que **sempre** utilitza el punt com a separador decimal, ignorant qualsevol configuració regional.
 
-Si volem forçar que `printf` utilitze sempre la **coma**, podem indicar la configuració en espanyol mitjançant `Locale.of("es", "ES")` com a primer paràmetre:
+| Mecanisme | Respecta el *locale* | Solució per a mostrar coma |
+| :--- | :---: | :--- |
+| `System.out.println(4.5)` | Mai | Usar `printf` o `String.format` |
+| `System.out.printf("%.2f", 4.5)` | Sí | Passar `Locale.of("es","ES")` com a 1r paràmetre |
+| `sc.nextDouble()` (Scanner) | Sí | Cridar `sc.useLocale(Locale.of("es","ES"))` |
 
-```java
-import java.util.Locale;
+Per a mostrar la **coma** en un número real amb `printf` o `String.format` tenim dues alternatives:
 
-double valor = 12.345;
-System.out.printf(Locale.of("es", "ES"), "Valor amb coma: %.2f\n", valor); // Mostra: 12,35
-```
+=== "Opció A: `printf` amb *locale* explícit (recomanat)"
+
+    ```java
+    import java.util.Locale;
+
+    double valor = 12.345;
+    System.out.printf(Locale.of("es", "ES"), "Valor: %.2f%n", valor); // Mostra: 12,35
+    ```
+
+=== "Opció B: Conversió a `String` amb `String.format`"
+
+    Si necessitem el resultat com a text per a concatenar-lo, podem usar `String.format` amb el *locale* i imprimir-lo després amb `println`:
+
+    ```java
+    import java.util.Locale;
+
+    double valor = 12.345;
+    String text = String.format(Locale.of("es", "ES"), "%.2f", valor); // "12,35"
+    System.out.println("Valor: " + text); // Ara sí podem usar println
+    ```
+
+!!! tip "Forçar la coma en tot el programa amb `Locale.setDefault`"
+    Podeu afegir `Locale.setDefault(...)` **al principi del `main()`** perquè `printf` i `Scanner` utilitzen la coma en tot el programa sense haver de configurar-los un per un. Recordeu que açò **mai** afectarà `println`:
+    ```java
+    Locale.setDefault(Locale.of("es", "ES"));
+
+    System.out.printf("%.2f%n", 4.5);  // Mostra: 4,50  
+    System.out.println(4.5);           // Segueix mostrant: 4.5  (comportament fix de println)
+    ```
 
 ---
 
@@ -228,14 +257,15 @@ La classe **`Scanner`** es troba disponible des de Java 5 en el paquet `java.uti
 
 ### El separador decimal en `Scanner`: Coma (,) o punt (.)?
 
-De la mateixa manera, quan introduïm un número decimal per teclat amb `sc.nextDouble()`:
+Quan es crea un objecte `Scanner`, aquest adopta automàticament el *locale* **que veu la JVM** (la màquina virtual de Java), no necessàriament el del sistema operatiu. La JVM determina el seu *locale* per defecte a partir de la variable d'entorn `LANG` (o `LC_ALL`), però **ignora** les variables `LC_NUMERIC`, `LC_TIME`, etc. de forma individual.
 
-* Depenent de la configuració de l'ordinador, `Scanner` pot demanar el decimal amb un **punt** (`3.14`) o amb una **coma** (`3,14`).
-* Si el vostre sistema espera una cosa i en teclegem una altra, el programa llançarà un error (`InputMismatchException`).
+!!! warning "El *locale* de la JVM pot diferir del sistema"
+    En molts sistemes Linux configurats parcialment en espanyol (per exemple, amb `LANG=en_US.UTF-8` però `LC_NUMERIC=es_ES`), la JVM arrencarà en anglès i `sc.nextDouble()` esperarà un **punt** per defecte, encara que el sistema operatiu usaria la coma. Per comprovar quin *locale* veu realment la vostra JVM:
+    ```bash
+    java -XshowSettings:locale -version 2>&1 | grep "default locale"
+    ```
 
-#### Com forçar que accepte sempre la coma (,)?
-
-Per a assegurar-nos que `Scanner` accepte sempre la **coma** (el format estàndard a Espanya), podem indicar la configuració regional en espanyol mitjançant `Locale.of("es", "ES")`:
+A diferència de `println`, en `Scanner` **sí podem forçar la coma** de forma explícita i portable amb `useLocale()`:
 
 ```java
 import java.util.Locale;
@@ -243,13 +273,10 @@ import java.util.Scanner;
 
 Scanner sc = new Scanner(System.in);
 sc.useLocale(Locale.of("es", "ES")); // Ara sc.nextDouble() accepta sempre 3,14 amb coma!
-```
 
-!!! tip "Forçar la coma en tot el programa"
-    Si voleu que tant `Scanner` com `printf` utilitzen sempre la coma sense haver de configurar-los per separat, podeu afegir aquesta línia a l'inici del vostre programa:
-    ```java
-    Locale.setDefault(Locale.of("es", "ES"));
-    ```
+System.out.print("Introdueix un decimal: ");
+double valor = sc.nextDouble(); // L'usuari pot escriure 4,5 i funciona correctament
+```
 
 ---
 
@@ -324,7 +351,38 @@ String adreca = sc.nextLine(); // Funciona perfectament sense problemes!
 
 
 
-## 5. Taula comparativa: Classe `IO` (Java 25) vs Model Clàssic
+## 5. Arguments de la línia d'ordres: `String[] args`
+
+Quan executem un programa Java des d'un terminal, podem passar-li **valors directament en la mateixa ordre d'execució**. Aquests valors es denominen **arguments de la línia d'ordres** (*command-line arguments*).
+
+```bash
+java Programa.java Pep 25
+```
+
+Dins del programa, aquests arguments arriben al mètode `main` com a text (`String`) i podem accedir-hi per la seua posició numèrica —igual que si fóra una llista numerada a partir de zero—:
+
+* `args[0]` → primer argument → `"Pep"`
+* `args[1]` → segon argument → `"25"`
+* `args[2]` → tercer argument → i així successivament...
+
+!!! note "Els índexs comencen en 0"
+    El primer argument no és `args[1]` sinó **`args[0]`**. Açò és consistent amb la forma en què Java numera les posicions en general, com veurem quan estudiem els arrays.
+
+```java
+void main(String[] args) {
+    String nom  = args[0];        // "Pep"
+    int    edat = Integer.parseInt(args[1]); // "25" --> 25
+
+    System.out.println("Hola, " + nom + "! Tens " + edat + " anys.");
+}
+```
+
+!!! warning "Els arguments sempre arriben com a `String`"
+    Tots els arguments de la línia d'ordres són text. Si necessitem un número, cal convertir-lo explícitament amb `Integer.parseInt()`, `Double.parseDouble()`, etc.
+
+---
+
+## 6. Taula comparativa: Classe `IO` (Java 25) vs Model Clàssic
 
 | Operació | Amb la classe `IO` (Java 25) | Model Clàssic (`System.out` / `Scanner`) |
 | :--- | :--- | :--- |

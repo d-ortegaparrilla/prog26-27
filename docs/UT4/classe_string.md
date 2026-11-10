@@ -16,37 +16,26 @@ Una característica fonamental i distintiva dels objectes `String` en Java és q
 Observem el següent exemple:
 
 ```java
-String salutacio = "bon dia";
-salutacio = salutacio.toUpperCase();
+String s = "abc";
+s = s.toUpperCase();
 ```
 
-1. Inicialment es crea a l'Heap l'objecte amb el text `"bon dia"` i la variable `salutacio` l'apunta.
-2. En cridar a `toUpperCase()`, Java crea un **segon objecte** independent amb el text `"BON DIA"`.
-3. L'operador d'assignació `=` fa que la referència `salutacio` passe a apuntar al nou objecte.
-4. L'objecte inicial `"bon dia"` queda orfe en memòria i serà eliminat automàticament pel **Recol·lector de Fem** (*Garbage Collector*).
+1. Inicialment es crea a l'Heap l'objecte amb el text `"abc"` i la variable `s` l'apunta.
+2. En cridar a `toUpperCase()`, Java crea un **segon objecte** independent amb el text `"ABC"`.
+3. L'operador d'assignació `=` fa que la referència `s` passe a apuntar al nou objecte.
+4. L'objecte inicial `"abc"` queda orfe en memòria i serà eliminat automàticament pel **Recol·lector de Fem** (*Garbage Collector*).
 
-```mermaid
-graph LR
-    subgraph Memòria Stack
-        S["salutacio (Referència)"]
-    end
-    subgraph Memòria Heap
-        O1["Objecte 1: 'bon dia' (Orfe -> Garbage Collector)"]
-        O2["Objecte 2: 'BON DIA'"]
-    end
-    S -.->|Abans| O1
-    S ===>|Després d'assignar| O2
-```
+![Immutabilitat dels objectes String en memòria](images/string_immutabilitat.png){ style="display: block; margin: 1.5em auto; max-width: 650px; width: 100%; border-radius: 4px;" }
 
 ---
 
 ## 2. Creació d'objectes `String`
 
-Podem crear cadenes mitjançant diferents formes:
+Podem crear cadenes principalment de dues formes bàsiques:
 
 ### 2.1 Literals entre cometes dobles
 
-És la forma directa i recomanada. Java utilitza una zona especial de memòria anomenada **String Constant Pool** per a optimitzar l'ús de la memòria:
+És la forma directa i més habitual. Java utilitza una zona especial de memòria anomenada **String Constant Pool** per a optimitzar l'ús de la memòria:
 
 ```java
 String s1 = "Petrer";
@@ -63,16 +52,16 @@ int edat = 22;
 String presentacio = "Hola, em dic " + nom + " i tinc " + edat + " anys.";
 ```
 
-### 2.3 Constructors de la classe `String`
+Com que els objectes `String` són immutables, en concatenar cadenes es crea sempre un nou objecte a l'Heap:
 
-La classe `String` compta amb múltiples constructors per a inicialitzar cadenes a partir d'altres fonts de dades:
+```java
+String b = "Ordinador";
+String c = " Portàtil";
 
-| Constructor | Descripció | Exemple |
-| :--- | :--- | :--- |
-| `String()` | Crea una cadena buida equivalent a `""`. | `String s = new String();` |
-| `String(String original)` | Crea un nou objecte duplicant el contingut de la cadena indicada. | `String s = new String("hola");` |
-| `String(char[] array)` | Crea un `String` a partir d'un array complet de caràcters. | `char[] c = {'A', 'B'}; String s = new String(c);` |
-| `String(char[] a, int pos, int len)` | Crea un `String` prenent `len` caràcters a partir de la posició `pos`. | `String s = new String(c, 0, 1);` |
+b = b + c; // Crea un nou String ("Ordinador Portàtil") i li assigna la seua adreça a b
+```
+
+![Concatenació de cadenes en memòria](images/string_concatenacio.png){ style="display: block; margin: 1.5em auto; max-width: 750px; width: 100%; border-radius: 4px;" }
 
 ---
 
@@ -115,17 +104,22 @@ Un dels errors més comuns en aprendre Java és utilitzar l'operador d'igualtat 
     * El mètode **`equals()`** compara el **contingut caràcter a caràcter** dels dos textos.
 
 ```java
-String s1 = new String("hola");
-String s2 = new String("hola");
+IO.print("Introdueix una paraula: ");
+String s1 = IO.readln(); // Imaginem que l'usuari escriu "hola" per teclat
+String s2 = "hola";      // Literal definit en el programa
 
+// ERROR FREQÜENT: Compara si apunten a la mateixa adreça de memòria
 if (s1 == s2) {
-    IO.println("Són idèntics en memòria"); // NO s'executa! Són dos objectes diferents
+    IO.println("Són idèntics en memòria"); // NO s'executarà! Són dos objectes diferents
 }
 
+// FORMA CORRECTA: Compara el text caràcter a caràcter
 if (s1.equals(s2)) {
-    IO.println("Tenen el mateix text!"); // SÍ s'executa correctament
+    IO.println("Tenen el mateix contingut de text!"); // SÍ s'executarà
 }
 ```
+
+Com que la cadena `s1` s'ha creat dinàmicament en memòria en temps d'execució en llegir del teclat, es troba en una ubicació de memòria diferent del literal `s2`. Per tant, `s1 == s2` avalua a `false`. En canvi, el mètode `s1.equals(s2)` comprova que ambdues cadenes contenen exactament la mateixa seqüència de caràcters (`'h'`, `'o'`, `'l'`, `'a'`), avaluant a `true`.
 
 ---
 

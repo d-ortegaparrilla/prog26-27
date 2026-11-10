@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 290" width="100%" height="100%" xml:space="preserve" style="background: white; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  <defs>
+    <marker id="arrow-solid" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 1.5 L 10 5 L 0 8.5 z" fill="#b45309" />
+    </marker>
+    <filter id="shadow" x="-5%" y="-5%" width="115%" height="120%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.07" />
+    </filter>
+  </defs>
+
+  <!-- Background Card -->
+  <rect width="880" height="290" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5" />
+
+  <!-- Code expression title at top left -->
+  <text x="40" y="32" font-size="16" font-family="'JetBrains Mono', 'Fira Code', 'Roboto Mono', Consolas, monospace">
+    <tspan fill="#64748b">Operació:&#160;</tspan><tspan fill="#083344" font-weight="bold">b = b + c;</tspan>
+  </text>
+
+  <!-- ================= VARIABLE B ================= -->
+  <!-- Label b -->
+  <text x="30" y="88" fill="#9a3412" font-size="22" font-family="'JetBrains Mono', 'Fira Code', 'Roboto Mono', Consolas, monospace" font-weight="bold">b</text>
+
+  <!-- Box b referencia -->
+  <rect x="55" y="60" width="125" height="42" rx="4" fill="#ffffff" stroke="#1e3a8a" stroke-width="2" filter="url(#shadow)" />
+  <text x="117" y="87" fill="#1e3a8a" font-size="17" font-style="italic" font-family="Georgia, serif" text-anchor="middle">referència</text>
+
+  <!-- ================= OBJECT 1: Ordinador ================= -->
+  <g filter="url(#shadow)">
+    <rect x="290" y="52" width="155" height="26" fill="#f1f5f9" stroke="#1e3a8a" stroke-width="1.8" />
+    <text x="367" y="70" fill="#1e3a8a" font-size="15" font-weight="bold" text-anchor="middle">String</text>
+    <rect x="290" y="78" width="155" height="28" fill="#ffffff" stroke="#1e3a8a" stroke-width="1.8" />
+    <text x="367" y="98" fill="#0d9488" font-size="17" font-family="'JetBrains Mono', 'Fira Code', 'Roboto Mono', Consolas, monospace" font-weight="bold" text-anchor="middle">Ordinador</text>
+  </g>
+
+  <!-- Arrow from b to Ordinador (cancelled) -->
+  <line x1="180" y1="81" x2="282" y2="81" stroke="#b45309" stroke-width="2" marker-end="url(#arrow-solid)" />
+
+  <!-- Red Cross over b -> Ordinador -->
+  <line x1="220" y1="68" x2="245" y2="94" stroke="#dc2626" stroke-width="3.2" stroke-linecap="round" />
+  <line x1="245" y1="68" x2="220" y2="94" stroke="#dc2626" stroke-width="3.2" stroke-linecap="round" />
+
+  <!-- ================= VARIABLE C ================= -->
+  <!-- Label c -->
+  <text x="495" y="88" fill="#9a3412" font-size="22" font-family="'JetBrains Mono', 'Fira Code', 'Roboto Mono', Consolas, monospace" font-weight="bold">c</text>
+
+  <!-- Box c referencia -->
+  <rect x="520" y="60" width="125" height="42" rx="4" fill="#ffffff" stroke="#1e3a8a" stroke-width="2" filter="url(#shadow)" />
+  <text x="582" y="87" fill="#1e3a8a" font-size="17" font-style="italic" font-family="Georgia, serif" text-anchor="middle">referència</text>
+
+  <!-- ================= OBJECT 2: Portàtil ================= -->
+  <g filter="url(#shadow)">
+    <rect x="700" y="52" width="145" height="26" fill="#f1f5f9" stroke="#1e3a8a" stroke-width="1.8" />
+    <text x="772" y="70" fill="#1e3a8a" font-size="15" font-weight="bold" text-anchor="middle">String</text>
+    <rect x="700" y="78" width="145" height="28" fill="#ffffff" stroke="#1e3a8a" stroke-width="1.8" />
+    <text x="772" y="98" fill="#0d9488" font-size="17" font-family="'JetBrains Mono', 'Fira Code', 'Roboto Mono', Consolas, monospace" font-weight="bold" text-anchor="middle">Portàtil</text>
+  </g>
+
+  <!-- Arrow from c to Portatil (active) -->
+  <line x1="645" y1="81" x2="692" y2="81" stroke="#b45309" stroke-width="2.2" marker-end="url(#arrow-solid)" />
+
+  <!-- ================= OBJECT 3: Ordinador Portàtil ================= -->
+  <g filter="url(#shadow)">
+    <rect x="290" y="160" width="215" height="28" fill="#f1f5f9" stroke="#1e3a8a" stroke-width="1.8" />
+    <text x="397" y="180" fill="#1e3a8a" font-size="15" font-weight="bold" text-anchor="middle">String</text>
+    <rect x="290" y="188" width="215" height="32" fill="#ffffff" stroke="#1e3a8a" stroke-width="1.8" />
+    <text x="397" y="210" fill="#0d9488" font-size="17" font-family="'JetBrains Mono', 'Fira Code', 'Roboto Mono', Consolas, monospace" font-weight="bold" text-anchor="middle">Ordinador Portàtil</text>
+  </g>
+
+  <!-- Arrow from b to Ordinador Portatil -->
+  <line x1="180" y1="88" x2="282" y2="178" stroke="#b45309" stroke-width="2.5" marker-end="url(#arrow-solid)" />
+
+  <!-- Bottom Explanatory Caption -->
+  <text x="440" y="262" fill="#64748b" font-size="14" text-anchor="middle">La concatenació b + c crea un nou String a l&apos;Heap i b passa a referenciar-lo; l&apos;original &quot;Ordinador&quot; queda orfe.</text>
+</svg>

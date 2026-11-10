@@ -89,11 +89,12 @@ Quan les dades estan desordenades, no tenim més remei que recórrer el vector e
 int clau = 22;
 int[] dades = {8, 41, 37, 22, 19};
 int pos = -1;
+boolean trobat = false;
 
-for (int i = 0; i < dades.length; i++) {
+for (int i = 0; i < dades.length && !trobat; i++) {
     if (dades[i] == clau) {
         pos = i;
-        break; // Trobat, interrompem el bucle
+        trobat = true; // Trobat, interrompem el bucle
     }
 }
 ```

@@ -27,12 +27,7 @@ En aquesta taula, l'element `M[1][3]` correspon a la fila 1 i la columna 3, el v
 
 En Java **no existeixen les matrius bidimensionals pures** com un bloc rígid de memòria 2D. En realitat, una matriu és un **array de referències on cadascuna apunta a un altre array independent**:
 
-```mermaid
-graph TD
-    M["M (Array de 3 files)"] --> F0["Fila [0] (Array de 5 int)"]
-    M --> F1["Fila [1] (Array de 5 int)"]
-    M --> F2["Fila [2] (Array de 5 int)"]
-```
+![Disposició d'una matriu en memòria com a array d'arrays](images/matriu_memoria.png){ style="display: block; margin: 1.5em auto; max-width: 800px; width: 100%; border-radius: 4px;" }
 
 D'aquesta estructura interna es deriven dues propietats clau:
 
@@ -71,6 +66,10 @@ m[0] = new int[3]; // Fila 0: 3 columnes
 m[1] = new int[5]; // Fila 1: 5 columnes
 m[2] = new int[2]; // Fila 2: 2 columnes
 ```
+
+Gràficament podem representar la disposició real en memòria d'aquesta matriu irregular de la manera següent:
+
+![Disposició en memòria d'una matriu irregular](images/matriu_irregular.png){ style="display: block; margin: 1.5em auto; max-width: 800px; width: 100%; border-radius: 4px;" }
 
 ---
 
