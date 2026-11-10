@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
     
     
       
@@ -1442,6 +1442,62 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="classe_string.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    La classe String
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="matrius.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Matrius en Java (Arrays multidimensionals)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1783,13 +1839,14 @@ En l'exemple anterior, el rang <code>(1, 4)</code> modifica exclusivament les po
 <div class="language-java highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">clau</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">22</span><span class="p">;</span>
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">dades</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">41</span><span class="p">,</span><span class="w"> </span><span class="mi">37</span><span class="p">,</span><span class="w"> </span><span class="mi">22</span><span class="p">,</span><span class="w"> </span><span class="mi">19</span><span class="p">};</span>
 </span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="kt">int</span><span class="w"> </span><span class="n">pos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">;</span>
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">dades</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">dades</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">clau</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">        </span><span class="n">pos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
-</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">        </span><span class="k">break</span><span class="p">;</span><span class="w"> </span><span class="c1">// Trobat, interrompem el bucle</span>
-</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="p">}</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="kt">boolean</span><span class="w"> </span><span class="n">trobat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">dades</span><span class="p">.</span><span class="na">length</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">!</span><span class="n">trobat</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">dades</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">clau</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">        </span><span class="n">pos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">        </span><span class="n">trobat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span><span class="w"> </span><span class="c1">// Trobat, interrompem el bucle</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="p">}</span>
 </span></code></pre></div>
 <h3 id="42-cerca-en-taules-ordenades-cerca-dicotomica-binaria">4.2 Cerca en taules ordenades: Cerca dicotòmica / binària<a class="headerlink" href="#42-cerca-en-taules-ordenades-cerca-dicotomica-binaria" title="Permanent link">&para;</a></h3>
 <p>Si el vector està ordenat, podem emprar l'algorisme de <strong>cerca dicotòmica</strong> (<em>binary search</em>), el qual divideix la taula en dues meitats successives descartant la meitat on és impossible que estiga el valor.</p>
@@ -2055,7 +2112,7 @@ En l'exemple anterior, el rang <code>(1, 4)</code> modifica exclusivament les po
       <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["header.autohide", "content.code.copy", "content.code.annotate", "navigation.top", "navigation.instant", "navigation.tracking", "search.suggest", "search.highlight"], "search": "../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copiat al porta-retalls", "clipboard.copy": "C\u00f2pia al porta-retalls", "search.result.more.one": "1 m\u00e9s en aquesta p\u00e0gina", "search.result.more.other": "# m\u00e9s en aquesta p\u00e0gina", "search.result.none": "Cap document coincideix", "search.result.one": "1 document coincident", "search.result.other": "# documents coincidents", "search.result.placeholder": "Escriu per a comen\u00e7ar a cercar", "search.result.term.missing": "Desaparegut", "select.version": "Selecciona la versi\u00f3"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.c21346df.min.js"></script>
+      <script src="../assets/javascripts/bundle.a5f9d56c.min.js"></script>
       
         <script src="../javascripts/mathjax.js"></script>
       

@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://d-ortegaparrilla.github.io/prog26-27/UT4/matrius.html">
       
       
-        <link rel="prev" href="introduccio.html">
+        <link rel="prev" href="classe_string.html">
       
       
       
@@ -23,7 +23,7 @@
       
       
       <link rel="icon" href="../favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
     
     
       
@@ -1165,6 +1165,265 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="classe_string.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    La classe String
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Matrius en Java (Arrays multidimensionals)
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="matrius.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Matrius en Java (Arrays multidimensionals)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Taula de continguts">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Taula de continguts
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-concepte-de-matriu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Concepte de matriu
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Concepte de matriu">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-les-matrius-com-a-arrays-darrays" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 Les matrius com a "arrays d'arrays"
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-creacio-i-instanciacio-de-matrius" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Creació i instanciació de matrius
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Creació i instanciació de matrius">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-matrius-irregulars-ragged-arrays" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Matrius irregulars (Ragged Arrays)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-inicialitzacio-de-matrius" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Inicialització de matrius
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Inicialització de matrius">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-inicialitzacio-per-defecte" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Inicialització per defecte
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-inicialitzacio-explicita-literals-entre-claus-niades" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Inicialització explícita (literals entre claus niades)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-recorregut-duna-matriu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Recorregut d'una matriu
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-exemples-practics-resolts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Exemples pràctics resolts
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Exemples pràctics resolts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exemple-1-cerca-del-valor-maxim-i-minim-duna-matriu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exemple 1: Cerca del valor màxim i mínim d'una matriu
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemple-2-suma-de-dues-matrius-3-times-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exemple 2: Suma de dues matrius \(3 \times 3\)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemple-3-intercanvi-de-dues-files-duna-matriu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exemple 3: Intercanvi de dues files d'una matriu
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1427,10 +1686,7 @@
 <p>En aquesta taula, l'element <code>M[1][3]</code> correspon a la fila 1 i la columna 3, el valor del qual és <strong><code>8</code></strong>.</p>
 <h3 id="11-les-matrius-com-a-arrays-darrays">1.1 Les matrius com a "arrays d'arrays"<a class="headerlink" href="#11-les-matrius-com-a-arrays-darrays" title="Permanent link">&para;</a></h3>
 <p>En Java <strong>no existeixen les matrius bidimensionals pures</strong> com un bloc rígid de memòria 2D. En realitat, una matriu és un <strong>array de referències on cadascuna apunta a un altre array independent</strong>:</p>
-<pre class="mermaid"><code>graph TD
-    M["M (Array de 3 files)"] --&gt; F0["Fila [0] (Array de 5 int)"]
-    M --&gt; F1["Fila [1] (Array de 5 int)"]
-    M --&gt; F2["Fila [2] (Array de 5 int)"]</code></pre>
+<p><img alt="Disposició d'una matriu en memòria com a array d'arrays" src="images/matriu_memoria.png" style="display: block; margin: 1.5em auto; max-width: 800px; width: 100%; border-radius: 4px;" /></p>
 <p>D'aquesta estructura interna es deriven dues propietats clau:</p>
 <ul>
 <li><strong><code>M.length</code></strong>: Retorna el nombre total de <strong>files</strong> (en l'exemple anterior, <code>3</code>).</li>
@@ -1456,6 +1712,8 @@
 </span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="n">m</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="o">[</span><span class="mi">5</span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="c1">// Fila 1: 5 columnes</span>
 </span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="n">m</span><span class="o">[</span><span class="mi">2</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="o">[</span><span class="mi">2</span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="c1">// Fila 2: 2 columnes</span>
 </span></code></pre></div>
+<p>Gràficament podem representar la disposició real en memòria d'aquesta matriu irregular de la manera següent:</p>
+<p><img alt="Disposició en memòria d'una matriu irregular" src="images/matriu_irregular.png" style="display: block; margin: 1.5em auto; max-width: 800px; width: 100%; border-radius: 4px;" /></p>
 <hr />
 <h2 id="3-inicialitzacio-de-matrius">3. Inicialització de matrius<a class="headerlink" href="#3-inicialitzacio-de-matrius" title="Permanent link">&para;</a></h2>
 <h3 id="31-inicialitzacio-per-defecte">3.1 Inicialització per defecte<a class="headerlink" href="#31-inicialitzacio-per-defecte" title="Permanent link">&para;</a></h3>
@@ -1722,7 +1980,7 @@
       <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["header.autohide", "content.code.copy", "content.code.annotate", "navigation.top", "navigation.instant", "navigation.tracking", "search.suggest", "search.highlight"], "search": "../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copiat al porta-retalls", "clipboard.copy": "C\u00f2pia al porta-retalls", "search.result.more.one": "1 m\u00e9s en aquesta p\u00e0gina", "search.result.more.other": "# m\u00e9s en aquesta p\u00e0gina", "search.result.none": "Cap document coincideix", "search.result.one": "1 document coincident", "search.result.other": "# documents coincidents", "search.result.placeholder": "Escriu per a comen\u00e7ar a cercar", "search.result.term.missing": "Desaparegut", "select.version": "Selecciona la versi\u00f3"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.c21346df.min.js"></script>
+      <script src="../assets/javascripts/bundle.a5f9d56c.min.js"></script>
       
         <script src="../javascripts/mathjax.js"></script>
       

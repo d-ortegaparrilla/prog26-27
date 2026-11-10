@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
     
     
       
@@ -1453,6 +1453,62 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="classe_string.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    La classe String
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="matrius.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Matrius en Java (Arrays multidimensionals)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1761,32 +1817,7 @@
 <li>El segon element ocupa la posició <strong><code>1</code></strong>.</li>
 <li>En un array de <span class="arithmatex">\(n\)</span> elements, l'<strong>últim element</strong> ocupa la posició <strong><code>n - 1</code></strong>.</li>
 </ul>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Posició (Índex)</th>
-<th style="text-align: center;"><code>[0]</code></th>
-<th style="text-align: center;"><code>[1]</code></th>
-<th style="text-align: center;"><code>[2]</code></th>
-<th style="text-align: center;"><code>[3]</code></th>
-<th style="text-align: center;"><code>[4]</code></th>
-<th style="text-align: center;">...</th>
-<th style="text-align: center;"><code>[19]</code></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><strong>Valor (<code>notes</code>)</strong></td>
-<td style="text-align: center;"><code>7.5</code></td>
-<td style="text-align: center;"><code>4.2</code></td>
-<td style="text-align: center;"><code>9.0</code></td>
-<td style="text-align: center;"><code>5.8</code></td>
-<td style="text-align: center;"><code>6.3</code></td>
-<td style="text-align: center;">...</td>
-<td style="text-align: center;"><code>8.1</code></td>
-</tr>
-</tbody>
-</table>
+<p><img alt="Representació gràfica de l'array notes" src="images/array_notes.png" style="display: block; margin: 1.5em auto; max-width: 750px; width: 100%; border-radius: 4px;" /></p>
 <p>Per exemple, si guardem les notes de 20 estudiants en un vector anomenat <code>notes</code>, <code>notes[0]</code> conté la qualificació del primer alumne i <code>notes[19]</code> la de l'últim.</p>
 <hr />
 <h2 id="2-creacio-darrays-unidimensionals">2. Creació d'arrays unidimensionals<a class="headerlink" href="#2-creacio-darrays-unidimensionals" title="Permanent link">&para;</a></h2>
@@ -1841,14 +1872,7 @@
 <li><strong>Variable referència (a l'Stack):</strong> Emmagatzema únicament l'adreça de memòria on comença l'array.</li>
 <li><strong>Elements de l'array (a l'Heap):</strong> És el bloc consecutiu on es guarden els valors reals.</li>
 </ul>
-<pre class="mermaid"><code>graph LR
-    subgraph Memòria Stack
-        V["vendes (Referència)"]
-    end
-    subgraph Memòria Heap
-        A["[0]: 0 | [1]: 0 | [2]: 0 | [3]: 0 | [4]: 0"]
-    end
-    V --&gt;|Apunta a| A</code></pre>
+<p><img alt="Diferència entre la referència i el contingut de l'array en memòria" src="images/referencia_memoria.png" style="display: block; margin: 1.5em auto; max-width: 550px; width: 100%; border-radius: 4px;" /></p>
 <div class="admonition warning">
 <p class="admonition-title">Còpia de referències vs. Còpia d'elements</p>
 <p>Si fem <code>int[] b = vendes;</code>, <strong>no</strong> estem duplicant l'array! Estem fent que dues variables referencien exactament al mateix bloc de memòria. Qualsevol modificació feta mitjançant <code>b[0] = 99;</code> afectarà també a <code>vendes[0]</code>.</p>
@@ -1903,6 +1927,8 @@
 </span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="n">valors</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">valors</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="c1">// Ús com a operand (valors[1] valdrà 20)</span>
 </span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="n">valors</span><span class="o">[</span><span class="mi">2</span><span class="o">]++</span><span class="p">;</span><span class="w">             </span><span class="c1">// Increment directe</span>
 </span></code></pre></div>
+<p>Un altre exemple:</p>
+<p><img alt="Accés a un array" src="images/acces_elements.png" style="display: block; margin: 1.5em auto; max-width: 750px; width: 100%; border-radius: 4px;" /></p>
 <p>Com a índex podem utilitzar qualsevol expressió que produïsca un nombre enter (<code>int</code>, <code>short</code>, <code>byte</code>, o una variable entera):</p>
 <div class="language-java highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">posicio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
 </span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="n">valors</span><span class="o">[</span><span class="n">posicio</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">50</span><span class="p">;</span>
@@ -2157,7 +2183,7 @@
       <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["header.autohide", "content.code.copy", "content.code.annotate", "navigation.top", "navigation.instant", "navigation.tracking", "search.suggest", "search.highlight"], "search": "../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copiat al porta-retalls", "clipboard.copy": "C\u00f2pia al porta-retalls", "search.result.more.one": "1 m\u00e9s en aquesta p\u00e0gina", "search.result.more.other": "# m\u00e9s en aquesta p\u00e0gina", "search.result.none": "Cap document coincideix", "search.result.one": "1 document coincident", "search.result.other": "# documents coincidents", "search.result.placeholder": "Escriu per a comen\u00e7ar a cercar", "search.result.term.missing": "Desaparegut", "select.version": "Selecciona la versi\u00f3"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.c21346df.min.js"></script>
+      <script src="../assets/javascripts/bundle.a5f9d56c.min.js"></script>
       
         <script src="../javascripts/mathjax.js"></script>
       

@@ -15,17 +15,17 @@
         <link rel="canonical" href="https://d-ortegaparrilla.github.io/prog26-27/UT4/classe_string.html">
       
       
-        <link rel="prev" href="classe_array.html">
+        <link rel="prev" href="arrays_caracters.html">
       
       
-        <link rel="next" href="exercicis.html">
+        <link rel="next" href="matrius.html">
       
       
         
       
       
       <link rel="icon" href="../favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
     
     
       
@@ -1167,6 +1167,220 @@
 
               
             
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    La classe String
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="classe_string.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    La classe String
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Taula de continguts">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Taula de continguts
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-immutabilitat-dels-objectes-string" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Immutabilitat dels objectes String
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-creacio-dobjectes-string" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Creació d'objectes String
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Creació d&#39;objectes String">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-literals-entre-cometes-dobles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Literals entre cometes dobles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-operador-de-concatenacio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Operador de concatenació +
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-metodes-principals-de-la-classe-string" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Mètodes principals de la classe String
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-comparacio-de-cadenes-equals-vs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Comparació de cadenes: equals() vs ==
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-exemples-practics-resolts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Exemples pràctics resolts
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Exemples pràctics resolts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exemple-1-processament-de-noms-i-extraccio-dinicials" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exemple 1: Processament de noms i extracció d'inicials
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemple-2-comprovacio-de-palindroms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exemple 2: Comprovació de palíndroms
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="matrius.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Matrius en Java (Arrays multidimensionals)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1239,17 +1453,6 @@
     <span class="md-ellipsis">
       
         2.2 Operador de concatenació +
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#23-constructors-de-la-classe-string" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2.3 Constructors de la classe String
       
     </span>
   </a>
@@ -1353,30 +1556,21 @@
 <p>Una vegada que un objecte <code>String</code> ha sigut creat a la memòria Heap, <strong>el seu contingut intern mai no es pot modificar</strong>. Qualsevol mètode o operació que aparentment modifique una cadena (com <code>toUpperCase()</code>, <code>replace()</code> o la concatenació amb <code>+</code>) el que fa en realitat és <strong>crear i retornar un objecte <code>String</code> completament nou</strong> amb les modificacions, deixant la cadena original intacta.</p>
 </div>
 <p>Observem el següent exemple:</p>
-<div class="language-java highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">String</span><span class="w"> </span><span class="n">salutacio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"bon dia"</span><span class="p">;</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">salutacio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">salutacio</span><span class="p">.</span><span class="na">toUpperCase</span><span class="p">();</span>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">String</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"abc"</span><span class="p">;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="na">toUpperCase</span><span class="p">();</span>
 </span></code></pre></div>
 <ol>
-<li>Inicialment es crea a l'Heap l'objecte amb el text <code>"bon dia"</code> i la variable <code>salutacio</code> l'apunta.</li>
-<li>En cridar a <code>toUpperCase()</code>, Java crea un <strong>segon objecte</strong> independent amb el text <code>"BON DIA"</code>.</li>
-<li>L'operador d'assignació <code>=</code> fa que la referència <code>salutacio</code> passe a apuntar al nou objecte.</li>
-<li>L'objecte inicial <code>"bon dia"</code> queda orfe en memòria i serà eliminat automàticament pel <strong>Recol·lector de Fem</strong> (<em>Garbage Collector</em>).</li>
+<li>Inicialment es crea a l'Heap l'objecte amb el text <code>"abc"</code> i la variable <code>s</code> l'apunta.</li>
+<li>En cridar a <code>toUpperCase()</code>, Java crea un <strong>segon objecte</strong> independent amb el text <code>"ABC"</code>.</li>
+<li>L'operador d'assignació <code>=</code> fa que la referència <code>s</code> passe a apuntar al nou objecte.</li>
+<li>L'objecte inicial <code>"abc"</code> queda orfe en memòria i serà eliminat automàticament pel <strong>Recol·lector de Fem</strong> (<em>Garbage Collector</em>).</li>
 </ol>
-<pre class="mermaid"><code>graph LR
-    subgraph Memòria Stack
-        S["salutacio (Referència)"]
-    end
-    subgraph Memòria Heap
-        O1["Objecte 1: 'bon dia' (Orfe -&gt; Garbage Collector)"]
-        O2["Objecte 2: 'BON DIA'"]
-    end
-    S -.-&gt;|Abans| O1
-    S ===&gt;|Després d'assignar| O2</code></pre>
+<p><img alt="Immutabilitat dels objectes String en memòria" src="images/string_immutabilitat.png" style="display: block; margin: 1.5em auto; max-width: 650px; width: 100%; border-radius: 4px;" /></p>
 <hr />
 <h2 id="2-creacio-dobjectes-string">2. Creació d'objectes <code>String</code><a class="headerlink" href="#2-creacio-dobjectes-string" title="Permanent link">&para;</a></h2>
-<p>Podem crear cadenes mitjançant diferents formes:</p>
+<p>Podem crear cadenes principalment de dues formes bàsiques:</p>
 <h3 id="21-literals-entre-cometes-dobles">2.1 Literals entre cometes dobles<a class="headerlink" href="#21-literals-entre-cometes-dobles" title="Permanent link">&para;</a></h3>
-<p>És la forma directa i recomanada. Java utilitza una zona especial de memòria anomenada <strong>String Constant Pool</strong> per a optimitzar l'ús de la memòria:</p>
+<p>És la forma directa i més habitual. Java utilitza una zona especial de memòria anomenada <strong>String Constant Pool</strong> per a optimitzar l'ús de la memòria:</p>
 <div class="language-java highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">String</span><span class="w"> </span><span class="n">s1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Petrer"</span><span class="p">;</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">String</span><span class="w"> </span><span class="n">s2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Petrer"</span><span class="p">;</span><span class="w"> </span><span class="c1">// Reutilitza la mateixa instància de memòria del Pool</span>
 </span></code></pre></div>
@@ -1386,39 +1580,13 @@
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kt">int</span><span class="w"> </span><span class="n">edat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">22</span><span class="p">;</span>
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">String</span><span class="w"> </span><span class="n">presentacio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Hola, em dic "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">nom</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">" i tinc "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">edat</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">" anys."</span><span class="p">;</span>
 </span></code></pre></div>
-<h3 id="23-constructors-de-la-classe-string">2.3 Constructors de la classe <code>String</code><a class="headerlink" href="#23-constructors-de-la-classe-string" title="Permanent link">&para;</a></h3>
-<p>La classe <code>String</code> compta amb múltiples constructors per a inicialitzar cadenes a partir d'altres fonts de dades:</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Constructor</th>
-<th style="text-align: left;">Descripció</th>
-<th style="text-align: left;">Exemple</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>String()</code></td>
-<td style="text-align: left;">Crea una cadena buida equivalent a <code>""</code>.</td>
-<td style="text-align: left;"><code>String s = new String();</code></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>String(String original)</code></td>
-<td style="text-align: left;">Crea un nou objecte duplicant el contingut de la cadena indicada.</td>
-<td style="text-align: left;"><code>String s = new String("hola");</code></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>String(char[] array)</code></td>
-<td style="text-align: left;">Crea un <code>String</code> a partir d'un array complet de caràcters.</td>
-<td style="text-align: left;"><code>char[] c = {'A', 'B'}; String s = new String(c);</code></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>String(char[] a, int pos, int len)</code></td>
-<td style="text-align: left;">Crea un <code>String</code> prenent <code>len</code> caràcters a partir de la posició <code>pos</code>.</td>
-<td style="text-align: left;"><code>String s = new String(c, 0, 1);</code></td>
-</tr>
-</tbody>
-</table>
+<p>Com que els objectes <code>String</code> són immutables, en concatenar cadenes es crea sempre un nou objecte a l'Heap:</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">String</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Ordinador"</span><span class="p">;</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">String</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">" Portàtil"</span><span class="p">;</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">c</span><span class="p">;</span><span class="w"> </span><span class="c1">// Crea un nou String ("Ordinador Portàtil") i li assigna la seua adreça a b</span>
+</span></code></pre></div>
+<p><img alt="Concatenació de cadenes en memòria" src="images/string_concatenacio.png" style="display: block; margin: 1.5em auto; max-width: 750px; width: 100%; border-radius: 4px;" /></p>
 <hr />
 <h2 id="3-metodes-principals-de-la-classe-string">3. Mètodes principals de la classe <code>String</code><a class="headerlink" href="#3-metodes-principals-de-la-classe-string" title="Permanent link">&para;</a></h2>
 <p>La classe <code>String</code> ofereix desenes de mètodes d'utilitat per al processament de text:</p>
@@ -1570,46 +1738,50 @@
 <li>El mètode <strong><code>equals()</code></strong> compara el <strong>contingut caràcter a caràcter</strong> dels dos textos.</li>
 </ul>
 </div>
-<div class="language-java highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">String</span><span class="w"> </span><span class="n">s1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">String</span><span class="p">(</span><span class="s">"hola"</span><span class="p">);</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">String</span><span class="w"> </span><span class="n">s2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">String</span><span class="p">(</span><span class="s">"hola"</span><span class="p">);</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">s1</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">s2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="n">IO</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Són idèntics en memòria"</span><span class="p">);</span><span class="w"> </span><span class="c1">// NO s'executa! Són dos objectes diferents</span>
-</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="p">}</span>
-</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
-</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">s1</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">s2</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">    </span><span class="n">IO</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Tenen el mateix text!"</span><span class="p">);</span><span class="w"> </span><span class="c1">// SÍ s'executa correctament</span>
-</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="p">}</span>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">IO</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Introdueix una paraula: "</span><span class="p">);</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">String</span><span class="w"> </span><span class="n">s1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">IO</span><span class="p">.</span><span class="na">readln</span><span class="p">();</span><span class="w"> </span><span class="c1">// Imaginem que l'usuari escriu "hola" per teclat</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">String</span><span class="w"> </span><span class="n">s2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"hola"</span><span class="p">;</span><span class="w">      </span><span class="c1">// Literal definit en el programa</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="c1">// ERROR FREQÜENT: Compara si apunten a la mateixa adreça de memòria</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">s1</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">s2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">    </span><span class="n">IO</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Són idèntics en memòria"</span><span class="p">);</span><span class="w"> </span><span class="c1">// NO s'executarà! Són dos objectes diferents</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="p">}</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="c1">// FORMA CORRECTA: Compara el text caràcter a caràcter</span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">s1</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">s2</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">    </span><span class="n">IO</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Tenen el mateix contingut de text!"</span><span class="p">);</span><span class="w"> </span><span class="c1">// SÍ s'executarà</span>
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="p">}</span>
 </span></code></pre></div>
+<p>Com que la cadena <code>s1</code> s'ha creat dinàmicament en memòria en temps d'execució en llegir del teclat, es troba en una ubicació de memòria diferent del literal <code>s2</code>. Per tant, <code>s1 == s2</code> avalua a <code>false</code>. En canvi, el mètode <code>s1.equals(s2)</code> comprova que ambdues cadenes contenen exactament la mateixa seqüència de caràcters (<code>'h'</code>, <code>'o'</code>, <code>'l'</code>, <code>'a'</code>), avaluant a <code>true</code>.</p>
 <hr />
 <h2 id="5-exemples-practics-resolts">5. Exemples pràctics resolts<a class="headerlink" href="#5-exemples-practics-resolts" title="Permanent link">&para;</a></h2>
 <h3 id="exemple-1-processament-de-noms-i-extraccio-dinicials">Exemple 1: Processament de noms i extracció d'inicials<a class="headerlink" href="#exemple-1-processament-de-noms-i-extraccio-dinicials" title="Permanent link">&para;</a></h3>
 <p>Llegeix el nom complet d'un usuari amb cognoms (per exemple, <code>"  garcia pérez, joan  "</code>), el neteja d'espais residuals, el divideix en paraules i genera les inicials en majúscules.</p>
 <details class="example">
 <summary>Solució en Java</summary>
-<div class="language-java highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="cm">/*</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="cm"> * Programa que processa una cadena de text, neteja espais amb trim(),</span>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="cm"> * divideix paraules amb split() i extreu les inicials en majúscules.</span>
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="cm"> */</span>
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">    </span><span class="n">IO</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Introdueix el teu nom complet (Nom Cognom1 Cognom2): "</span><span class="p">);</span>
-</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">linia</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">IO</span><span class="p">.</span><span class="na">readln</span><span class="p">().</span><span class="na">trim</span><span class="p">();</span>
-</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>
-</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">    </span><span class="c1">// Dividim la cadena per un o més espais en blanc</span>
-</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">    </span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">paraules</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">linia</span><span class="p">.</span><span class="na">split</span><span class="p">(</span><span class="s">" "</span><span class="p">);</span>
-</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">inicials</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">""</span><span class="p">;</span>
-</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>
-</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">    </span><span class="n">IO</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"\nParaules detectades:"</span><span class="p">);</span>
-</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">paraules</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">p</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="w">            </span><span class="n">IO</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"- "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">p</span><span class="p">);</span>
-</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="w">            </span><span class="c1">// Afegim la primera lletra en majúscula</span>
-</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="w">            </span><span class="n">inicials</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="na">substring</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">).</span><span class="na">toUpperCase</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">"."</span><span class="p">;</span>
-</span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="w">        </span><span class="p">}</span>
-</span><span id="__span-4-20"><a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-4-21"><a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>
-</span><span id="__span-4-22"><a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a><span class="w">    </span><span class="n">IO</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"\nInicials generades: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">inicials</span><span class="p">);</span>
-</span><span id="__span-4-23"><a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a><span class="p">}</span>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="cm">/*</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="cm"> * Programa que processa una cadena de text, neteja espais amb trim(),</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="cm"> * divideix paraules amb split() i extreu les inicials en majúscules.</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="cm"> */</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">    </span><span class="n">IO</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Introdueix el teu nom complet (Nom Cognom1 Cognom2): "</span><span class="p">);</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">linia</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">IO</span><span class="p">.</span><span class="na">readln</span><span class="p">().</span><span class="na">trim</span><span class="p">();</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">    </span><span class="c1">// Dividim la cadena per un o més espais en blanc</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">    </span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">paraules</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">linia</span><span class="p">.</span><span class="na">split</span><span class="p">(</span><span class="s">" "</span><span class="p">);</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">inicials</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">""</span><span class="p">;</span>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="w">    </span><span class="n">IO</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"\nParaules detectades:"</span><span class="p">);</span>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">paraules</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">p</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="w">            </span><span class="n">IO</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"- "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">p</span><span class="p">);</span>
+</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="w">            </span><span class="c1">// Afegim la primera lletra en majúscula</span>
+</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="w">            </span><span class="n">inicials</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="na">substring</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">).</span><span class="na">toUpperCase</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">"."</span><span class="p">;</span>
+</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-5-21"><a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>
+</span><span id="__span-5-22"><a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a><span class="w">    </span><span class="n">IO</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"\nInicials generades: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">inicials</span><span class="p">);</span>
+</span><span id="__span-5-23"><a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a><span class="p">}</span>
 </span></code></pre></div>
 </details>
 <hr />
@@ -1617,32 +1789,32 @@
 <p>Un palíndrom és una paraula que es llegeix exactament igual d'esquerra a dreta que de dreta a esquerra (per exemple: <code>"radar"</code>, <code>"annna"</code>, <code>"reconèixer"</code>). El programa comprova si una paraula introduïda per teclat compleix aquesta condició.</p>
 <details class="example">
 <summary>Solució en Java</summary>
-<div class="language-java highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="cm">/*</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="cm"> * Programa que comprova si una paraula és un palíndrom</span>
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="cm"> * comparant els caràcters simètrics des dels extrems.</span>
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="cm"> */</span>
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">    </span><span class="n">IO</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Introdueix una paraula per a comprovar si és palíndrom: "</span><span class="p">);</span>
-</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">paraula</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">IO</span><span class="p">.</span><span class="na">readln</span><span class="p">().</span><span class="na">trim</span><span class="p">().</span><span class="na">toLowerCase</span><span class="p">();</span>
-</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
-</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">    </span><span class="kt">boolean</span><span class="w"> </span><span class="n">esPalindrom</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
-</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">paraula</span><span class="p">.</span><span class="na">length</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
-</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>
-</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">esPalindrom</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">paraula</span><span class="p">.</span><span class="na">charAt</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">paraula</span><span class="p">.</span><span class="na">charAt</span><span class="p">(</span><span class="n">j</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="w">            </span><span class="n">esPalindrom</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
-</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="w">        </span><span class="p">}</span>
-</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="w">        </span><span class="n">i</span><span class="o">++</span><span class="p">;</span>
-</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="w">        </span><span class="n">j</span><span class="o">--</span><span class="p">;</span>
-</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>
-</span><span id="__span-5-21"><a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">esPalindrom</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">!</span><span class="n">paraula</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-5-22"><a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a><span class="w">        </span><span class="n">IO</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"La paraula \""</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">paraula</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">"\" ÉS un palíndrom!"</span><span class="p">);</span>
-</span><span id="__span-5-23"><a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-5-24"><a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a><span class="w">        </span><span class="n">IO</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"La paraula \""</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">paraula</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">"\" NO és un palíndrom."</span><span class="p">);</span>
-</span><span id="__span-5-25"><a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-5-26"><a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a><span class="p">}</span>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="cm">/*</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="cm"> * Programa que comprova si una paraula és un palíndrom</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="cm"> * comparant els caràcters simètrics des dels extrems.</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="cm"> */</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">    </span><span class="n">IO</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Introdueix una paraula per a comprovar si és palíndrom: "</span><span class="p">);</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">paraula</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">IO</span><span class="p">.</span><span class="na">readln</span><span class="p">().</span><span class="na">trim</span><span class="p">().</span><span class="na">toLowerCase</span><span class="p">();</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">    </span><span class="kt">boolean</span><span class="w"> </span><span class="n">esPalindrom</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">paraula</span><span class="p">.</span><span class="na">length</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">esPalindrom</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">paraula</span><span class="p">.</span><span class="na">charAt</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">paraula</span><span class="p">.</span><span class="na">charAt</span><span class="p">(</span><span class="n">j</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="w">            </span><span class="n">esPalindrom</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+</span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-6-17"><a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a><span class="w">        </span><span class="n">i</span><span class="o">++</span><span class="p">;</span>
+</span><span id="__span-6-18"><a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a><span class="w">        </span><span class="n">j</span><span class="o">--</span><span class="p">;</span>
+</span><span id="__span-6-19"><a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-6-20"><a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a>
+</span><span id="__span-6-21"><a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">esPalindrom</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">!</span><span class="n">paraula</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-22"><a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a><span class="w">        </span><span class="n">IO</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"La paraula \""</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">paraula</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">"\" ÉS un palíndrom!"</span><span class="p">);</span>
+</span><span id="__span-6-23"><a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-24"><a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a><span class="w">        </span><span class="n">IO</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"La paraula \""</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">paraula</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">"\" NO és un palíndrom."</span><span class="p">);</span>
+</span><span id="__span-6-25"><a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-6-26"><a id="__codelineno-6-26" name="__codelineno-6-26" href="#__codelineno-6-26"></a><span class="p">}</span>
 </span></code></pre></div>
 </details>
 
@@ -1703,7 +1875,7 @@
       <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["header.autohide", "content.code.copy", "content.code.annotate", "navigation.top", "navigation.instant", "navigation.tracking", "search.suggest", "search.highlight"], "search": "../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copiat al porta-retalls", "clipboard.copy": "C\u00f2pia al porta-retalls", "search.result.more.one": "1 m\u00e9s en aquesta p\u00e0gina", "search.result.more.other": "# m\u00e9s en aquesta p\u00e0gina", "search.result.none": "Cap document coincideix", "search.result.one": "1 document coincident", "search.result.other": "# documents coincidents", "search.result.placeholder": "Escriu per a comen\u00e7ar a cercar", "search.result.term.missing": "Desaparegut", "select.version": "Selecciona la versi\u00f3"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.c21346df.min.js"></script>
+      <script src="../assets/javascripts/bundle.a5f9d56c.min.js"></script>
       
         <script src="../javascripts/mathjax.js"></script>
       

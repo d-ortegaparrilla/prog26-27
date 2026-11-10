@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
     
     
       
@@ -1199,23 +1199,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="El separador decimal en Scanner: Coma (,) o punt (.)?">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#com-forcar-que-accepte-sempre-la-coma" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Com forçar que accepte sempre la coma (,)?
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
         
       </ul>
@@ -1291,10 +1274,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-taula-comparativa-classe-io-java-25-vs-model-classic" class="md-nav__link">
+  <a href="#5-arguments-de-la-linia-dordres-string-args" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. Taula comparativa: Classe IO (Java 25) vs Model Clàssic
+        5. Arguments de la línia d'ordres: String[] args
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-taula-comparativa-classe-io-java-25-vs-model-classic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Taula comparativa: Classe IO (Java 25) vs Model Clàssic
       
     </span>
   </a>
@@ -1491,6 +1485,62 @@
     
   
     Arrays de caràcters en Java
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UT4/classe_string.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    La classe String
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UT4/matrius.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Matrius en Java (Arrays multidimensionals)
   
 
     
@@ -1725,23 +1775,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="El separador decimal en Scanner: Coma (,) o punt (.)?">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#com-forcar-que-accepte-sempre-la-coma" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Com forçar que accepte sempre la coma (,)?
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
         
       </ul>
@@ -1817,10 +1850,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-taula-comparativa-classe-io-java-25-vs-model-classic" class="md-nav__link">
+  <a href="#5-arguments-de-la-linia-dordres-string-args" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. Taula comparativa: Classe IO (Java 25) vs Model Clàssic
+        5. Arguments de la línia d'ordres: String[] args
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-taula-comparativa-classe-io-java-25-vs-model-classic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Taula comparativa: Classe IO (Java 25) vs Model Clàssic
       
     </span>
   </a>
@@ -2060,29 +2104,79 @@
 </span></code></pre></div></p>
 <hr />
 <h3 id="configuracio-regional-locale-coma-o-punt-decimal">Configuració regional (<em>Locale</em>): Coma o punt decimal?<a class="headerlink" href="#configuracio-regional-locale-coma-o-punt-decimal" title="Permanent link">&para;</a></h3>
-<p>Segons la configuració del vostre sistema operatiu, els nombres decimals es mostraran per defecte amb un <strong>punt</strong> (com <code>3.14</code>, habitual en l'àmbit anglosaxó) o amb una <strong>coma</strong> (com <code>3,14</code>, habitual a Espanya).</p>
-<p>Si volem forçar que <code>printf</code> utilitze sempre la <strong>coma</strong>, podem indicar la configuració en espanyol mitjançant <code>Locale.of("es", "ES")</code> com a primer paràmetre:</p>
+<p>Una confusió habitual és pensar que canviant la configuració regional es pot aconseguir que <code>System.out.println(4.5)</code> mostre <code>4,5</code>. Açò <strong>no és possible</strong>: <code>println</code> i <code>print</code> converteixen internament el número a <code>String</code> amb <code>Double.toString()</code>, que <strong>sempre</strong> utilitza el punt com a separador decimal, ignorant qualsevol configuració regional.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Mecanisme</th>
+<th style="text-align: center;">Respecta el <em>locale</em></th>
+<th style="text-align: left;">Solució per a mostrar coma</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>System.out.println(4.5)</code></td>
+<td style="text-align: center;">Mai</td>
+<td style="text-align: left;">Usar <code>printf</code> o <code>String.format</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>System.out.printf("%.2f", 4.5)</code></td>
+<td style="text-align: center;">Sí</td>
+<td style="text-align: left;">Passar <code>Locale.of("es","ES")</code> com a 1r paràmetre</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>sc.nextDouble()</code> (Scanner)</td>
+<td style="text-align: center;">Sí</td>
+<td style="text-align: left;">Cridar <code>sc.useLocale(Locale.of("es","ES"))</code></td>
+</tr>
+</tbody>
+</table>
+<p>Per a mostrar la <strong>coma</strong> en un número real amb <code>printf</code> o <code>String.format</code> tenim dues alternatives:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Opció A: <code>printf</code> amb <em>locale</em> explícit (recomanat)</label><label for="__tabbed_1_2">Opció B: Conversió a <code>String</code> amb <code>String.format</code></label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="language-java highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Locale</span><span class="p">;</span>
 </span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
 </span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="kt">double</span><span class="w"> </span><span class="n">valor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">12.345</span><span class="p">;</span>
-</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="n">Locale</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="s">"es"</span><span class="p">,</span><span class="w"> </span><span class="s">"ES"</span><span class="p">),</span><span class="w"> </span><span class="s">"Valor amb coma: %.2f\n"</span><span class="p">,</span><span class="w"> </span><span class="n">valor</span><span class="p">);</span><span class="w"> </span><span class="c1">// Mostra: 12,35</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="n">Locale</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="s">"es"</span><span class="p">,</span><span class="w"> </span><span class="s">"ES"</span><span class="p">),</span><span class="w"> </span><span class="s">"Valor: %.2f%n"</span><span class="p">,</span><span class="w"> </span><span class="n">valor</span><span class="p">);</span><span class="w"> </span><span class="c1">// Mostra: 12,35</span>
 </span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<p>Si necessitem el resultat com a text per a concatenar-lo, podem usar <code>String.format</code> amb el <em>locale</em> i imprimir-lo després amb <code>println</code>:</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Locale</span><span class="p">;</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="kt">double</span><span class="w"> </span><span class="n">valor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">12.345</span><span class="p">;</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="n">String</span><span class="w"> </span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">String</span><span class="p">.</span><span class="na">format</span><span class="p">(</span><span class="n">Locale</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="s">"es"</span><span class="p">,</span><span class="w"> </span><span class="s">"ES"</span><span class="p">),</span><span class="w"> </span><span class="s">"%.2f"</span><span class="p">,</span><span class="w"> </span><span class="n">valor</span><span class="p">);</span><span class="w"> </span><span class="c1">// "12,35"</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Valor: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">text</span><span class="p">);</span><span class="w"> </span><span class="c1">// Ara sí podem usar println</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Forçar la coma en tot el programa amb <code>Locale.setDefault</code></p>
+<p>Podeu afegir <code>Locale.setDefault(...)</code> <strong>al principi del <code>main()</code></strong> perquè <code>printf</code> i <code>Scanner</code> utilitzen la coma en tot el programa sense haver de configurar-los un per un. Recordeu que açò <strong>mai</strong> afectarà <code>println</code>:
+<div class="language-java highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">Locale</span><span class="p">.</span><span class="na">setDefault</span><span class="p">(</span><span class="n">Locale</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="s">"es"</span><span class="p">,</span><span class="w"> </span><span class="s">"ES"</span><span class="p">));</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">"%.2f%n"</span><span class="p">,</span><span class="w"> </span><span class="mf">4.5</span><span class="p">);</span><span class="w">  </span><span class="c1">// Mostra: 4,50  </span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="mf">4.5</span><span class="p">);</span><span class="w">           </span><span class="c1">// Segueix mostrant: 4.5  (comportament fix de println)</span>
+</span></code></pre></div></p>
+</div>
 <hr />
 <h2 id="3-entrada-estandard-per-consola-la-classe-javautilscanner">3. Entrada estàndard per consola: La classe <code>java.util.Scanner</code><a class="headerlink" href="#3-entrada-estandard-per-consola-la-classe-javautilscanner" title="Permanent link">&para;</a></h2>
 <p>La classe <strong><code>Scanner</code></strong> es troba disponible des de Java 5 en el paquet <code>java.util</code>. S'encarrega de llegir fluxos de text (provinents del teclat, d'arxius o de cadenes) i fragmentar-los en xicotetes unitats anomenades <strong>testimonis</strong> (<em>tokens</em>), separats habitualment per caràcters en blanc (espais, tabuladors i salts de línia).</p>
 <h3 id="passos-per-a-utilitzar-scanner">Passos per a utilitzar <code>Scanner</code><a class="headerlink" href="#passos-per-a-utilitzar-scanner" title="Permanent link">&para;</a></h3>
 <ol>
 <li><strong>Importar la classe:</strong> Cal incloure la instrucció a l'inici del fitxer:
-   <div class="language-java highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Scanner</span><span class="p">;</span>
+   <div class="language-java highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Scanner</span><span class="p">;</span>
 </span></code></pre></div></li>
 <li><strong>Crear l'objecte associat al teclat (<code>System.in</code>):</strong>
-   <div class="language-java highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">Scanner</span><span class="w"> </span><span class="n">sc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+   <div class="language-java highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="n">Scanner</span><span class="w"> </span><span class="n">sc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
 </span></code></pre></div></li>
 <li><strong>Cridar als mètodes de lectura segons el tipus de dada desitjat:</strong>
-   <div class="language-java highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">edat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
+   <div class="language-java highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">edat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
 </span></code></pre></div></li>
 <li><strong>Tancar l'escàner en finalitzar (bona pràctica):</strong>
-   <div class="language-java highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="n">sc</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
+   <div class="language-java highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="n">sc</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
 </span></code></pre></div></li>
 </ol>
 <hr />
@@ -2131,31 +2225,29 @@
 <div class="admonition tip">
 <p class="admonition-title">Com llegir un caràcter individual (<code>char</code>) amb <code>Scanner</code>?</p>
 <p>Com que <code>Scanner</code> no disposa d'un mètode <code>nextChar()</code>, per a obtindre un caràcter llegim el text amb <code>next()</code> (o <code>nextLine()</code>) i n'extraiem el primer caràcter situat a la posició 0 mitjançant el mètode <strong><code>.charAt(0)</code></strong>:
-<div class="language-java highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Introdueix una opció (S/N): "</span><span class="p">);</span>
-</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="kt">char</span><span class="w"> </span><span class="n">resposta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">next</span><span class="p">().</span><span class="na">charAt</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Introdueix una opció (S/N): "</span><span class="p">);</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="kt">char</span><span class="w"> </span><span class="n">resposta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">next</span><span class="p">().</span><span class="na">charAt</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
 </span></code></pre></div></p>
 </div>
 <hr />
 <h3 id="el-separador-decimal-en-scanner-coma-o-punt">El separador decimal en <code>Scanner</code>: Coma (,) o punt (.)?<a class="headerlink" href="#el-separador-decimal-en-scanner-coma-o-punt" title="Permanent link">&para;</a></h3>
-<p>De la mateixa manera, quan introduïm un número decimal per teclat amb <code>sc.nextDouble()</code>:</p>
-<ul>
-<li>Depenent de la configuració de l'ordinador, <code>Scanner</code> pot demanar el decimal amb un <strong>punt</strong> (<code>3.14</code>) o amb una <strong>coma</strong> (<code>3,14</code>).</li>
-<li>Si el vostre sistema espera una cosa i en teclegem una altra, el programa llançarà un error (<code>InputMismatchException</code>).</li>
-</ul>
-<h4 id="com-forcar-que-accepte-sempre-la-coma">Com forçar que accepte sempre la coma (,)?<a class="headerlink" href="#com-forcar-que-accepte-sempre-la-coma" title="Permanent link">&para;</a></h4>
-<p>Per a assegurar-nos que <code>Scanner</code> accepte sempre la <strong>coma</strong> (el format estàndard a Espanya), podem indicar la configuració regional en espanyol mitjançant <code>Locale.of("es", "ES")</code>:</p>
-<div class="language-java highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Locale</span><span class="p">;</span>
-</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Scanner</span><span class="p">;</span>
-</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>
-</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="n">Scanner</span><span class="w"> </span><span class="n">sc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
-</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="n">sc</span><span class="p">.</span><span class="na">useLocale</span><span class="p">(</span><span class="n">Locale</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="s">"es"</span><span class="p">,</span><span class="w"> </span><span class="s">"ES"</span><span class="p">));</span><span class="w"> </span><span class="c1">// Ara sc.nextDouble() accepta sempre 3,14 amb coma!</span>
-</span></code></pre></div>
-<div class="admonition tip">
-<p class="admonition-title">Forçar la coma en tot el programa</p>
-<p>Si voleu que tant <code>Scanner</code> com <code>printf</code> utilitzen sempre la coma sense haver de configurar-los per separat, podeu afegir aquesta línia a l'inici del vostre programa:
-<div class="language-java highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="n">Locale</span><span class="p">.</span><span class="na">setDefault</span><span class="p">(</span><span class="n">Locale</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="s">"es"</span><span class="p">,</span><span class="w"> </span><span class="s">"ES"</span><span class="p">));</span>
+<p>Quan es crea un objecte <code>Scanner</code>, aquest adopta automàticament el <em>locale</em> <strong>que veu la JVM</strong> (la màquina virtual de Java), no necessàriament el del sistema operatiu. La JVM determina el seu <em>locale</em> per defecte a partir de la variable d'entorn <code>LANG</code> (o <code>LC_ALL</code>), però <strong>ignora</strong> les variables <code>LC_NUMERIC</code>, <code>LC_TIME</code>, etc. de forma individual.</p>
+<div class="admonition warning">
+<p class="admonition-title">El <em>locale</em> de la JVM pot diferir del sistema</p>
+<p>En molts sistemes Linux configurats parcialment en espanyol (per exemple, amb <code>LANG=en_US.UTF-8</code> però <code>LC_NUMERIC=es_ES</code>), la JVM arrencarà en anglès i <code>sc.nextDouble()</code> esperarà un <strong>punt</strong> per defecte, encara que el sistema operatiu usaria la coma. Per comprovar quin <em>locale</em> veu realment la vostra JVM:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>java<span class="w"> </span>-XshowSettings:locale<span class="w"> </span>-version<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s2">"default locale"</span>
 </span></code></pre></div></p>
 </div>
+<p>A diferència de <code>println</code>, en <code>Scanner</code> <strong>sí podem forçar la coma</strong> de forma explícita i portable amb <code>useLocale()</code>:</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Locale</span><span class="p">;</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Scanner</span><span class="p">;</span>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="n">Scanner</span><span class="w"> </span><span class="n">sc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="n">sc</span><span class="p">.</span><span class="na">useLocale</span><span class="p">(</span><span class="n">Locale</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="s">"es"</span><span class="p">,</span><span class="w"> </span><span class="s">"ES"</span><span class="p">));</span><span class="w"> </span><span class="c1">// Ara sc.nextDouble() accepta sempre 3,14 amb coma!</span>
+</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>
+</span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Introdueix un decimal: "</span><span class="p">);</span>
+</span><span id="__span-18-8"><a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a><span class="kt">double</span><span class="w"> </span><span class="n">valor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextDouble</span><span class="p">();</span><span class="w"> </span><span class="c1">// L'usuari pot escriure 4,5 i funciona correctament</span>
+</span></code></pre></div>
 <hr />
 <h2 id="4-el-funcionament-intern-del-bufer-i-el-problema-classic-del-salt-de-linia">4. El funcionament intern del búfer i el problema clàssic del salt de línia<a class="headerlink" href="#4-el-funcionament-intern-del-bufer-i-el-problema-classic-del-salt-de-linia" title="Permanent link">&para;</a></h2>
 <p>Per a entendre com evitar els errors més comuns amb <code>Scanner</code>, és imprescindible conéixer com funciona internament la lectura des del teclat:</p>
@@ -2168,47 +2260,73 @@
 <li>Si a continuació invoquem <strong><code>nextLine()</code></strong>, aquest mètode està dissenyat per a consumir tot el contingut fins a trobar un salt de línia. Com que troba immediatament el <code>\n</code> que havia quedat penjat del número anterior, <strong>el consumeix al moment i retorna una cadena buida (<code>""</code>)</strong>, sense esperar mai que l'usuari puga escriure res!</li>
 </ol>
 <h3 id="exemple-de-lerror-tipic">Exemple de l'error típic<a class="headerlink" href="#exemple-de-lerror-tipic" title="Permanent link">&para;</a></h3>
-<div class="language-java highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="n">Scanner</span><span class="w"> </span><span class="n">sc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
-</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>
-</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Introdueix la teua edat: "</span><span class="p">);</span>
-</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="kt">int</span><span class="w"> </span><span class="n">edat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span><span class="w"> </span><span class="c1">// L'usuari escriu 25 i prem Intro</span>
-</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>
-</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Introdueix la teua adreça: "</span><span class="p">);</span>
-</span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="n">String</span><span class="w"> </span><span class="n">adreca</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextLine</span><span class="p">();</span><span class="w"> </span><span class="c1">// EL PROGRAMA NO S'ATURA! Llig directament el \n pendent!</span>
-</span><span id="__span-17-8"><a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a>
-</span><span id="__span-17-9"><a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Edat: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">edat</span><span class="p">);</span>
-</span><span id="__span-17-10"><a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Adreça: '"</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">adreca</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">"'"</span><span class="p">);</span><span class="w"> </span><span class="c1">// Queda buida: ''</span>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="n">Scanner</span><span class="w"> </span><span class="n">sc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Introdueix la teua edat: "</span><span class="p">);</span>
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="kt">int</span><span class="w"> </span><span class="n">edat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span><span class="w"> </span><span class="c1">// L'usuari escriu 25 i prem Intro</span>
+</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>
+</span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Introdueix la teua adreça: "</span><span class="p">);</span>
+</span><span id="__span-19-7"><a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="n">String</span><span class="w"> </span><span class="n">adreca</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextLine</span><span class="p">();</span><span class="w"> </span><span class="c1">// EL PROGRAMA NO S'ATURA! Llig directament el \n pendent!</span>
+</span><span id="__span-19-8"><a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a>
+</span><span id="__span-19-9"><a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Edat: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">edat</span><span class="p">);</span>
+</span><span id="__span-19-10"><a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Adreça: '"</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">adreca</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">"'"</span><span class="p">);</span><span class="w"> </span><span class="c1">// Queda buida: ''</span>
 </span></code></pre></div>
 <hr />
 <h3 id="com-solucionar-el-problema-del-bufer">Com solucionar el problema del búfer?<a class="headerlink" href="#com-solucionar-el-problema-del-bufer" title="Permanent link">&para;</a></h3>
 <p>Disposem de dues estratègies per a resoldre aquesta situació:</p>
 <h4 id="estrategia-1-netejar-el-bufer-manualment-amb-un-nextline-de-descart">Estratègia 1: Netejar el búfer manualment amb un <code>nextLine()</code> de descart<a class="headerlink" href="#estrategia-1-netejar-el-bufer-manualment-amb-un-nextline-de-descart" title="Permanent link">&para;</a></h4>
 <p>Consisteix a col·locar una instrucció buida <code>sc.nextLine();</code> just després de llegir un número i abans de llegir qualsevol línia de text:</p>
-<div class="language-java highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Introdueix la teua edat: "</span><span class="p">);</span>
-</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="kt">int</span><span class="w"> </span><span class="n">edat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span><span class="w"> </span><span class="c1">// Llig l'enter</span>
-</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>
-</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="n">sc</span><span class="p">.</span><span class="na">nextLine</span><span class="p">();</span><span class="w"> </span><span class="c1">// NETEJA EL BÚFER: consumeix el \n pendent</span>
-</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>
-</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Introdueix la teua adreça: "</span><span class="p">);</span>
-</span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="n">String</span><span class="w"> </span><span class="n">adreca</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextLine</span><span class="p">();</span><span class="w"> </span><span class="c1">// Ara sí s'atura correctament a esperar el text!</span>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Introdueix la teua edat: "</span><span class="p">);</span>
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="kt">int</span><span class="w"> </span><span class="n">edat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span><span class="w"> </span><span class="c1">// Llig l'enter</span>
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>
+</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="n">sc</span><span class="p">.</span><span class="na">nextLine</span><span class="p">();</span><span class="w"> </span><span class="c1">// NETEJA EL BÚFER: consumeix el \n pendent</span>
+</span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>
+</span><span id="__span-20-6"><a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Introdueix la teua adreça: "</span><span class="p">);</span>
+</span><span id="__span-20-7"><a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a><span class="n">String</span><span class="w"> </span><span class="n">adreca</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextLine</span><span class="p">();</span><span class="w"> </span><span class="c1">// Ara sí s'atura correctament a esperar el text!</span>
 </span></code></pre></div>
 <h4 id="estrategia-2-llegir-sempre-amb-nextline-i-convertir-metode-recomanat">Estratègia 2: Llegir sempre amb <code>nextLine()</code> i convertir (Mètode recomanat)<a class="headerlink" href="#estrategia-2-llegir-sempre-amb-nextline-i-convertir-metode-recomanat" title="Permanent link">&para;</a></h4>
 <p>En compte de mesclar <code>nextInt()</code> i <code>nextLine()</code>, podem llegir <strong>sempre</strong> línies completes com a text (<code>sc.nextLine()</code>) i transformar el text al tipus numèric necessari mitjançant els mètodes de conversió estàtics de Java (<code>Integer.parseInt()</code>, <code>Double.parseDouble()</code>), exactament com fèiem amb <code>IO.readln()</code>:</p>
-<div class="language-java highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Introdueix la teua edat: "</span><span class="p">);</span>
-</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="kt">int</span><span class="w"> </span><span class="n">edat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Integer</span><span class="p">.</span><span class="na">parseInt</span><span class="p">(</span><span class="n">sc</span><span class="p">.</span><span class="na">nextLine</span><span class="p">());</span><span class="w"> </span><span class="c1">// Llig tota la línia i no deixa residus al búfer!</span>
-</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>
-</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Introdueix el teu pes: "</span><span class="p">);</span>
-</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="kt">double</span><span class="w"> </span><span class="n">pes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Double</span><span class="p">.</span><span class="na">parseDouble</span><span class="p">(</span><span class="n">sc</span><span class="p">.</span><span class="na">nextLine</span><span class="p">());</span>
-</span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a>
-</span><span id="__span-19-7"><a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Introdueix la teua adreça: "</span><span class="p">);</span>
-</span><span id="__span-19-8"><a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a><span class="n">String</span><span class="w"> </span><span class="n">adreca</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextLine</span><span class="p">();</span><span class="w"> </span><span class="c1">// Funciona perfectament sense problemes!</span>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Introdueix la teua edat: "</span><span class="p">);</span>
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="kt">int</span><span class="w"> </span><span class="n">edat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Integer</span><span class="p">.</span><span class="na">parseInt</span><span class="p">(</span><span class="n">sc</span><span class="p">.</span><span class="na">nextLine</span><span class="p">());</span><span class="w"> </span><span class="c1">// Llig tota la línia i no deixa residus al búfer!</span>
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>
+</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Introdueix el teu pes: "</span><span class="p">);</span>
+</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a><span class="kt">double</span><span class="w"> </span><span class="n">pes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Double</span><span class="p">.</span><span class="na">parseDouble</span><span class="p">(</span><span class="n">sc</span><span class="p">.</span><span class="na">nextLine</span><span class="p">());</span>
+</span><span id="__span-21-6"><a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a>
+</span><span id="__span-21-7"><a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Introdueix la teua adreça: "</span><span class="p">);</span>
+</span><span id="__span-21-8"><a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a><span class="n">String</span><span class="w"> </span><span class="n">adreca</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextLine</span><span class="p">();</span><span class="w"> </span><span class="c1">// Funciona perfectament sense problemes!</span>
 </span></code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">Per què aquesta és l'estratègia preferida en l'entorn professional?</p>
 <p>Llegir sempre línies senceres amb <code>sc.nextLine()</code> i convertir amb <code>Integer.parseInt()</code> o <code>Double.parseDouble()</code> és una pràctica molt recomanable perquè evita errors subtils de memòria cau, simplifica el control de flux i permet afegir blocs de validació i gestió d'errors de forma més neta.</p>
 </div>
 <hr />
-<h2 id="5-taula-comparativa-classe-io-java-25-vs-model-classic">5. Taula comparativa: Classe <code>IO</code> (Java 25) vs Model Clàssic<a class="headerlink" href="#5-taula-comparativa-classe-io-java-25-vs-model-classic" title="Permanent link">&para;</a></h2>
+<h2 id="5-arguments-de-la-linia-dordres-string-args">5. Arguments de la línia d'ordres: <code>String[] args</code><a class="headerlink" href="#5-arguments-de-la-linia-dordres-string-args" title="Permanent link">&para;</a></h2>
+<p>Quan executem un programa Java des d'un terminal, podem passar-li <strong>valors directament en la mateixa ordre d'execució</strong>. Aquests valors es denominen <strong>arguments de la línia d'ordres</strong> (<em>command-line arguments</em>).</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>java<span class="w"> </span>Programa.java<span class="w"> </span>Pep<span class="w"> </span><span class="m">25</span>
+</span></code></pre></div>
+<p>Dins del programa, aquests arguments arriben al mètode <code>main</code> com a text (<code>String</code>) i podem accedir-hi per la seua posició numèrica —igual que si fóra una llista numerada a partir de zero—:</p>
+<ul>
+<li><code>args[0]</code> → primer argument → <code>"Pep"</code></li>
+<li><code>args[1]</code> → segon argument → <code>"25"</code></li>
+<li><code>args[2]</code> → tercer argument → i així successivament...</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Els índexs comencen en 0</p>
+<p>El primer argument no és <code>args[1]</code> sinó <strong><code>args[0]</code></strong>. Açò és consistent amb la forma en què Java numera les posicions en general, com veurem quan estudiem els arrays.</p>
+</div>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">nom</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">args</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">;</span><span class="w">        </span><span class="c1">// "Pep"</span>
+</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="w">    </span><span class="kt">int</span><span class="w">    </span><span class="n">edat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Integer</span><span class="p">.</span><span class="na">parseInt</span><span class="p">(</span><span class="n">args</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="p">);</span><span class="w"> </span><span class="c1">// "25" --&gt; 25</span>
+</span><span id="__span-23-4"><a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>
+</span><span id="__span-23-5"><a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Hola, "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">nom</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">"! Tens "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">edat</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">" anys."</span><span class="p">);</span>
+</span><span id="__span-23-6"><a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a><span class="p">}</span>
+</span></code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Els arguments sempre arriben com a <code>String</code></p>
+<p>Tots els arguments de la línia d'ordres són text. Si necessitem un número, cal convertir-lo explícitament amb <code>Integer.parseInt()</code>, <code>Double.parseDouble()</code>, etc.</p>
+</div>
+<hr />
+<h2 id="6-taula-comparativa-classe-io-java-25-vs-model-classic">6. Taula comparativa: Classe <code>IO</code> (Java 25) vs Model Clàssic<a class="headerlink" href="#6-taula-comparativa-classe-io-java-25-vs-model-classic" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
@@ -2323,7 +2441,7 @@
       <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["header.autohide", "content.code.copy", "content.code.annotate", "navigation.top", "navigation.instant", "navigation.tracking", "search.suggest", "search.highlight"], "search": "../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copiat al porta-retalls", "clipboard.copy": "C\u00f2pia al porta-retalls", "search.result.more.one": "1 m\u00e9s en aquesta p\u00e0gina", "search.result.more.other": "# m\u00e9s en aquesta p\u00e0gina", "search.result.none": "Cap document coincideix", "search.result.one": "1 document coincident", "search.result.other": "# documents coincidents", "search.result.placeholder": "Escriu per a comen\u00e7ar a cercar", "search.result.term.missing": "Desaparegut", "select.version": "Selecciona la versi\u00f3"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.c21346df.min.js"></script>
+      <script src="../assets/javascripts/bundle.a5f9d56c.min.js"></script>
       
         <script src="../javascripts/mathjax.js"></script>
       
